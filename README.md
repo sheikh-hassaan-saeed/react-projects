@@ -5,7 +5,7 @@ This repository documents my **daily progress** as I learn React through:
 - Personal micro-projects (components, hooks, state, effects)
 - Practical implementations of core concepts (props, forms, state, conditional rendering, routing)
 
-Each folder represents a new day or topic:
+Each file represents a new day or topic:
 - `Day 1 - JSX Basics`
 - `Day 3 - useState Deep Dive`
 - `Day 7 - Conditional Rendering & Event Handling`
