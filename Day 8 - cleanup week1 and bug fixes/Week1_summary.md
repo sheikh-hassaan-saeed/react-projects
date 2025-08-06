@@ -15,7 +15,7 @@
 - How to use built-in JS functions like Math.max, Math.floor, etc.
 
 ## Bug I fixed 
-- Fixed layout issues in components 
+- Fixed layout issue in a component 
 
 ## Reflections
 - Initially struggled with writing arrow functions and creating logic
