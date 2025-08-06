@@ -24,9 +24,6 @@ function ProfileCard({ name, role, department }) {
         </div>
 
     );
-
-
-
 }
 
 export default ProfileCard;
