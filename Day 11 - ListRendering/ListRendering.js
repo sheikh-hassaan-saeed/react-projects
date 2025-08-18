@@ -8,7 +8,6 @@ function ListRendering() {
         { id: 3, name: "Keyboard", price: 100 }
     ]);
 
-
     return (
 
         <div style={{ textAlign: "center" }}>
@@ -26,11 +25,7 @@ function ListRendering() {
             })}
 
         </div>
-
     )
-
-
-
 };
 
 export default ListRendering;
