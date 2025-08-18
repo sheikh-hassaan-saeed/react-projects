@@ -16,10 +16,7 @@ function ConditionalToggle() {
     return (
 
         <>
-
             {loggenIn ? <h2 style={BtnStyle}>Welcome</h2> : <button style={BtnStyle}>Log In</button>}
-
-
         </>
 
     )
