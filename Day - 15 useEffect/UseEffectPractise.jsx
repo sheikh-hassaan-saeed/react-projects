@@ -7,7 +7,6 @@ function PractiseSideEffects() {
         const timer = setTimeout(() => {
             setCount(count + 1)
         }, 1000);
-
     },);
 
     return (
@@ -16,6 +15,5 @@ function PractiseSideEffects() {
         </>
     );
 }
-
 export default PractiseSideEffects;
 
