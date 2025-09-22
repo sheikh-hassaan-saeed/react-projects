@@ -1,0 +1,10 @@
+.services-container h2 {
+    text-align: center;
+}
+
+.services-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+
+}
