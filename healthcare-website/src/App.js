@@ -2,6 +2,7 @@ import './App.css';
 import Banner from './components/banner/Banner';
 import Doctors from './components/doctors/Doctors';
 import Facilities from './components/facilities/Facilities';
+import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
 import Partners from './components/parterns/Partners';
 import Reviews from './components/reviews/Reviews';
@@ -18,6 +19,7 @@ function App() {
       <Partners />
       <Facilities />
       <Reviews />
+      <Footer />
     </>
   );
 }
