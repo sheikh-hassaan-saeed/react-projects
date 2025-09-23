@@ -45,3 +45,16 @@ h2 {
     right: 20%;
     z-index: 2;
 }
+
+@media only screen and (max-width:768px) {
+    .facilites-container {
+        width: 950px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+        width: 950px;
+    }
+}

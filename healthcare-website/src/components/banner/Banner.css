@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .banner {
     display: flex;
     background-color: rgb(213, 236, 255);
@@ -56,4 +61,34 @@
     bottom: 0;
     right: 10%;
     width: 90%;
+}
+
+@media only screen and (max-width: 768px) {
+    .banner {
+        width: 900px;
+        text-align: center;
+        margin-top: 4rem;
+
+    }
+
+    .banner-img {
+        display: none;
+    }
+
+    .text-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 4rem;
+        margin-top: -2.5rem;
+    }
+
+    .buttons button {
+        margin-top: 0;
+    }
+
+    .text-area p {
+        margin-top: -12px;
+    }
 }

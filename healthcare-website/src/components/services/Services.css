@@ -10,3 +10,21 @@
     justify-items: center;
     margin-top: 2rem;
 }
+
+@media only screen and (max-width: 768px) {
+    .services-container h2 {
+        text-align: center;
+    }
+
+    .services-container {
+        width: 940px;
+    }
+
+    .services-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+}

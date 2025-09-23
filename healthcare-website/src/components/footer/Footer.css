@@ -47,3 +47,25 @@
     font-size: 20px;
     padding: 20px;
 }
+
+@media only screen and (max-width:768px) {
+    .footer-container {
+        width: 950px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 120px;
+
+    }
+
+    .footer-container img,
+    p {
+        display: none;
+    }
+
+    .copyright {
+        text-align: center;
+        width: 950px;
+    }
+}

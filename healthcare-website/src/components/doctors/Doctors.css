@@ -11,3 +11,17 @@
     justify-items: center;
     margin-top: 2rem;
 }
+
+@media only screen and (max-width:768px) {
+    .doctors-wrapper {
+        width: 950px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .doctors-container h2 {
+        text-align: center;
+        width: 950px;
+    }
+}
