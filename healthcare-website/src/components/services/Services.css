@@ -8,5 +8,5 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     justify-items: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }

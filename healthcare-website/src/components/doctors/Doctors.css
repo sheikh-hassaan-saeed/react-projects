@@ -1,7 +1,7 @@
 .doctors-container h2 {
     text-align: center;
     font-size: 40px;
-    margin-top: 4rem;
+    margin-top: 8rem;
 }
 
 .doctors-wrapper {
@@ -9,5 +9,5 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     align-items: center;
     justify-items: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
