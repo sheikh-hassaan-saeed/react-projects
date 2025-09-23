@@ -1,7 +1,7 @@
 .banner {
     display: flex;
     background-color: rgb(213, 236, 255);
-    padding: 2rem;
+    padding: 50px;
     justify-content: space-between;
     align-items: center;
 }
