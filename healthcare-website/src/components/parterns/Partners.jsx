@@ -15,18 +15,18 @@ const Partners = () => {
             <div className="partners-container">
                 <h2>Our Health Partners</h2>
                 <p>Lorem ipsum dolor sit amet.</p>
-
-                <div className="partners">
-                    <div className='images'>
-                        <img src={Partner1} />
-                        <img src={Partner2} />
-                        <img src={Partner3} />
-                        <img src={Partner4} />
-                        <img src={Partner5} />
-                    </div>
+            </div>
+            <div className="partners">
+                <div className='images'>
+                    <img src={Partner1} />
+                    <img src={Partner2} />
+                    <img src={Partner3} />
+                    <img src={Partner4} />
+                    <img src={Partner5} />
                 </div>
             </div>
         </>
+
     )
 }
 

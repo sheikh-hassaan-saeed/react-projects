@@ -1,0 +1,28 @@
+.doctors-container h2 {
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 40px;
+}
+
+.doctors-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+    justify-items: center;
+    margin-top: 4rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .doctors-container h2 {
+        font-size: 30px;
+        margin-top: 4rem;
+    }
+
+    .doctors-wrapper {
+        margin-top: 2rem;
+    }
+}

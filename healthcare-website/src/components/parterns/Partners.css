@@ -3,7 +3,72 @@
     display: flex;
     gap: 40px;
     padding: 10px 20px;
-    background-color: rgb(0, 39, 112);
-    border-radius: 15px;
-    box-shadow: 0 0 10px;
+    background-color: rgb(14, 41, 95);
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    max-width: 950px;
+}
+
+.explore-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+}
+
+.explore-btn button {
+    padding: 20px 40px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background-color: rgb(167, 214, 255);
+    border: 1px solid rgb(14, 41, 95);
+}
+
+.partners-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.partners-container h2 {
+    font-size: 35px;
+}
+
+.partners-container p {
+    font-size: 25px;
+}
+
+.partners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+    .explore-btn button {
+        padding: 10px 30px;
+    }
+
+    .partners-container h2 {
+        font-size: 28px;
+    }
+
+    .partners-container p {
+        font-size: 18px;
+    }
+
+    .images {
+        padding: 5px 10px;
+        max-width: 400px;
+        gap: 20px;
+    }
+
+    .images img {
+        height: 20px;
+        width: 50px;
+    }
 }

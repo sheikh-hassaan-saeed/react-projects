@@ -5,25 +5,25 @@ import lobarotory from '../assets/images/laboratory.png'
 
 const services = [
     {
-        name: "Id 1",
+        name: "Treatment",
         paragraph: "lorem sa fdf asdf",
         Image: treatment
     },
 
     {
-        name: "Id 2",
+        name: "Vaccine",
         paragraph: "lorem sa fdf asdf",
         Image: vaccine
     },
 
     {
-        name: "Id 3",
+        name: "Pethealth",
         paragraph: "lorem sa fdf asdf",
         Image: pethealth
     },
 
     {
-        name: "Id 4",
+        name: "Lobarotory",
         paragraph: "lorem sa fdf asdf",
         Image: lobarotory
     },
