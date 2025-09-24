@@ -65,10 +65,13 @@
         padding: 5px 10px;
         max-width: 400px;
         gap: 20px;
+        margin-top: 1rem;
     }
 
     .images img {
         height: 20px;
         width: 50px;
     }
+
+
 }

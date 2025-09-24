@@ -2,6 +2,7 @@
     max-width: 400px;
     max-height: 400px;
     position: relative;
+
 }
 
 .facilites-img img {
@@ -15,4 +16,62 @@
     top: 20%;
     right: 20%;
     z-index: 2;
+}
+
+.h2-facilites {
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 40px;
+}
+
+.h3-facilites {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.btn-facilites button {
+    padding: 20px 40px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgb(14, 41, 95);
+    color: white;
+
+}
+
+.facilites-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 300px;
+    margin-top: 4rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .h2-facilites {
+        font-size: 30px;
+    }
+
+    .h3-facilites {
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .facilites-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 80px;
+    }
+
+    .facilites-img {
+        max-width: 250px;
+        max-height: 250px;
+        position: relative;
+        margin-left: 40px;
+    }
+
+    .btn-facilites button {
+        padding: 10px 30px;
+        border-radius: 7px;
+    }
 }

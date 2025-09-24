@@ -6,15 +6,14 @@ import facility2 from '../../assets/images/facility2.jpg'
 const Facilities = () => {
     return (
         <>
-            <h2>Our Facilites</h2>
+            <h2 className='h2-facilites'>Our Facilites</h2>
             <div className="facilites-container">
 
                 <div className="text-area">
-                    <h3>Clinical facilites are the backbone of <br />modern healthcare system</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur <br />adipisicing elit. Saepe, molestiae?</p>
 
+                    <h3 className='h3-facilites'>Clinical facilites are the backbone of <br />modern healthcare system</h3>
 
-                    <div className="btn">
+                    <div className="btn-facilites">
                         <button>Find Out More</button>
                     </div>
                 </div>
