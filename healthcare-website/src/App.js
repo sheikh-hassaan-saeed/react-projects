@@ -14,8 +14,8 @@ function App() {
 
       <NavBar />
       <Banner />
-      {/* <Services />
-      <Doctors />
+      <Services />
+      {/* <Doctors />
       <Partners />
       <Facilities />
       <Reviews />

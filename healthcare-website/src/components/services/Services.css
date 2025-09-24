@@ -1,0 +1,33 @@
+.services-container h2 {
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 40px;
+}
+
+.services-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    margin-top: 4rem;
+}
+
+@media only screen and (max-width:768px) {
+    .services-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        justify-items: center;
+        margin-top: 4rem;
+        gap: 10px;
+        margin: 0 20px 0 20px;
+    }
+
+    .services-container h2 {
+        text-align: center;
+        margin-top: 4rem;
+        font-size: 30px;
+    }
+
+    .services-wrapper {
+        margin-top: 2rem;
+    }
+}
