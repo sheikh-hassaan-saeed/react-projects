@@ -1,0 +1,94 @@
+.banner {
+    display: flex;
+    padding: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(167, 214, 255);
+    margin-top: 3rem;
+    gap: 300px;
+}
+
+
+.banner-img {
+    max-width: 480px;
+    max-height: 480px;
+    position: relative;
+}
+
+.banner-img .ellipse-pic {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.banner-img .doctor-pic {
+    position: relative;
+    z-index: 2;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+}
+
+.text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.text-area h2 {
+    font-size: 40px;
+}
+
+.text-area p {
+    font-size: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 20px 40px;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+    color: white;
+    background-color: rgb(14, 41, 95);
+    border: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .banner-img {
+        display: none;
+    }
+
+    .text-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .text-area h2 {
+        font-size: 35px;
+    }
+
+    .text-area p {
+        font-size: 20px;
+    }
+
+    .buttons button {
+        margin-top: 20px;
+        padding: 10px 20px;
+    }
+}
