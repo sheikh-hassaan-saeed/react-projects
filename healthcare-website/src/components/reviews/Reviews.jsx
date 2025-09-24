@@ -7,7 +7,7 @@ import Image3 from '../../assets/images/3.jpg'
 const Reviews = () => {
     return (
         <>
-            <h2>What People Say</h2>
+            <h2 className='h2-reviews'>What People Say</h2>
             <div className="reviews-container">
 
 
@@ -20,7 +20,7 @@ const Reviews = () => {
                 <div className="review">
                     <img src={Image2} />
                     <h3>Ricky Raynold</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Lorem, ipsum dolor sit amet.</p>
                 </div>
 
                 <div className="review">
