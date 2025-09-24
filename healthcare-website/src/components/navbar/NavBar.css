@@ -2,32 +2,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar img {
-    padding: 0.8rem 4rem;
+    padding: 10px 8%;
 }
 
 .nav-links {
     display: flex;
     gap: 20px;
-    padding: 0.8rem 4rem 0 4rem;
 }
 
 .nav-links a {
-    background-color: rgb(0, 62, 123);
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
     list-style: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 400;
-    border: none;
-    outline: none;
-    cursor: pointer;
+    padding: 7px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(14, 41, 95);
+    border-radius: 6px;
 }
 
-.nav-links a:hover {
-    background-color: rgb(34, 101, 167);
+@media only screen and (max-width: 768px) {
+    .nav-links a {
+        padding: 2px 5px;
+        font-size: 7px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 2%;
+    }
 }

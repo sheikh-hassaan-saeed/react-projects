@@ -3,6 +3,7 @@ import './NavBar.css'
 import logo from '../../assets/images/logo.png'
 const NavBar = () => {
     return (
+
         <div className="navbar">
             <img src={logo} />
 
@@ -13,6 +14,8 @@ const NavBar = () => {
                 <a href="#">Hospital Contact</a>
             </div>
         </div>
+
+
     )
 }
 
