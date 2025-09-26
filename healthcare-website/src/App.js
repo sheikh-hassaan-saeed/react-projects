@@ -19,7 +19,7 @@ function App() {
       <Partners />
       <Facilities />
       <Reviews />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
