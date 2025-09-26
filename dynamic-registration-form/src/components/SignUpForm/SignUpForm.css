@@ -1,0 +1,326 @@
+.form-container {
+    width: 65%;
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 1rem;
+    padding: 20px 10px 50px 80px;
+
+}
+
+input:focus {
+    border-color: #000;
+}
+
+input::placeholder {
+    color: #252525;
+    font-size: 14px;
+}
+
+.header {
+    padding: 20px 0 20px 4px;
+}
+
+.header h2 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 750;
+}
+
+.header p {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    margin-top: 1em;
+}
+
+.input-row-1 {
+    display: flex;
+    gap: 40px;
+
+}
+
+.input-row-1 input {
+    width: 380px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.input-row-1 label {
+    flex-grow: 1;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.input-row-2 {
+    display: flex;
+    gap: 40px;
+}
+
+.input-row-2 input {
+    width: 380px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.input-row-2 label {
+    flex-grow: 1;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+
+
+
+
+
+input,
+select {
+    border: none;
+    border-bottom: 1px solid #484848;
+    padding: 8px 0;
+    outline: none;
+    transition: border-color 0.3s;
+    background: transparent;
+    width: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+
+}
+
+.input-row-4 {
+    display: flex;
+    gap: 40px;
+    width: 802px;
+}
+
+.input-row-4 textarea {
+    border: none;
+    border-bottom: 1px solid #484848;
+    padding: 8px 0;
+    outline: none;
+    transition: border-color 0.3s;
+    background: transparent;
+    width: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+
+}
+
+textarea::placeholder {
+    color: #252525;
+
+}
+
+.input-row-5 {
+    display: flex;
+    gap: 40px;
+}
+
+.input-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.input-col label {
+    font-size: 13px;
+    color: #252525;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.input-col input[type="file"] {
+    font-size: 12px;
+    border: none;
+    padding: 8px 0;
+    border-bottom: 1px solid #484848;
+    width: 380px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.have-account {
+    width: 97%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: #252525;
+    margin-top: 10px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.have-account span {
+    margin-left: 10px;
+    color: blue;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button {
+    background-color: #0a49c6;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 25px;
+    cursor: pointer;
+    width: 30%;
+    border: none;
+    outline: none;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.btn button:hover {
+    background-color: #1d3557;
+}
+
+.form-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.form-img img {
+    width: 420px;
+    height: 420px;
+}
+
+.error {
+    color: #ff0419;
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: flex;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+}
+
+.input-row-5 .input-col .error {
+    margin-top: -5px;
+}
+
+
+
+.input-row-1 .error {
+    margin-top: -1px;
+}
+
+.input-row-2 .error {
+    margin-top: -1px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        padding: 50px 0 20px 4px;
+    }
+
+    .header h2 {
+
+        font-size: 60px;
+    }
+
+    .header p {
+        font-size: 30px;
+    }
+
+    .form-img {
+        display: none;
+    }
+
+    .input-row-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 6rem;
+    }
+
+    .input-row-1 input {
+        width: 650px;
+        font-size: 26px;
+    }
+
+    .input-row-1 input::placeholder {
+        font-size: 20px;
+    }
+
+    .input-row-1 label {
+        flex-grow: 1;
+    }
+
+    .input-row-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 1rem;
+    }
+
+    .input-row-2 input {
+        width: 650px;
+        font-size: 20px;
+    }
+
+    .input-row-2 input::placeholder {
+        font-size: 20px;
+    }
+
+    .input-row-2 label {
+        flex-grow: 1;
+    }
+
+    .input-row-4 {
+        margin-top: 1rem;
+    }
+
+    .input-row-4 textarea {
+        width: 100%;
+        font-size: 20px;
+        width: 650px;
+    }
+
+    textarea::placeholder {
+        color: #252525;
+    }
+
+    .input-row-5 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+
+
+    .input-row-5 .input-col input {
+        width: 650px;
+    }
+
+
+
+    .have-account {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    .error {
+        color: #ff0419;
+        font-size: 0.85rem;
+        font-weight: 400;
+        display: flex;
+        margin-top: -10px;
+        margin-right: 160px;
+        margin-bottom: 5px;
+
+    }
+
+}
