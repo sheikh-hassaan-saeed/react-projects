@@ -48,6 +48,7 @@
 
 .text-area p {
     font-size: 30px;
+    margin-top: -20px;
 }
 
 .buttons {
@@ -57,6 +58,7 @@
 
 .buttons button {
     padding: 20px 40px;
+    margin-top: 1.5rem;
     border-radius: 7px;
     font-size: 14px;
     outline: none;

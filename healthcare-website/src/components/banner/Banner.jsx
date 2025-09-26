@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="banner">
 
             <div className="text-area">
-                <h2>St.Jhon Hospital</h2>
+                <h2>DocX Laboratories</h2>
                 <p>Lorem ipsum dolor sit amet.</p>
 
 
