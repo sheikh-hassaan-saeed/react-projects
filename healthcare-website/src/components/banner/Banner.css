@@ -3,7 +3,7 @@
     padding: 40px;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgb(167, 214, 255);
+    background-color: rgb(14, 41, 95);
     margin-top: 3rem;
     gap: 300px;
 }
@@ -40,15 +40,18 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+
 }
 
 .text-area h2 {
     font-size: 40px;
+    color: white;
 }
 
 .text-area p {
     font-size: 30px;
     margin-top: -20px;
+    color: white;
 }
 
 .buttons {
@@ -60,12 +63,16 @@
     padding: 20px 40px;
     margin-top: 1.5rem;
     border-radius: 7px;
-    font-size: 14px;
+    font-size: 18px;
     outline: none;
-    color: white;
-    background-color: rgb(14, 41, 95);
+    color: black;
+    background-color: white;
     border: none;
     cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: rgb(160, 160, 160);
 }
 
 @media only screen and (max-width: 768px) {

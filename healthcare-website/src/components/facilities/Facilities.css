@@ -35,7 +35,12 @@
     border: none;
     background-color: rgb(14, 41, 95);
     color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
 
+.btn-facilites button:hover {
+    background-color: rgb(27, 84, 241);
 }
 
 .facilites-container {

@@ -21,8 +21,14 @@
     border-radius: 7px;
     border: none;
     outline: none;
-    background-color: rgb(167, 214, 255);
-    border: 1px solid rgb(14, 41, 95);
+    background-color: rgb(14, 41, 95);
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.explore-btn button:hover {
+    background-color: rgb(27, 84, 241);
 }
 
 .partners-container {
