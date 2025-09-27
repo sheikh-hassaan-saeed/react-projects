@@ -38,11 +38,12 @@
 .buttons button {
     font-weight: 600;
     transition: all 300ms ease;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
     width: 9rem;
     border: 2px solid rgb(85, 85, 85);
     border-radius: 2rem;
     cursor: pointer;
+    background-color: white;
 
 }
 
@@ -62,4 +63,40 @@
 .banner-img img {
     height: 360px;
     width: 360px;
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio-banner {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        gap: 1rem;
+    }
+
+    .banner-img img {
+        height: 189px;
+        width: 189px;
+    }
+
+    .text-area p {
+        font-size: 16px;
+    }
+
+    .text-area h1 {
+        font-size: 32px;
+    }
+
+    .text-p2 {
+        font-size: 1.25rem;
+    }
+
+    .main-text-area {
+        margin-top: 0rem;
+    }
+
+    .buttons button {
+        width: 8rem;
+        padding: 0.8rem;
+    }
+
 }
