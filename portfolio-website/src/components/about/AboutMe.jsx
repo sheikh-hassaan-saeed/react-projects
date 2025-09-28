@@ -2,6 +2,7 @@ import React from 'react'
 import './AboutMe.css'
 import experience from '../../assets/experience.png'
 import education from '../../assets/education.png'
+import arrow from '../../assets/arrow.png'
 const AboutMe = () => {
     return (
         <div className="about-container">
@@ -31,7 +32,9 @@ const AboutMe = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto accusantium accusamus quisquam sint debitis inventore expedita hic! Adipisci, laudantium ea. Ipsum, veritatis similique ex tempora quaerat molestiae eligendi veniam delectus recusandae numquam ducimus totam modi cumque magni debitis magnam adipisci molestias voluptates. Optio minus aut odio atque tenetur unde.</p>
             </div>
 
-
+            <div className="arrow-container">
+                <img src={arrow} />
+            </div>
         </div>
     )
 }
