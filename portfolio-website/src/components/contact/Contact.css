@@ -63,23 +63,25 @@
         display: flex;
         justify-content: center;
         gap: 0.6rem;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         padding: 1.3rem 0.3rem;
         border-radius: 1.8rem;
+        flex-direction: column;
+        align-items: center;
         margin: 1rem auto 0;
 
     }
 
     .contact-container img {
-        width: 24px;
-        height: 24px;
+        width: 27px;
+        height: 27px;
         object-fit: contain;
         display: block;
     }
 
     .email img {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
     }
 
 

@@ -21,8 +21,9 @@ const AboutMe = () => {
                 <div className="boxes">
                     <img src={education} />
                     <h3>Education</h3>
-                    <p>High School</p>
                     <p>Bsc. Computer Science</p>
+                    <p>High School</p>
+
                 </div>
 
 

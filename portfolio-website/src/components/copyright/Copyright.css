@@ -5,4 +5,14 @@
 .copyright-container {
     text-align: center;
     margin-top: 2rem;
+    margin-bottom: 0.7rem;
+    color: rgb(54, 54, 54);
+}
+
+@media only screen and (max-width: 768px) {
+    .copyright-container {
+        margin-bottom: 1rem;
+        color: rgb(54, 54, 54);
+    }
+
 }

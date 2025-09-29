@@ -14,6 +14,10 @@
 
 }
 
+h1 {
+    font-size: 2.5rem;
+}
+
 .boxes {
     border: 0.1rem solid black;
     padding: 2rem 7rem;
@@ -37,10 +41,13 @@
     bottom: -2rem;
 }
 
+
+
 .arrow-container img {
     width: 2.5rem;
     height: 2.5rem;
 }
+
 
 @media only screen and (max-width: 768px) {
 
@@ -59,5 +66,11 @@
     .text-container {
         padding: 1.5rem 3rem;
         text-align: center;
+    }
+
+    .arrow-container {
+        position: absolute;
+        right: 2rem;
+        bottom: -4rem;
     }
 }

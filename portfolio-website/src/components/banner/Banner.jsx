@@ -19,7 +19,7 @@ const Banner = () => {
                 </div>
 
                 <div className="buttons">
-                    <button>Download CV</button>
+                    <button className='Active'>Download CV</button>
                     <button>Contact Info</button>
                 </div>
 
