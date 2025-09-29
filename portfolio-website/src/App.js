@@ -6,6 +6,7 @@ import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import BottomNavbar from './components/bottomNavbar/BottomNavbar';
+import Copyright from './components/copyright/Copyright';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
       <Projects />
       <Contact />
       <BottomNavbar />
+      <Copyright />
     </>
   );
 }
