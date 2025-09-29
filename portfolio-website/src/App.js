@@ -4,6 +4,7 @@ import Banner from './components/banner/Banner';
 import AboutMe from './components/about/AboutMe';
 import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
       <AboutMe />
       <Experience />
       <Projects />
+      <Contact />
     </>
   );
 }
