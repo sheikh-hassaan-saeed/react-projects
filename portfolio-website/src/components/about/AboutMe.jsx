@@ -15,14 +15,14 @@ const AboutMe = () => {
                     <img src={experience} />
                     <h3>Experience</h3>
                     <p>2+ months</p>
-                    <p>Fronend Development</p>
+                    <p>Frontend Development</p>
                 </div>
 
                 <div className="boxes">
                     <img src={education} />
                     <h3>Education</h3>
                     <p>Bsc. Computer Science</p>
-                    <p>High School</p>
+                    <p>High School Graduate</p>
 
                 </div>
 
@@ -44,6 +44,7 @@ const AboutMe = () => {
                 <img src={arrow} />
             </div>
         </div>
+
     )
 }
 

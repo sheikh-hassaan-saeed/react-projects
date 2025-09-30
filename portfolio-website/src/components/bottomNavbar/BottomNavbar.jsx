@@ -6,10 +6,10 @@ const BottomNavbar = () => {
             <div className="bottom-navbar">
 
                 <div className='bottom-nav-links'>
-                    <a href='#'>Home</a>
-                    <a href='#'>Experience</a>
-                    <a href='#'>Projects</a>
-                    <a href='#'>Contact</a>
+                    <a href='#home'>Home</a>
+                    <a href='#skills'>Skills</a>
+                    <a href='#projects'>Projects</a>
+                    <a href='#contact'>Contact</a>
                 </div>
             </div>
         </>

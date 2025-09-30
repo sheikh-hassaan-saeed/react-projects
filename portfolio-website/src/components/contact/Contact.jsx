@@ -4,14 +4,14 @@ import email from '../../assets/email.png'
 import linkedin from '../../assets/linkedin.png'
 const Contact = () => {
     return (
-        <>
+        <section id='contact'>
             <p className='contact-p1'>Get in Touch</p>
             <h1 className='contact-h1'>Contact Me</h1>
 
             <div className="contact-container">
                 <div className="elements-container">
                     <div className="email">
-                        <img src={email} />
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sheikhhassaansaeed@gmail.com" target="_blank" rel="noopener noreferrer"><img src={email} /></a>
                         <p>sheikhhassaansaeed@gmail.com</p>
                     </div>
 
@@ -21,7 +21,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 

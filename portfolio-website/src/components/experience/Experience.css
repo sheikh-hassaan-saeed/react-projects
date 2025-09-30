@@ -64,3 +64,13 @@ article {
         flex-direction: column;
     }
 }
+
+@media only screen and (max-width:375px) {
+    .main-article-container {
+        display: flex;
+        flex-direction: column;
+        width: 270px;
+    }
+
+
+}

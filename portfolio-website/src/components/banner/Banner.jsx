@@ -1,10 +1,10 @@
-import React from 'react'
 import './Banner.css'
 import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 import circle from '../../assets/circle.png'
 
 const Banner = () => {
+
     return (
         <div className="portfolio-banner">
 
@@ -19,8 +19,8 @@ const Banner = () => {
                 </div>
 
                 <div className="buttons">
-                    <button className='Active'>Download CV</button>
-                    <button>Contact Info</button>
+                    <a href='#' className='cv-btn'> Download CV</a>
+                    <a href="#contact" className='contact-btn'>Contact Info</a>
                 </div>
 
 

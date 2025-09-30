@@ -4,7 +4,7 @@
 
 .copyright-container {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.7rem;
     color: rgb(54, 54, 54);
 }
@@ -13,6 +13,10 @@
     .copyright-container {
         margin-bottom: 1rem;
         color: rgb(54, 54, 54);
+    }
+
+    .copyright-container p {
+        font-size: 12px;
     }
 
 }

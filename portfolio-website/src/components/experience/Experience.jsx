@@ -3,7 +3,7 @@ import './Experience.css'
 import checkmark from '../../assets/checkmark.png'
 const Experience = () => {
     return (
-        <>
+        <section id='skills'>
             <div className="section3">
                 <p className='section3-p'>Explore My</p>
                 <h1 className='section3-h1'>Skills</h1>
@@ -42,7 +42,7 @@ const Experience = () => {
                     )}
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 
