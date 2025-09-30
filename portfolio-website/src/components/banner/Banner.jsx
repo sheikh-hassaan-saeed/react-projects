@@ -25,8 +25,14 @@ const Banner = () => {
 
 
                 <div className="social-links">
-                    <img src={linkedin} className='icon' />
-                    <img src={github} className='icon' />
+                    <a href="https://www.linkedin.com/in/sheikh-hassaan-saeed"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <img src={linkedin} className='icon' /></a>
+                    <a href="https://github.com/sheikh-hassaan-saeed"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <img src={github} className='icon' /></a>
                 </div>
             </div>
 

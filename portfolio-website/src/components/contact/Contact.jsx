@@ -16,7 +16,7 @@ const Contact = () => {
                     </div>
 
                     <div className="linkedin">
-                        <img src={linkedin} />
+                        <a href='https://www.linkedin.com/in/sheikh-hassaan-saeed/' target='_blank' rel='noopener noreferer'><img src={linkedin} /></a>
                         <p>Linkedin</p>
                     </div>
                 </div>

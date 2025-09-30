@@ -33,6 +33,7 @@ h1 {
 .text-container {
     padding: 2rem 20rem;
     text-align: center;
+    line-height: 1.7;
 }
 
 .arrow-container {
@@ -47,6 +48,8 @@ h1 {
     width: 2.5rem;
     height: 2.5rem;
 }
+
+
 
 
 @media only screen and (max-width: 768px) {

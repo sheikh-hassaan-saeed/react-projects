@@ -30,7 +30,14 @@ const AboutMe = () => {
             </div>
 
             <div className="text-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto accusantium accusamus quisquam sint debitis inventore expedita hic! Adipisci, laudantium ea. Ipsum, veritatis similique ex tempora quaerat molestiae eligendi veniam delectus recusandae numquam ducimus totam modi cumque magni debitis magnam adipisci molestias voluptates. Optio minus aut odio atque tenetur unde.</p>
+                <p>
+                    Hi, I’m Hassaan — a <strong>Front-End Developer</strong> with holding a practical experience from a
+                    remote internship. Along the way, I have earned the <strong>Meta Front-End Developer Certificate</strong>,
+                    completed <strong>5+ side projects</strong>, and built a track record as a
+                    <strong> 5-star freelancer</strong>. Right now, I’m focused on sharpening my
+                    <strong> UI/UX skills</strong> and developing <strong>dynamic and scalable front-end projects</strong>.
+                    I enjoy problem-solving, learning new tools, new tech stacks, and collaborating with teams.
+                </p>
             </div>
 
             <div className="arrow-container">
