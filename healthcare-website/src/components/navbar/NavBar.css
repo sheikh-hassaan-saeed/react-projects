@@ -18,11 +18,22 @@
 
 .nav-links a {
     list-style: none;
-    padding: 7px 20px;
+    padding: 5px 10px;
+    font-size: 18px;
     text-decoration: none;
-    color: white;
-    background-color: rgb(14, 41, 95);
-    border-radius: 6px;
+    color: rgb(0, 0, 0);
+
+}
+
+
+.nav-links a:first-child {
+    border-bottom: 2px solid rgb(0, 43, 134);
+    border-width: 3px;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid rgb(22, 95, 253);
+    border-width: 3px;
 }
 
 .hamburger {

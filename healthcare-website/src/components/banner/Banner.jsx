@@ -8,7 +8,7 @@ const Banner = () => {
 
             <div className="text-area">
                 <h2>DocX Laboratories</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Better health starts with compassionate care.</p>
 
 
                 <div className="buttons">
