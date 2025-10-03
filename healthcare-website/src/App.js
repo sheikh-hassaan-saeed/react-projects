@@ -7,20 +7,41 @@ import NavBar from './components/navbar/NavBar';
 import Partners from './components/parterns/Partners';
 import Reviews from './components/reviews/Reviews';
 import Services from './components/services/Services';
+import { Route, Router, Routes } from 'react-router-dom'
+import Packages from './pages/packages/Packages';
 
 function App() {
   return (
-    <>
 
+
+    <main>
       <NavBar />
-      <Banner />
-      <Services />
-      <Doctors />
-      <Partners />
-      <Facilities />
-      <Reviews />
+
+      <Routes>
+        <Route path='/' element={
+          <>
+
+
+            <Banner />
+            <Services />
+            <Doctors />
+            <Partners />
+            <Facilities />
+            <Reviews />
+
+          </>
+        } />
+      </Routes>
+
+
+      <Routes>
+        <Route path='/packages' element={<Packages />} />
+      </Routes>
       <Footer />
-    </>
+    </main>
+
+
+
   );
 }
 

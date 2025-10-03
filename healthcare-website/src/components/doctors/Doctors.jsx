@@ -4,7 +4,7 @@ import Doctor from '../doctor/Doctor'
 const Doctors = () => {
     return (
         <div className="doctors-container">
-            <h2>Our Doctors</h2>
+            <h2>Our Specialists</h2>
 
             <div className="doctors-wrapper">
                 <Doctor />

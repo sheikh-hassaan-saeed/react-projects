@@ -15,6 +15,7 @@ const Reviews = () => {
                     <img src={Image1} />
                     <h3>Andrew Andy</h3>
                     <p>Lorem ipsum dolor sit amet.</p>
+
                 </div>
 
                 <div className="review">

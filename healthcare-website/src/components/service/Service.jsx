@@ -1,27 +1,20 @@
-import React from 'react'
-import './Service.css'
-import services from '../../assets/services'
-const Service = () => {
+import React from "react"
+import "./Service.css"
+
+const Service = ({ image, name, paragraph }) => {
     return (
-
-        <>
-            {services.map((service, index) =>
-                <div className="service-container">
-                    <div className="service-img">
-                        <img src={service.Image} />
-                    </div>
-
-                    <div className="service-h3">
-                        <h3>{service.name}</h3>
-                    </div>
-                    <div className="service-p">
-                        <p>{service.paragraph}</p>
-                    </div>
-
-                </div>
-            )}
-        </>
+        <div className="service-container">
+            <div className="service-img">
+                <img src={image} alt={name} />
+            </div>
+            <div className="service-h3">
+                <h3>{name}</h3>
+            </div>
+            <div className="service-p">
+                <p>{paragraph}</p>
+            </div>
+        </div>
     )
 }
 
-export default Service;
+export default Service

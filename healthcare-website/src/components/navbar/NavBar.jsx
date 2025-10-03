@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
+import Packages from '../../pages/packages/Packages';
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -17,10 +19,10 @@ const NavBar = () => {
             </div>
 
             <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-                <a href="#">Home</a>
-                <a href="#">Laboratory Test</a>
-                <a href="#">Doctors List</a>
-                <a href="#">Hospital Contact</a>
+                <Link to='/'>Home</Link>
+                <Link to='/packages'>Tests & Packages</Link>
+                <a href="#">Book a Test</a>
+                <a href="#">Contact Us</a>
             </div>
         </div>
     );

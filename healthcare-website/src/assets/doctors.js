@@ -5,17 +5,17 @@ import Steve from '../assets/images/Dr Steve.jpg'
 const Doctors = [
     {
         name: "Dr Andrew",
-        profession: "Neurologist",
+        profession: "Pathologist",
         image: Andrew
     },
     {
         name: "Dr Michelle",
-        profession: "Psychologist",
+        profession: "Microbiologist",
         image: Michelle
     },
     {
         name: "Dr Steve",
-        profession: "Cardiologist",
+        profession: "Biochemist",
         image: Steve
     },
 

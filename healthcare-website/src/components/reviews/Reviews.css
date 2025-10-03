@@ -10,6 +10,7 @@
     height: 100%;
     border-radius: 50%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
 
 }
 
@@ -23,11 +24,14 @@
     font-size: 40px;
 }
 
+
+
 .reviews-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     justify-items: center;
     margin-top: 4rem;
+
 }
 
 @media only screen and (max-width: 768px) {
