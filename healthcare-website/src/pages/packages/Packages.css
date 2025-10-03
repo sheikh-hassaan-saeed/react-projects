@@ -1,0 +1,18 @@
+.packages-h1 {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.packages-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.packages-box {
+    background-color: rgb(0, 63, 117);
+    border: 2px solid navy;
+    color: color(srgb red green blue);
+}
