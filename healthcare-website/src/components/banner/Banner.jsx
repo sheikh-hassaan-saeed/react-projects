@@ -12,7 +12,7 @@ const Banner = () => {
 
 
                 <div className="buttons">
-                    <button>Appointment</button>
+                    <button>See Packages</button>
                     <button>Know More</button>
                 </div>
             </div>
