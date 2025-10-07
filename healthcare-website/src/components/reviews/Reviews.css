@@ -3,11 +3,11 @@
     height: 200px;
     text-align: center;
 
+
 }
 
 .review img {
-    width: 100%;
-    height: 100%;
+    height: 80%;
     border-radius: 50%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     object-fit: cover;
@@ -24,14 +24,19 @@
     font-size: 40px;
 }
 
-
+.review-box {
+    border: 0.1rem solid rgb(0, 43, 134);
+    height: 300px;
+    padding: 20px 40px;
+    border-radius: 2rem;
+}
 
 .reviews-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     justify-items: center;
     margin-top: 4rem;
-
+    gap: -5rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -48,8 +53,8 @@
     }
 
     .review {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 200px;
+        height: 200px;
         text-align: center;
 
     }
@@ -58,11 +63,10 @@
         font-size: 15px;
     }
 
+
     .review img {
-        width: 100px;
-        height: 150px;
-        width: 70%;
-        height: 70%;
+        margin-top: 1rem;
+        height: 60%;
         border: 2px solid rgb(167, 214, 255);
     }
 

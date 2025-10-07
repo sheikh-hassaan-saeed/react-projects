@@ -21,18 +21,18 @@ const Footer = () => {
 
                 <div className="column">
                     <h3>About</h3>
-                    <a href='#'>Home</a>
-                    <a href='#'>Medical Care</a>
-                    <a href='#'>Laboratory Tests</a>
-                    <a href='#'>Medical Labs</a>
+                    <a href='#'>Packages & Tests</a>
+                    <a href='#'>Personal Care</a>
+                    <a href='#'>Appointment</a>
+                    <a href='#'>Contact Us</a>
                 </div>
 
                 <div className="column">
                     <h3>Social Media</h3>
-                    <a href='#'>Home</a>
-                    <a href='#'>Medical Care</a>
-                    <a href='#'>Laboratory Tests</a>
-                    <a href='#'>Medical Labs</a>
+                    <a href='#'>Facebook</a>
+                    <a href='#'>Instagram</a>
+                    <a href='#'>Twitter</a>
+                    <a href='#'>LinkedIn</a>
                 </div>
 
             </div>

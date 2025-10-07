@@ -1,8 +1,6 @@
 import React from 'react'
 import './Reviews.css'
-import Image1 from '../../assets/images/1.jpg'
-import Image2 from '../../assets/images/2.jpg'
-import Image3 from '../../assets/images/3.jpg'
+import person from '../../assets/images/person-icon.png'
 
 const Reviews = () => {
     return (
@@ -10,24 +8,29 @@ const Reviews = () => {
             <h2 className='h2-reviews'>What People Say</h2>
             <div className="reviews-container">
 
+                <div className="review-box">
+                    <div className="review">
+                        <img src={person} />
+                        <h3>Andrew Andy</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
 
-                <div className="review">
-                    <img src={Image1} />
-                    <h3>Andrew Andy</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-
+                    </div>
                 </div>
 
-                <div className="review">
-                    <img src={Image2} />
-                    <h3>Ricky Raynold</h3>
-                    <p>Lorem, ipsum dolor sit amet.</p>
+                <div className="review-box">
+                    <div className="review">
+                        <img src={person} />
+                        <h3>Ricky Raynold</h3>
+                        <p>Lorem, ipsum dolor sit amet.</p>
+                    </div>
                 </div>
 
-                <div className="review">
-                    <img src={Image3} />
-                    <h3>Hannah Porter</h3>
-                    <p>Lorem ipsum dolor sit.</p>
+                <div className="review-box">
+                    <div className="review">
+                        <img src={person} />
+                        <h3>Hannah Porter</h3>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </div>
                 </div>
             </div>
         </>
