@@ -9,6 +9,7 @@ import Reviews from './components/reviews/Reviews';
 import Services from './components/services/Services';
 import { Route, Router, Routes } from 'react-router-dom'
 import Packages from './pages/packages/Packages';
+import BookForm from './pages/book/BookForm';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Facilities />
             <Reviews />
 
+
           </>
         } />
       </Routes>
@@ -36,6 +38,7 @@ function App() {
 
       <Routes>
         <Route path='/packages' element={<Packages />} />
+        <Route path='/bookform' element={<BookForm />} />
       </Routes>
       <Footer />
     </main>

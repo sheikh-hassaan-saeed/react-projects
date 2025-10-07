@@ -1,8 +1,14 @@
 import React from "react";
 import Packages from "../../assets/packages";
 import "./PackageCard.css";
+import { useNavigate } from 'react-router-dom'
 
 const PackageCard = () => {
+    const navigate = useNavigate();
+
+    const handleBook = (testName) => {
+        navigate('/bookForm', { state: { testName } });
+    };
     return (
         <div className="packagecard-container">
             {Packages.map((value, index) => {
@@ -18,7 +24,7 @@ const PackageCard = () => {
                         <p>{stars} ({value.rating})</p>
                         <p>Price: {value.price}</p>
                         <div className="package-btn">
-                            <button>Book Now</button>
+                            <button onClick={() => handleBook(value.name)}>Book Now</button>
                         </div>
                     </div>
                 );
