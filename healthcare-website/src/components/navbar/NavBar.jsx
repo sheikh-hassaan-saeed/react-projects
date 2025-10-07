@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
-import Packages from '../../pages/packages/Packages';
+import person from '../../assets/images/person.png';
+
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="navbar">
-            <h2>DocX Labs</h2>
+            <h2 className="logo">DocX Labs</h2>
 
-            <div
-                className="hamburger"
-                onClick={() => setIsOpen(!isOpen)}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
+            <div className={`nav-center ${isOpen ? 'open' : ''}`}>
+                <div className="nav-links">
+                    <Link to="/">Home</Link>
+                    <Link to="/packages">Tests & Packages</Link>
+                    <a href="#">Contact Us</a>
+                </div>
             </div>
 
-            <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-                <Link to='/'>Home</Link>
-                <Link to='/packages'>Tests & Packages</Link>
-                <a href="#">Book a Test</a>
-                <a href="#">Contact Us</a>
+            <div className="user-container">
+                <a href="#">My Profile</a>
+                <img src={person} alt="profile" />
+            </div>
+
+            <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     );
