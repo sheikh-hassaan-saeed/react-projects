@@ -35,40 +35,39 @@ form {
     margin-top: 2rem;
     width: 30%;
     box-sizing: border-box;
-
+    background-color: #dfeaff;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
 }
 
 form label {
     font-size: 18px;
-    margin-left: 0.8rem;
-    margin-bottom: 0.5rem;
+
 }
 
 form input {
-    padding: 0.7rem 0.7rem;
-    max-width: 800px;
-    border: 0.1rem solid navy;
-    outline: none;
-    margin-bottom: 1.5rem;
-    color: rgb(15, 15, 15);
-    font-size: 16px;
-    border-radius: 2rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
 }
 
 .selected-test {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 form button {
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    background-color: rgb(0, 43, 134);
+    background-color: #002b86;
     color: white;
     border: none;
-    outline: none;
+    padding: 10px;
+    border-radius: 6px;
     cursor: pointer;
+    margin-top: 2rem;
 }
 
+
+
 form button:hover {
-    background-color: rgb(0, 75, 237);
+    background-color: #001f60;
 }

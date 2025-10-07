@@ -19,7 +19,7 @@ const BookForm = () => {
                     <input type="text" placeholder="Enter your name" required />
 
                     <label>Phone</label>
-                    <input type="tel" placeholder="03XX-XXXXXXX" required />
+                    <input type="tel" placeholder="+971-XXXXXXX" required />
 
                     <label>Email</label>
                     <input type="email" placeholder="Enter your email" />

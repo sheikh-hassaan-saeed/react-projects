@@ -10,6 +10,7 @@ import Services from './components/services/Services';
 import { Route, Router, Routes } from 'react-router-dom'
 import Packages from './pages/packages/Packages';
 import BookForm from './pages/book/BookForm';
+import Contact from './pages/contact/Contact';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
       <Routes>
         <Route path='/packages' element={<Packages />} />
         <Route path='/bookform' element={<BookForm />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </main>
