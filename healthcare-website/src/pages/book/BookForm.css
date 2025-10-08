@@ -1,7 +1,7 @@
 .test-heading {
     text-align: center;
     margin-top: 2rem;
-    font-size: 35px;
+    font-size: 28px;
 }
 
 .form-image img {
@@ -70,4 +70,19 @@ form button {
 
 form button:hover {
     background-color: #001f60;
+}
+
+@media only screen and (max-width:768px) {
+    .form-image {
+        display: none;
+    }
+
+    form {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .test-heading {
+        font-size: 18px;
+    }
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 import person from '../../assets/images/person.png';
+import Profile from '../profile/Profile';
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const NavBar = () => {
             </div>
 
             <div className="user-container">
-                <a href="#">My Profile</a>
+                <Link to="/profile">My Profile</Link>
                 <img src={person} alt="profile" />
             </div>
 
