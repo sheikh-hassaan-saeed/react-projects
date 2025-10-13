@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './BookForm.css'
 import Packages from '../packages/Packages'
 import bloodIcon from '../../assets/images/blood icon.png'
 import { useLocation } from 'react-router-dom'
+import axios from 'axios'
 const BookForm = () => {
 
     const location = useLocation();
     const { testName } = location.state || {};
+    const [formdata, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formdata, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        await axios.post("http://localhost:5000/api/bookings", formdata);
+        alert("Booking confirmed!");
+        if (!formdata.name || !formdata.email || !formdata.phone || !formdata.date) {
+            alert("Enter all the details");
+            return;
+        }
+
+    }
     return (
         <>
             <h2 className='test-heading'>Booking for: {testName || "No test selected"}</h2>
@@ -14,21 +37,21 @@ const BookForm = () => {
             <div className="book-form-container">
 
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label>Name</label>
-                    <input type="text" placeholder="Enter your name" required />
+                    <input type="text" name="name" placeholder="Enter your name" value={formdata.name} onChange={handleChange} />
 
                     <label>Phone</label>
-                    <input type="tel" placeholder="+971-XXXXXXX" required />
+                    <input type="tel" name="phone" placeholder="+971-XXXXXXX" value={formdata.phone} onChange={handleChange} />
 
                     <label>Email</label>
-                    <input type="email" placeholder="Enter your email" />
+                    <input type="email" name="email" placeholder="Enter your email" value={formdata.email} onChange={handleChange} />
 
                     <label>Selected Test</label>
                     <input type="text" className='selected-test' value={testName || ""} readOnly />
 
                     <label>Preferred Date</label>
-                    <input type="date" required />
+                    <input type="date" name="date" value={formdata.date} onChange={handleChange} />
 
                     <button type="submit">Confirm Booking</button>
                 </form>
@@ -42,4 +65,4 @@ const BookForm = () => {
     )
 }
 
-export default BookForm
+export default BookForm;
