@@ -13,6 +13,7 @@ const BookForm = () => {
         email: '',
         phone: '',
         date: '',
+        testName: testName || '',
     });
 
     const handleChange = (e) => {
@@ -24,10 +25,6 @@ const BookForm = () => {
 
         await axios.post("http://localhost:5000/api/bookings", formdata);
         alert("Booking confirmed!");
-        if (!formdata.name || !formdata.email || !formdata.phone || !formdata.date) {
-            alert("Enter all the details");
-            return;
-        }
 
     }
     return (
@@ -48,7 +45,7 @@ const BookForm = () => {
                     <input type="email" name="email" placeholder="Enter your email" value={formdata.email} onChange={handleChange} />
 
                     <label>Selected Test</label>
-                    <input type="text" className='selected-test' value={testName || ""} readOnly />
+                    <input type="text" className='selected-test' name="testName" value={testName || ""} readOnly />
 
                     <label>Preferred Date</label>
                     <input type="date" name="date" value={formdata.date} onChange={handleChange} />
@@ -61,6 +58,7 @@ const BookForm = () => {
                 </div>
 
             </div>
+
         </>
     )
 }

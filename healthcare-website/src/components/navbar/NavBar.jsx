@@ -30,6 +30,8 @@ const NavBar = () => {
                     <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
                     <NavLink to="/packages" onClick={() => setIsOpen(false)}>Tests & Packages</NavLink>
                     <NavLink to='/contact' onClick={() => setIsOpen(false)}>Contact Us</NavLink>
+                    <NavLink to="/profile" onClick={() => setIsOpen(false)} className='profile-nav'>My Profile</NavLink>
+
                 </div>
             </div>
 
@@ -42,6 +44,7 @@ const NavBar = () => {
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
         </div>
     );
