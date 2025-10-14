@@ -1,26 +1,24 @@
-import React from 'react'
-import './Doctor.css'
-import doctors from '../../assets/doctors'
+import React from "react";
+import "./Doctor.css";
+import doctors from "../../assets/doctors";
+
 const Doctor = () => {
     return (
-        <>
-            {doctors.map((doctor, index) =>
-                <div className="doctor-container">
+        <div className="doctors-grid">
+            {doctors.map((doctor, index) => (
+                <div className="doctor-card" key={index}>
                     <div className="doctor-img">
-                        <img src={doctor.image} />
+                        <img src={doctor.image} alt={doctor.name} />
                     </div>
 
-                    <div className="doctor-name">
+                    <div className="doctor-info">
                         <h3>{doctor.name}</h3>
-                    </div>
-
-                    <div className="doctor-profession">
                         <p>{doctor.profession}</p>
                     </div>
                 </div>
-            )}
-        </>
-    )
-}
+            ))}
+        </div>
+    );
+};
 
 export default Doctor;

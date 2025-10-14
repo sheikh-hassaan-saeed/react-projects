@@ -1,20 +1,16 @@
-import React from "react"
-import "./Service.css"
+import React from "react";
+import "./Service.css";
 
 const Service = ({ image, name, paragraph }) => {
     return (
-        <div className='service-container'>
-            <div className="service-img">
+        <div className="service-card">
+            <div className="service-icon">
                 <img src={image} alt={name} />
             </div>
-            <div className="service-h3">
-                <h3>{name}</h3>
-            </div>
-            <div className="service-p">
-                <p>{paragraph}</p>
-            </div>
+            <h3>{name}</h3>
+            <p>{paragraph}</p>
         </div>
-    )
-}
+    );
+};
 
-export default Service
+export default Service;
