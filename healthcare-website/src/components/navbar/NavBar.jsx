@@ -16,7 +16,7 @@ const NavBar = () => {
         }
 
         document.addEventListener('mousedown', handleMouseClickOutside);
-        return (
+        return () => (
             document.removeEventListener('mousedown', handleMouseClickOutside)
         )
     }, [])

@@ -21,7 +21,10 @@ mongoose.connect(process.env.MONGO_URI)
 import bookingRoutes from "./routes/bookingRoutes.js"
 app.use("/api/bookings", bookingRoutes)
 
-app.listen(5000, () => console.log("Server Running on port 5000"))
+import contactRoutes from './routes/contactRoutes.js'
+app.use("/api/contact", contactRoutes)
+
+app.listen(5000, '0.0.0.0', () => console.log("Server Running on port 5000"))
 
 
 

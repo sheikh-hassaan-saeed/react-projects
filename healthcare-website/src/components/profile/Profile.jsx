@@ -8,7 +8,7 @@ function Profile() {
 
     useEffect(() => {
         const fetchBookings = async () => {
-            const res = await axios.get("http://localhost:5000/api/bookings");
+            const res = await axios.get("http://10.56.201.183:5000/api/bookings");
             setBookings(res.data);
         };
         fetchBookings();
@@ -46,7 +46,7 @@ function Profile() {
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Email</th>
+                                    <th className="email-data">Email</th>
                                     <th>Test</th>
                                     <th>Date</th>
                                 </tr>
@@ -57,7 +57,7 @@ function Profile() {
                                 {bookings.map((b) => (
                                     <tr key={b._id}>
                                         <td>{b.name}</td>
-                                        <td>{b.email}</td>
+                                        <td className="email-data">{b.email}</td>
                                         <td>{b.testName}</td>
                                         <td>{new Date(b.date).toLocaleDateString()}</td>
                                     </tr>

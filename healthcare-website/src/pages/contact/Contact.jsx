@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
+import axios from 'axios'
 const Contact = () => {
+
+    const [contactForm, setContactForm] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+
+    const handleChange = (e) => {
+        setContactForm({ ...contactForm, [e.target.name]: e.target.value })
+    }
+
+
+    const handleContactSubmit = async (e) => {
+        e.preventDefault();
+        const res = await axios.post("http://localhost:5000/api/contact", contactForm)
+        alert("Your Inquery Submitted!")
+
+        setContactForm({ name: '', email: '', message: '' })
+    }
+
     return (
         <div className="contact-container">
             <h2>Contact Us</h2>
@@ -10,17 +31,17 @@ const Contact = () => {
             </p>
 
             <div className="contact-content">
-                <form className="contact-form">
+                <form className="contact-form" onSubmit={handleContactSubmit}>
                     <label>Name</label>
-                    <input type="text" placeholder="Enter your name" required />
+                    <input type="text" placeholder="Enter your name" name='name' onChange={handleChange} required />
 
                     <label>Email</label>
-                    <input type="email" placeholder="Enter your email" required />
+                    <input type="email" placeholder="Enter your email" name='email' onChange={handleChange} required />
 
                     <label>Message</label>
-                    <textarea rows="5" placeholder="Write your message here..." required></textarea>
+                    <textarea rows="5" placeholder="Write your message here..." name='message' onChange={handleChange} required></textarea>
 
-                    <button type="submit">Send Message</button>
+                    <button type="submit" >Send Message</button>
                 </form>
 
                 <div className="contact-info">

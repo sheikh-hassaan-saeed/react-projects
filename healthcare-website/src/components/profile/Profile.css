@@ -85,3 +85,43 @@
     width: 9rem;
     height: 8.5rem;
 }
+
+@media only screen and (max-width: 768px) {
+    .data-img img {
+        position: absolute;
+        bottom: 60px;
+        right: -10px;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .profile-card {
+
+        max-width: 330px;
+        margin: 50px auto;
+        padding: 34px 26px;
+    }
+
+    .profile-h2 {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 3rem;
+    }
+
+    .email-data {
+        display: none;
+    }
+
+    th,
+    td {
+        font-size: 15px;
+
+    }
+
+    .profile-section {
+
+        line-height: 1.4;
+    }
+
+
+}
