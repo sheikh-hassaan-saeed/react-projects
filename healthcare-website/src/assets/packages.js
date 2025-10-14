@@ -1,7 +1,7 @@
-import bloodIcon from '../assets/images/blood icon.png'
-import brainIcon from '../assets/images/brain icon.png'
-import immuneIcon from '../assets/images/immune.png'
-import thyroidIcon from '../assets/images/thyroid.png'
+import bloodIcon from './images/blood icon.png'
+import brainIcon from './images/brain icon.png'
+import immuneIcon from './images/immune.png'
+import thyroidIcon from './images/thyroid.png'
 
 const Packages = [
     {

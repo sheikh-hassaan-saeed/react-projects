@@ -1,6 +1,6 @@
-import Andrew from '../assets/images/Dr Andrew.jpg'
-import Michelle from '../assets/images/Dr Michelle.jpg'
-import Steve from '../assets/images/Dr Steve.jpg'
+import Andrew from './images/Dr Andrew.jpg'
+import Michelle from './images/Dr Michelle.jpg'
+import Steve from './images/Dr Steve.jpg'
 
 const Doctors = [
     {
