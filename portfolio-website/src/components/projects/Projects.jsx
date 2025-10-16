@@ -1,6 +1,6 @@
 import React from 'react'
 import './Projects.css'
-import project1 from '../../assets/project-1.png'
+import project1 from '../../assets/docx.jpg'
 import project2 from '../../assets/project-2.png'
 import project3 from '../../assets/project-3.png'
 
@@ -17,7 +17,8 @@ const Projects = () => {
 
                     <div className="projects-container">
                         <img src={project1} />
-                        <h2>Project 1</h2>
+                        <h2>DocX Laboratories</h2>
+                        <p>A Full Stack Lab Website</p>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>
@@ -25,8 +26,8 @@ const Projects = () => {
                     </div>
 
                     <div className="projects-container">
-                        <img src={project1} />
-                        <h2>Project 1</h2>
+                        <img src={project2} />
+                        <h2>Project 2</h2>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>
@@ -34,8 +35,8 @@ const Projects = () => {
                     </div>
 
                     <div className="projects-container">
-                        <img src={project1} />
-                        <h2>Project 1</h2>
+                        <img src={project3} />
+                        <h2>Project 3</h2>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>

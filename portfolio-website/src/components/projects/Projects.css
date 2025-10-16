@@ -72,6 +72,15 @@
     background-color: rgb(255, 253, 250);
 }
 
+.projects-container h2 {
+    margin-top: 1rem;
+    font-size: 26px;
+}
+
+.projects-container p {
+    font-size: 18px;
+}
+
 .projects-text {
     text-align: center;
     margin-top: 7rem;
