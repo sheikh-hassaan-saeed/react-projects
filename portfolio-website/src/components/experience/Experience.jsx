@@ -13,23 +13,13 @@ const Experience = () => {
                     {[
                         { name: "HTML", level: "Experienced" },
                         { name: "CSS", level: "Experienced" },
+                        { name: "Tailwind CSS", level: "Experienced" },
                         { name: "JAVASCRIPT", level: "Experienced" },
                         { name: "REACT", level: "Experienced" },
-
-                    ].map((skill) =>
-                        <article>
-                            <img src={checkmark} />
-                            <div>
-                                <h3>{skill.name}</h3>
-                                <p>{skill.level}</p>
-                            </div>
-                        </article>
-                    )}
-                </div>
-
-                <div className="article-container-2">
-                    {[
                         { name: "Git & GitHub", level: "Experienced" },
+                        { name: "Express", level: "Intermediate" },
+                        { name: "Node Js", level: "Intermediate" },
+                        { name: "MongoDB", level: "Intermediate" },
 
                     ].map((skill) =>
                         <article>
@@ -41,6 +31,8 @@ const Experience = () => {
                         </article>
                     )}
                 </div>
+
+
             </div>
         </section>
     )

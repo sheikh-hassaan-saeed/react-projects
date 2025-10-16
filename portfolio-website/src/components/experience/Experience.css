@@ -30,15 +30,6 @@ article {
 
 }
 
-.article-container-2 {
-    display: flex;
-    text-align: initial;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 2.5rem;
-    margin-top: 2rem;
-}
 
 .main-article-container {
     border: 1px solid black;
