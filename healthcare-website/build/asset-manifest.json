@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.034bb201.css",
+    "main.js": "/static/js/main.6073b9eb.js",
+    "static/media/facility2.jpg": "/static/media/facility2.4fbce39adb7e5b97a6e3.jpg",
+    "static/media/hos-pic-2.jpg": "/static/media/hos-pic-2.957ded62664337f81ace.jpg",
+    "static/media/Dr Steve.jpg": "/static/media/Dr Steve.21de323f13acb6aae702.jpg",
+    "static/media/facility1.jpg": "/static/media/facility1.53c8ec5ea569a9c5965f.jpg",
+    "static/media/Dr Michelle.jpg": "/static/media/Dr Michelle.9185f0c990f7256fa77d.jpg",
+    "static/media/Dr Andrew.jpg": "/static/media/Dr Andrew.e21544ff16bf7e4deb29.jpg",
+    "static/media/ellipse.png": "/static/media/ellipse.bfa0a2b090161d6ffce9.png",
+    "static/media/banner-doctor.png": "/static/media/banner-doctor.fd1659d1ce57b412fc1e.png",
+    "static/media/brain icon.png": "/static/media/brain icon.866a147bf3cff3b3a31b.png",
+    "static/media/person-icon.png": "/static/media/person-icon.fa4c8a93c0c8ee8c884f.png",
+    "static/media/immune.png": "/static/media/immune.3a6176ab291ae7ad1f18.png",
+    "static/media/thyroid.png": "/static/media/thyroid.a3ce25ba90c1c88613e8.png",
+    "static/media/blood icon.png": "/static/media/blood icon.8c78aafd6f8ef9a1f4b4.png",
+    "index.html": "/index.html",
+    "main.034bb201.css.map": "/static/css/main.034bb201.css.map",
+    "main.6073b9eb.js.map": "/static/js/main.6073b9eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.034bb201.css",
+    "static/js/main.6073b9eb.js"
+  ]
+}
