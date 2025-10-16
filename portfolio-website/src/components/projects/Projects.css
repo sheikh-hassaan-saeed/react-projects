@@ -118,6 +118,15 @@
         margin-bottom: 1rem;
 
     }
+
+    .projects-container h2 {
+        margin-top: 1rem;
+        font-size: 20px;
+    }
+
+    .projects-container p {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (max-width: 375px) {
@@ -165,5 +174,14 @@
         transition: all 300ms ease;
         padding: 0.5rem;
         width: 6rem;
+    }
+
+    .projects-container h2 {
+        margin-top: 1rem;
+        font-size: 20px;
+    }
+
+    .projects-container p {
+        font-size: 16px;
     }
 }
