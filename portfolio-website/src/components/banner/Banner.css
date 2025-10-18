@@ -45,25 +45,12 @@
 .buttons {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 
-.contact-btn {
-    font-weight: 500;
-    transition: all 300ms ease;
-    padding: 0.9rem;
-    width: 10rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    border: rgb(53, 53, 53) 0.1rem solid;
-}
 
-.cv-btn {
+.exp-btn {
     font-weight: 500;
     transition: all 300ms ease;
     padding: 1rem;
@@ -101,6 +88,11 @@
 
 }
 
+.arrow-btn {
+    width: 40px;
+    height: 40px;
+}
+
 @media only screen and (max-width: 768px) {
     .portfolio-banner {
         display: flex;
@@ -133,6 +125,15 @@
     .buttons button {
         width: 8rem;
         padding: 0.8rem;
+    }
+
+    .arrow-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .exp-btn {
+        margin-left: 50px;
     }
 
 }
@@ -168,13 +169,16 @@
         margin-top: 0rem;
     }
 
-    .cv-btn {
+    .exp-btn {
         width: 9rem;
         padding: 0.8rem;
+        margin-left: 50px;
     }
 
-    .contact-btn {
-        width: 9rem;
-        padding: 0.7rem;
+
+    .arrow-btn {
+        width: 30px;
+        height: 30px;
     }
+
 }

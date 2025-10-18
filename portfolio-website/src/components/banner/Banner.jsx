@@ -2,7 +2,7 @@ import './Banner.css'
 import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 import circle from '../../assets/circle.png'
-
+import arrow from '../../assets/arrow.png'
 const Banner = () => {
 
     return (
@@ -19,8 +19,8 @@ const Banner = () => {
                 </div>
 
                 <div className="buttons">
-                    <a href='#' className='cv-btn'> Download CV</a>
-                    <a href="#contact" className='contact-btn'>Contact Info</a>
+                    <a href='#' className='exp-btn'>Explore More </a>
+                    <img className='arrow-btn' src={arrow} />
                 </div>
 
 
