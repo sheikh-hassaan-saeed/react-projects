@@ -20,14 +20,14 @@ const Projects = () => {
                         <h2>DocX Laboratories</h2>
                         <p>A Full Stack Lab Website</p>
                         <div className="buttons">
-                            <button className='project-btn1'>Github</button>
-                            <button className='project-btn2'>Live Demo</button>
+                            <button className='project-btn1'><a href='https://github.com/sheikh-hassaan-saeed/react-projects/tree/main/healthcare-website' target='_blank'>Github</a></button>
+                            <button className='project-btn2'> <a href='https://medical-website-six-sage.vercel.app/' target='_blank'>Live Demo</a></button>
                         </div>
                     </div>
 
                     <div className="projects-container">
                         <img src={project2} />
-                        <h2>Project 2</h2>
+                        <h2>Project 2 (In Progress)</h2>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>
@@ -36,7 +36,7 @@ const Projects = () => {
 
                     <div className="projects-container">
                         <img src={project3} />
-                        <h2>Project 3</h2>
+                        <h2>Project 3 (In Progress)</h2>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>

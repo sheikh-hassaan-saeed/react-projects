@@ -5,8 +5,8 @@ import AboutMe from './components/about/AboutMe';
 import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
-import BottomNavbar from './components/bottomNavbar/BottomNavbar';
 import Copyright from './components/copyright/Copyright';
+import BottomBtn from './components/bottombtn/BottomBtn';
 function App() {
   return (
     <>
@@ -16,7 +16,7 @@ function App() {
       <Experience />
       <Projects />
       <Contact />
-      <BottomNavbar />
+      <BottomBtn />
       <Copyright />
     </>
   );
