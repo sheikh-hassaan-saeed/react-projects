@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-shadow: border-box;
-}
-
-body {
-    background-color: rgb(24, 22, 36);
+    background-color: #f9f9f9;
+    color: #161614;
 }

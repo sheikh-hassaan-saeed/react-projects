@@ -1,13 +1,13 @@
-import './App.css';
+import React from "react";
+import Layout from "./components/layout/Layout";
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-
-    <>
-
-
-    </>
+    <div>
+      <Layout />
+    </div>
   );
-}
+};
 
 export default App;
