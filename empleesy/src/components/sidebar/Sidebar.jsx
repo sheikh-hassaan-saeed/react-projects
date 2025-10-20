@@ -1,12 +1,15 @@
 import React from 'react'
 import Logo from './Logo'
-import SearchBar from './SearchBar'
+import RouteSelect from './RouteSelect'
+import BottonPanel from './BottonPanel'
+
 
 const Sidebar = () => {
     return (
-        <div className='overflow-y-scroll sticky top-4 h-[calc(100vh-32px-48px)]'>
+        <div className="overflow-y-auto mr-4 no-scrollbar sticky flex flex-col  fixed top-4 h-[calc(120vh-32px-48px)]">
             <Logo />
-            <SearchBar />
+            <RouteSelect />
+            <BottonPanel />
         </div>
     )
 }
