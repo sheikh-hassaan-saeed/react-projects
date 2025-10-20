@@ -47,7 +47,6 @@ const Card = ({ title, value, pillText, trend, period }) => {
                             stroke-dashoffset="30" stroke-linecap="round" transform="rotate(-90 18 18)" />
                     </svg>
 
-
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-sm font-semibold text-gray-800">70%</div>
                     </div>
