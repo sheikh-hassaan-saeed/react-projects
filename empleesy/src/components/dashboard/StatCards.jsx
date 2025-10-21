@@ -34,28 +34,28 @@ const Card = ({ title, value, pillText, trend, period }) => {
 
     return (
         <div className="min-h-[200px] p-4 bg-white border mt-4 shadow-md  rounded-[21px] col-span-4">
-            <h3 className="text-stone-700 text-[14px] font-medium">{title}</h3>
+            <h3 className="text-stone-500 text-sm mt-1 ">{title}</h3>
             <div className='flex justify-between'>
                 <p className="text-3xl font-semibold text-stone-900 mt-1">{value}</p>
 
                 <div class="w-24 h-24 relative bottom-5">
                     <svg viewBox="0 0 36 36" class="w-full h-full">
 
-                        <circle cx="18" cy="18" r="15.9155" class="stroke-gray-200" stroke-width="3" fill="none" />
-                        <circle cx="18" cy="18" r="15.9155" class="stroke-green-500 transition-all duration-700" stroke-width="3" fill="none"
+                        <circle cx="18" cy="18" r="12.9155" class="stroke-blue-100" stroke-width="4" fill="none" />
+                        <circle cx="18" cy="18" r="15.9155" class="stroke-blue-500 transition-all duration-700" stroke-width="4" fill="none"
                             stroke-dasharray="100"
                             stroke-dashoffset="30" stroke-linecap="round" transform="rotate(-90 18 18)" />
                     </svg>
 
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-sm font-semibold text-gray-800">70%</div>
+                        <div class="text-lg font-semibold text-gray-800">70%</div>
                     </div>
                 </div>
             </div>
 
             <div className="flex items-center justify-between">
                 <span
-                    className={`flex items-center gap-1 text-xs font-medium py-1 px-2 mt-6 rounded-full ${trend === 'up' ? 'text-green-700 bg-green-100' : 'text-red-800 bg-red-100'
+                    className={`flex items-center gap-1 text-xs font-semibold py-2 px-3 mt-5 rounded-full ${trend === 'up' ? 'text-green-700 bg-green-100' : 'text-red-800 bg-red-100'
                         }`}
                 >
                     {trend === 'up' ? <FiTrendingUp /> : <FiTrendingDown />}
