@@ -24,7 +24,7 @@ const RouteSelect = () => {
                         : "text-stone-500 hover:text-stone-700 hover:bg-white "
                         }`}
                 >
-                    <span className="bg-transparent text-blue-900">{link.icon}</span>
+                    <span className="bg-transparent text-stone-800">{link.icon}</span>
                     <span className='bg-transparent'>{link.name}</span>
                 </div>
             ))}
