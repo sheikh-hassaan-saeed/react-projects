@@ -14,7 +14,7 @@ const BottonPanel = () => {
             {links.map((link, index) => (
                 <h3
                     key={index}
-                    className={`flex items-center gap-2 text-stone-700 font-medium cursor-pointer
+                    className={`flex items-center gap-2 text-stone-700 text-[12px] font-semibold cursor-pointer
             ${activeLinks === index ? "text-blue-900" : "text-stone-700"}`}
                 >
                     {link.icon}

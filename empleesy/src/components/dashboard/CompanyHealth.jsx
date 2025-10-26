@@ -65,20 +65,20 @@ const CompanyHealth = () => {
 
     return (
         <>
-            <div className="mb-8 mt-7 bg-gradient-to-br from-slate-50 to-slate-100   p-8 rounded-[21px] shadow-lg border mr-4">
-                <h1 className="text-4xl font-bold text-slate-800 mb-2">Company Health Index</h1>
-                <p className="text-slate-600">Real-time overview of your organization's performance</p>
+            <div className="mb-8 mt-3 bg-gradient-to-br from-slate-50 to-slate-100  px-8 py-6 rounded-[21px] shadow-lg border mr-4">
+                <h1 className="text-xl font-bold text-slate-800 mb-2">Company Health Index</h1>
+                <p className="text-slate-600 text-[12px]">Real-time overview of your organization's performance</p>
             </div>
             <div className="h-[150px] mt-5  ">
                 <div className="max-w-6xl mx-auto">
 
                     {/* Overall Health Score Card */}
-                    <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 mt-10 border border-slate-200 w-[756px]">
+                    <div className="bg-white rounded-2xl shadow-lg px-8 py-4 mb-4 border border-slate-200 w-[34rem]">
                         <div className="flex items-center justify-between">
                             <div>
-                                <h2 className="text-lg font-semibold text-slate-600 mb-2 ">Overall Health Score</h2>
+                                <h2 className="text-[16px] font-semibold text-slate-600 mb-2 ">Overall Health Score</h2>
                                 <div className="flex items-center gap-4">
-                                    <span className="text-6xl font-bold text-slate-800">{healthData.overallScore}</span>
+                                    <span className="text-4xl font-bold text-slate-800">{healthData.overallScore}</span>
                                     <div>
                                         <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${overallStatus.bg} ${overallStatus.color}`}>
                                             {overallStatus.label}
@@ -86,7 +86,7 @@ const CompanyHealth = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="relative w-32 h-32">
+                            <div className="relative w-20 h-20">
                                 <svg className="transform -rotate-90 w-32 h-32">
                                     <circle
                                         cx="64"
@@ -124,7 +124,7 @@ const CompanyHealth = () => {
                         {healthData.metrics.map((metric, index) => {
                             const Icon = metric.icon;
                             return (
-                                <div key={index} className="bg-white rounded-xl shadow-md p-6 border border-slate-200 hover:shadow-lg transition-shadow w-[360px]  mb-6 mt-6">
+                                <div key={index} className="bg-white rounded-xl shadow-md p-6 border border-slate-200 hover:shadow-lg transition-shadow w-[20rem]  mb-2 mt-6">
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="flex items-center gap-3">
                                             <div className={`p-3 rounded-lg ${getStatusColor(metric.status)} bg-opacity-10`}>

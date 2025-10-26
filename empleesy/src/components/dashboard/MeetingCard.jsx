@@ -47,9 +47,9 @@ const UpcomingMeetingsCard = () => {
     };
 
     return (
-        <div className="mt-6 flex flex-col gap-2 border w-[32rem] h-88 bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-[21px] shadow-md ml-3">
+        <div className="mt-2 flex flex-col gap-2 border w-[29rem] h-88 bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-[21px] shadow-md ml-3">
             {/* Header */}
-            <h3 className="text-slate-600 text-sm font-medium mb-4">Upcoming Meetings</h3>
+            <h3 className="text-slate-600">Upcoming Meetings</h3>
 
             {/* Meetings List */}
             <div className="space-y-3">
