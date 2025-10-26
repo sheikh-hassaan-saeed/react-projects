@@ -12,24 +12,24 @@ import { RxArrowTopRight } from 'react-icons/rx'
 
 const Suggestions = () => {
     return (
-        <div className=" mt-6 ml-4 flex flex-col gap-2 border w-[40rem] h-88 bg-white p-4 rounded-[21px] shadow-md ">
-            <h3 className='text-stone-500'>Suggestions from employees</h3>
+        <div className=" mt-6 flex flex-col gap-2 border w-[32rem] h-88 bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-[21px] shadow-md ml-3 ">
+            <h3 className='text-slate-600'>Suggestions from employees</h3>
             <div className='flex flex-col items-center'>
 
                 {Message.map((suggestion, index) => (
-                    <div className='bg-blue-100 h-40 w-[36rem] flex flex-col mt-2 mb-2 p-2   rounded-[21px] shadow-md '>
+                    <div className='bg-blue-100 h-32 w-[30rem] flex flex-col mt-4 mb-2 p-2   rounded-[21px] shadow-md '>
 
-                        <div className='flex  gap-3 pt-1 ' key={index}>
+                        <div className='flex  gap-3 pt-3 ' key={index}>
 
-                            <img className='w-12 h-12 ml-2 ' src={suggestion.image} />
+                            <img className='w-10 h-10 ml-2 ' src={suggestion.image} />
                             <div>
-                                <h3 className='text-[16px]'>{suggestion.name}</h3>
-                                <p className='text-[12px]'>{suggestion.role}</p>
+                                <h3 className='text-[15px]'>{suggestion.name}</h3>
+                                <p className='text-[10px]'>{suggestion.role}</p>
                             </div>
                         </div>
 
-                        <div className='flex justify-center p-3 mt-3'>
-                            <p className='text-[18px]'>{suggestion.message}</p>
+                        <div className='flex justify-center p-3 '>
+                            <p className='text-[16px]'>{suggestion.message}</p>
                         </div>
 
                     </div>

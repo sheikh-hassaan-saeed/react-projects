@@ -8,9 +8,6 @@ const Dashboard = () => {
         <div className='bg-white rounded-lg pb-4 shadow  h-[220vh]'>
             <TopBar />
             <Grid />
-
-
-
         </div >
     )
 }

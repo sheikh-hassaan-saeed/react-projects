@@ -33,8 +33,8 @@ const Card = ({ title, value, pillText, trend, period }) => {
 
 
     return (
-        <div className="min-h-[180px] p-6 bg-white border mt-3 shadow-md  rounded-[21px] col-span-4">
-            <h3 className="text-stone-500 text-sm mt-1 ">{title}</h3>
+        <div className="min-h-[180px] p-6 bg-gradient-to-br from-slate-50 to-slate-100 border mt-3 shadow-md  rounded-[21px] col-span-4">
+            <h3 className="text-slate-600 text-sm mt-1 ">{title}</h3>
             <div className='flex justify-between'>
                 <p className="text-3xl font-semibold text-stone-900 mt-1">{value}</p>
 
