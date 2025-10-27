@@ -76,9 +76,9 @@ const CompanyHealth = () => {
                     <div className="bg-white rounded-2xl shadow-lg px-8 py-4 mb-4 border border-slate-200 w-[34rem]">
                         <div className="flex items-center justify-between">
                             <div>
-                                <h2 className="text-[16px] font-semibold text-slate-600 mb-2 ">Overall Health Score</h2>
+                                <h2 className="text-[14px] font-semibold text-slate-600 mb-2 ">Overall Health Score</h2>
                                 <div className="flex items-center gap-4">
-                                    <span className="text-4xl font-bold text-slate-800">{healthData.overallScore}</span>
+                                    <span className="text-3xl font-bold text-slate-800">{healthData.overallScore}</span>
                                     <div>
                                         <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${overallStatus.bg} ${overallStatus.color}`}>
                                             {overallStatus.label}
@@ -87,32 +87,32 @@ const CompanyHealth = () => {
                                 </div>
                             </div>
                             <div className="relative w-20 h-20">
-                                <svg className="transform -rotate-90 w-32 h-32">
+                                <svg className="transform -rotate-90 w-20 h-20">
                                     <circle
-                                        cx="64"
-                                        cy="64"
-                                        r="56"
+                                        cx="42"
+                                        cy="42"
+                                        r="32"
                                         stroke="#e5e7eb"
-                                        strokeWidth="12"
+                                        strokeWidth="8"
                                         fill="none"
                                     />
                                     <circle
-                                        cx="64"
-                                        cy="64"
-                                        r="56"
+                                        cx="41"
+                                        cy="41"
+                                        r="32"
                                         stroke={healthData.overallScore >= 70 ? '#10b981' : '#f59e0b'}
-                                        strokeWidth="12"
+                                        strokeWidth="8"
                                         fill="none"
-                                        strokeDasharray={`${2 * Math.PI * 56}`}
-                                        strokeDashoffset={`${2 * Math.PI * 56 * (1 - healthData.overallScore / 100)}`}
+                                        strokeDasharray={`${2 * Math.PI * 42}`}
+                                        strokeDashoffset={`${2 * Math.PI * 42 * (1 - healthData.overallScore / 100)}`}
                                         strokeLinecap="round"
                                     />
                                 </svg>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     {healthData.overallScore >= 70 ? (
-                                        <CheckCircle className="w-12 h-12 text-green-500" />
+                                        <CheckCircle className="w-8 h-8 text-green-500" />
                                     ) : (
-                                        <AlertCircle className="w-12 h-12 text-yellow-500" />
+                                        <AlertCircle className="w-8 h-8 text-yellow-500" />
                                     )}
                                 </div>
                             </div>
