@@ -30,14 +30,14 @@ const Projects = () => {
                         <h2>Automotive Website</h2>
                         <p>Car Workshop Website with Integrated Booking System</p>
                         <div className="buttons">
-                            <button className='project-btn1'>Github</button>
-                            <button className='project-btn2'>Live Demo</button>
+                            <button className='project-btn1'><a href='https://github.com/sheikh-hassaan-saeed/automotive-website' target='_blank'>Github</a></button>
+                            <button className='project-btn2'> <a href='https://automotive-website-nu.vercel.app/' target='_blank'>Live Demo</a></button>
                         </div>
                     </div>
 
                     <div className="projects-container">
                         <img src={project3} />
-                        <h2>Project 3 (In Progress)</h2>
+                        <h2>Empleesy (Coming Soon!)</h2>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>
