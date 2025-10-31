@@ -40,7 +40,8 @@
     list-style: none;
     text-decoration: none;
     color: white;
-    background-color: dodgerblue;
+    background: linear-gradient(135deg, rgb(0, 77, 145) 0%, rgb(0, 136, 255) 100%);
+
 
 }
 

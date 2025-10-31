@@ -23,11 +23,15 @@ h1 {
     padding: 2rem 7rem;
     text-align: center;
     border-radius: 2rem;
+
 }
+
 
 .boxes img {
     width: 2rem;
     height: 2rem;
+    filter: invert(11%) sepia(16%) saturate(6340%) hue-rotate(187deg) brightness(87%) contrast(89%);
+
 }
 
 .text-container {
@@ -64,6 +68,7 @@ h1 {
         padding: 1.5rem 5rem;
         text-align: center;
         border-radius: 2rem;
+
     }
 
     .text-container {

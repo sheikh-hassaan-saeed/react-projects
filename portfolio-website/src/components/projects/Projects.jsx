@@ -3,7 +3,7 @@ import './Projects.css'
 import project1 from '../../assets/docx.jpg'
 import project2 from '../../assets/project-2.png'
 import project3 from '../../assets/project-3.png'
-
+import mechanic from '../../assets/logo.png'
 
 const Projects = () => {
     return (
@@ -18,7 +18,7 @@ const Projects = () => {
                     <div className="projects-container">
                         <img src={project1} />
                         <h2>DocX Laboratories</h2>
-                        <p>A Full Stack Lab Website</p>
+                        <p>MERN Lab Site with Live Booking and Profile Rendering</p>
                         <div className="buttons">
                             <button className='project-btn1'><a href='https://github.com/sheikh-hassaan-saeed/react-projects/tree/main/healthcare-website' target='_blank'>Github</a></button>
                             <button className='project-btn2'> <a href='https://medical-website-six-sage.vercel.app/' target='_blank'>Live Demo</a></button>
@@ -26,8 +26,9 @@ const Projects = () => {
                     </div>
 
                     <div className="projects-container">
-                        <img src={project2} />
-                        <h2>Project 2 (In Progress)</h2>
+                        <img src={mechanic} />
+                        <h2>Automotive Website</h2>
+                        <p>Car Workshop Website with Integrated Booking System</p>
                         <div className="buttons">
                             <button className='project-btn1'>Github</button>
                             <button className='project-btn2'>Live Demo</button>
