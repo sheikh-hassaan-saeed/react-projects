@@ -47,44 +47,48 @@ const UpcomingMeetingsCard = () => {
     };
 
     return (
-        <div className="mt-2 flex flex-col gap-2 border w-[29rem] h-88 bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-[21px] shadow-md ml-3">
-            {/* Header */}
-            <h3 className="text-slate-600">Upcoming Meetings</h3>
+        <>
+            <div className='mr-4'>
+                <div className="mt-2 flex flex-col gap-2 border w-full h-70 bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-[21px] shadow-md ml-3">
+                    {/* Header */}
+                    <h3 className="text-slate-600 text-[12px]">Upcoming Meetings</h3>
 
-            {/* Meetings List */}
-            <div className="space-y-3">
-                {meetings.map((meeting) => (
-                    <div
-                        key={meeting.id}
-                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-white transition-colors"
-                    >
-                        {/* Icon */}
-                        <div className={`p-2 rounded-lg ${getTypeColor(meeting.type)} flex-shrink-0`}>
-                            {getTypeIcon(meeting.type)}
-                        </div>
+                    {/* Meetings List */}
+                    <div className="space-y-3">
+                        {meetings.map((meeting) => (
+                            <div
+                                key={meeting.id}
+                                className="flex items-start gap-3 p-3 rounded-lg hover:bg-white transition-colors"
+                            >
+                                {/* Icon */}
+                                <div className={`p-2 rounded-lg ${getTypeColor(meeting.type)} flex-shrink-0`}>
+                                    {getTypeIcon(meeting.type)}
+                                </div>
 
-                        {/* Content */}
-                        <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-semibold text-gray-900 mb-1">
-                                {meeting.title}
-                            </h4>
-                            <div className="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                                <Clock className="w-3 h-3" />
-                                <span>{meeting.time}</span>
-                                <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                <span>{meeting.duration}</span>
+                                {/* Content */}
+                                <div className="flex-1 min-w-0">
+                                    <h4 className="text-[12px] font-semibold text-gray-900 mb-1">
+                                        {meeting.title}
+                                    </h4>
+                                    <div className="flex items-center gap-2 text-[10px] text-gray-500 mb-1">
+                                        <Clock className="w-3 h-3" />
+                                        <span>{meeting.time}</span>
+                                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span>{meeting.duration}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-[10px] text-gray-500">
+                                        <Users className="w-3 h-3" />
+                                        <span>{meeting.attendees} attendees</span>
+                                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span className="font-medium">{meeting.date}</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-2 text-xs text-gray-500">
-                                <Users className="w-3 h-3" />
-                                <span>{meeting.attendees} attendees</span>
-                                <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                <span className="font-medium">{meeting.date}</span>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

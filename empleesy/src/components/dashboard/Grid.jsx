@@ -9,7 +9,7 @@ const Grid = () => {
     return (
         <>
             <div className="px-4 grid grid-cols-12 gap-4 w-full relative">
-                {/* Top stat cards row */}
+
                 <div className="col-span-12 flex justify-center">
                     <div className="w-[98%] grid grid-cols-12 gap-4">
                         <StatCards />
@@ -25,7 +25,7 @@ const Grid = () => {
                 <div className="col-span-7">
                     <CompanyHealth />
                 </div>
-                <div className='cols-span-12'>
+                <div className='col-span-12'>
                     <AISuggestions />
                 </div>
 
