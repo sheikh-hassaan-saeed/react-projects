@@ -1,7 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
 import RouteSelect from './RouteSelect'
-import BottonPanel from './BottonPanel'
 
 
 const Sidebar = () => {
@@ -9,7 +8,6 @@ const Sidebar = () => {
         <div className="overflow-y-auto mr-2 no-scrollbar sticky flex flex-col top-4 h-[calc(120vh-32px-48px)]">
             <Logo />
             <RouteSelect />
-            <BottonPanel />
         </div>
     )
 }

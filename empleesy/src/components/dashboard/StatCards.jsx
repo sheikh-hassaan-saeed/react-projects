@@ -6,14 +6,14 @@ export const StatCards = () => {
         <>
             <Card
                 title="New Employee"
-                value="35"
+                value="05"
                 pillText="+5%"
                 trend="down"
                 period="This Month"
             />
             <Card
                 title="Total Employees"
-                value="270"
+                value="38"
                 pillText="+2%"
                 trend="up"
                 period="This Year"
