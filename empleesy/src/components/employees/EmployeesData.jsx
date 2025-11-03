@@ -1,0 +1,90 @@
+import React, { useState } from 'react'
+import EmployeesModal from './EmployeesModel'
+const EmployeesData = () => {
+
+    const [employess, setEmployees] = useState([
+        { id: 1, name: "John Doe", email: "john@example.com", salary: 5000, department: "Engineering", joinDate: "2024-10-15" },
+        { id: 2, name: "Jane Smith", email: "jane@example.com", salary: 4500, department: "Marketing", joinDate: "2024-10-20" },
+        { id: 3, name: "Bob Wilson", email: "bob@example.com", salary: 4200, department: "HR", joinDate: "2024-10-25" },
+        { id: 4, name: "Alice Blue", email: "alice@example.com", salary: 3800, department: "Engineering", joinDate: "2024-10-02" },
+        { id: 5, name: "Sam Andrew", email: "sam@example.com", salary: 4800, department: "Sales", joinDate: "2024-10-14" },
+        { id: 6, name: "Austin Hubert", email: "austin@example.com", salary: 2900, department: "HR", joinDate: "2024-10-18" }
+    ])
+
+    const removeEntry = (employeeID) => {
+        setEmployees(employess.filter(emp => emp.id !== employeeID))
+
+    }
+
+
+    return (
+        <div className='p-6'>
+            <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
+
+            <div className='flex justify-end mb-6'>
+                <button
+                    className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-lg'
+                >
+                    <span className='text-xl'>+</span>
+                    Add Employee
+                </button>
+            </div>
+
+
+            <div className='overflow-x-auto bg-white rounded-lg shadow'>
+                <table className='w-full'>
+                    <thead className='bg-gradient-to-br from-slate-50 to-slate-100 border-b'>
+                        <tr>
+                            <th className='px-8 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
+                                Name
+                            </th>
+                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
+                                Email
+                            </th>
+                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
+                                Salary
+                            </th>
+                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
+                                Department
+                            </th>
+                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
+                                Hired Date
+                            </th>
+                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody className='divide-y divide-gray-200'>
+                        {employess.map((employee) => (
+                            <tr key={employee.id} className='hover:bg-gray-50 transition-colors'>
+                                <td className='px-6 py-4 text-sm text-gray-900'>
+                                    {employee.name}
+                                </td>
+                                <td className='px-6 py-4 text-sm text-gray-600'>
+                                    {employee.email}
+                                </td>
+                                <td className='px-6 py-4 text-sm font-semibold text-gray-900'>
+                                    ${employee.salary.toLocaleString()}
+                                </td>
+                                <td className='px-6 py-4 text-sm text-gray-600'>
+                                    {employee.department}
+                                </td>
+                                <td className='px-6 py-4 text-sm text-gray-900'>
+                                    {employee.joinDate}
+                                </td>
+
+                                <td>
+                                    <button className='hover:bg-slate-200 py-1 px-4 rounded-md' >Edit</button>
+                                    <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => removeEntry(employee.id)}>Remove</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    )
+}
+
+export default EmployeesData

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Dashboard from './components/dashboard/Dashboard'
-import EmployeesData from './components/sidebar-page/EmployeesData'
+import EmployeesData from './components/employees/EmployeesData'
 import Profile from './components/topbar-page/Profile'
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/employees" element={<EmployeesData />} />
+
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Layout>
