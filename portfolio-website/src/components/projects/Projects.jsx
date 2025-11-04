@@ -35,7 +35,7 @@ const Projects = () => {
                         </div>
                     </div>
 
-                    <div className="projects-container">
+                    <div className="projects-container" id='thirdproject'>
                         <img src={project3} />
                         <h2>Empleesy (Coming Soon!)</h2>
                         <div className="buttons">

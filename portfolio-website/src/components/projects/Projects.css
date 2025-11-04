@@ -28,6 +28,10 @@
 
 }
 
+#thirdproject {
+    height: 37rem;
+}
+
 .project-btn1 {
     font-weight: 500;
     transition: all 300ms ease;
@@ -108,6 +112,10 @@
         align-items: center;
         width: 90%;
         box-sizing: border-box;
+    }
+
+    #thirdproject {
+        height: 28rem;
     }
 
     .projects-container {
