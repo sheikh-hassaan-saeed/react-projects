@@ -7,49 +7,60 @@ import NavBar from './components/navbar/NavBar';
 import Partners from './components/parterns/Partners';
 import Reviews from './components/reviews/Reviews';
 import Services from './components/services/Services';
-import { Route, Router, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Packages from './pages/packages/Packages';
 import BookForm from './pages/book/BookForm';
 import Contact from './pages/contact/Contact';
 import Profile from './components/profile/Profile';
+import { AnimatePresence, motion } from "framer-motion";
 
-function App() {
+function AnimatedRoutes() {
+  const location = useLocation();
+
   return (
-
-
-    <main>
-      <NavBar />
-
-      <Routes>
+    <AnimatePresence mode='wait'>
+      <Routes location={location} key={location.pathname}>
         <Route path='/' element={
-          <>
-
-
+          <PageWrapper>
             <Banner />
             <Services />
             <Doctors />
             <Partners />
             <Facilities />
             <Reviews />
-
-
-
-          </>
+          </PageWrapper>
         } />
+
+        <Route path='/packages' element={<PageWrapper><Packages /></PageWrapper>} />
+        <Route path='/bookform' element={<PageWrapper><BookForm /></PageWrapper>} />
+        <Route path='/contact' element={<PageWrapper><Contact /></PageWrapper>} />
+        <Route path='/profile' element={<PageWrapper><Profile /></PageWrapper>} />
       </Routes>
+    </AnimatePresence>
+  );
+}
 
 
-      <Routes>
-        <Route path='/packages' element={<Packages />} />
-        <Route path='/bookform' element={<BookForm />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/profile' element={<Profile />} />
-      </Routes>
+function PageWrapper({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function App() {
+  return (
+    <main>
+      <NavBar />
+      <AnimatedRoutes />
       <Footer />
     </main>
-
-
-
   );
 }
 
