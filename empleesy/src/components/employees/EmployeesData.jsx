@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import EmployeesModal from './EmployeesModel'
+import EmployeesModel from './EmployeesModel'
 const EmployeesData = () => {
 
     const [employess, setEmployees] = useState([
@@ -16,18 +16,50 @@ const EmployeesData = () => {
 
     }
 
+    const [showModel, setShowModel] = useState(false)
+    const [editingEmployees, setEditingEmployees] = useState(null)
+
+    const handleSaveEmployee = (data) => {
+        const formattedData = { ...data, salary: Number(data.salary) }
+
+        if (editingEmployees) {
+            // Update existing employee
+            setEmployees(employess.map(emp =>
+                emp.id === editingEmployees.id ? { ...emp, ...formattedData } : emp
+            ));
+        } else {
+            // Add new employee
+            const newEmployee = {
+                id: employess.length + 1, //Seperate New ID for New Entry
+                ...formattedData
+            };
+            setEmployees([...employess, newEmployee]);
+        }
+    };
+
+
 
     return (
         <div className='p-6'>
-            <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
 
-            <div className='flex justify-end mb-6'>
+
+            <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
+            <div className='flex justify-end'>
                 <button
+                    onClick={() => {
+                        setEditingEmployees(null);
+                        setShowModel(true);
+                    }}
                     className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-lg'
                 >
-                    <span className='text-xl'>+</span>
-                    Add Employee
+                    + Add Employee
                 </button>
+            </div>
+
+            <div className='flex justify-end mb-6'>
+                <EmployeesModel
+                    isOpen={showModel} onClose={() => setShowModel(false)} employeeData={editingEmployees} onSave={handleSaveEmployee}
+                />
             </div>
 
 
@@ -75,7 +107,7 @@ const EmployeesData = () => {
                                 </td>
 
                                 <td>
-                                    <button className='hover:bg-slate-200 py-1 px-4 rounded-md' >Edit</button>
+                                    <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => { setEditingEmployees(employee); setShowModel(true) }}>Edit</button>
                                     <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => removeEntry(employee.id)}>Remove</button>
                                 </td>
                             </tr>
@@ -83,6 +115,7 @@ const EmployeesData = () => {
                     </tbody>
                 </table>
             </div>
+
         </div>
     )
 }
