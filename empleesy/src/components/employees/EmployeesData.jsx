@@ -38,7 +38,7 @@ const EmployeesData = () => {
     };
 
     const [search, setSearch] = useState("")
-
+    const [sort, setSort] = useState("asc")
 
 
     return (
@@ -78,8 +78,10 @@ const EmployeesData = () => {
                             <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
                                 Email
                             </th>
-                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
-                                Salary
+                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'
+                                onClick={() => setSort(sort === "asc" ? "dsc" : "asc")}
+                            >
+                                Salary {sort === "asc" ? "▲" : "▼"}
                             </th>
                             <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
                                 Department
@@ -93,32 +95,34 @@ const EmployeesData = () => {
                         </tr>
                     </thead>
                     <tbody className='divide-y divide-gray-200'>
-                        {employess.filter((employee) => {
-                            return search.toLowerCase() === '' ? employee : employee.name.toLowerCase().includes(search)
-                        }).map((employee) => (
-                            <tr key={employee.id} className='hover:bg-gray-50 transition-colors'>
-                                <td className='px-6 py-4 text-sm text-gray-900'>
-                                    {employee.name}
-                                </td>
-                                <td className='px-6 py-4 text-sm text-gray-600'>
-                                    {employee.email}
-                                </td>
-                                <td className='px-6 py-4 text-sm font-semibold text-gray-900'>
-                                    ${employee.salary.toLocaleString()}
-                                </td>
-                                <td className='px-6 py-4 text-sm text-gray-600'>
-                                    {employee.department}
-                                </td>
-                                <td className='px-6 py-4 text-sm text-gray-900'>
-                                    {employee.joinDate}
-                                </td>
+                        {employess
+                            .sort((a, b) => sort === "asc" ? a.salary - b.salary : b.salary - a.salary)
+                            .filter((employee) => {
+                                return search.toLowerCase() === '' ? employee : employee.name.toLowerCase().includes(search)
+                            }).map((employee) => (
+                                <tr key={employee.id} className='hover:bg-gray-50 transition-colors'>
+                                    <td className='px-6 py-4 text-sm text-gray-900'>
+                                        {employee.name}
+                                    </td>
+                                    <td className='px-6 py-4 text-sm text-gray-600'>
+                                        {employee.email}
+                                    </td>
+                                    <td className='px-6 py-4 text-sm font-semibold text-gray-900'>
+                                        ${employee.salary.toLocaleString()}
+                                    </td>
+                                    <td className='px-6 py-4 text-sm text-gray-600'>
+                                        {employee.department}
+                                    </td>
+                                    <td className='px-6 py-4 text-sm text-gray-900'>
+                                        {employee.joinDate}
+                                    </td>
 
-                                <td>
-                                    <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => { setEditingEmployees(employee); setShowModel(true) }}>Edit</button>
-                                    <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => removeEntry(employee.id)}>Remove</button>
-                                </td>
-                            </tr>
-                        ))}
+                                    <td>
+                                        <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => { setEditingEmployees(employee); setShowModel(true) }}>Edit</button>
+                                        <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => removeEntry(employee.id)}>Remove</button>
+                                    </td>
+                                </tr>
+                            ))}
                     </tbody>
                 </table>
             </div>
