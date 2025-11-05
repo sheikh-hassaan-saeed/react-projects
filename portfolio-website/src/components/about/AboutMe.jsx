@@ -14,7 +14,7 @@ const AboutMe = () => {
                 <div className="boxes">
                     <img src={experience} />
                     <h3>Experience</h3>
-                    <p>4+ months</p>
+                    <p>6+ months</p>
                     <p>Frontend Development</p>
                 </div>
 
