@@ -37,6 +37,8 @@ const EmployeesData = () => {
         }
     };
 
+    const [search, setSearch] = useState("")
+
 
 
     return (
@@ -44,7 +46,10 @@ const EmployeesData = () => {
 
 
             <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
-            <div className='flex justify-end'>
+            <div className='flex justify-between'>
+                <input className=' w-[40rem] rounded-lg border border-slate-500 p-3' placeholder='Search...'
+                    onChange={(e) => setSearch(e.target.value)}
+                />
                 <button
                     onClick={() => {
                         setEditingEmployees(null);
@@ -88,7 +93,9 @@ const EmployeesData = () => {
                         </tr>
                     </thead>
                     <tbody className='divide-y divide-gray-200'>
-                        {employess.map((employee) => (
+                        {employess.filter((employee) => {
+                            return search.toLowerCase() === '' ? employee : employee.name.toLowerCase().includes(search)
+                        }).map((employee) => (
                             <tr key={employee.id} className='hover:bg-gray-50 transition-colors'>
                                 <td className='px-6 py-4 text-sm text-gray-900'>
                                     {employee.name}
