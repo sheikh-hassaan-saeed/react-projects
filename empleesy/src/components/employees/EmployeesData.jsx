@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import EmployeesModel from './EmployeesModel'
 const EmployeesData = () => {
-
-    const [employess, setEmployees] = useState([
+    const [employees, setEmployees] = useState([
         { id: 1, name: "John Doe", email: "john@example.com", salary: 5000, department: "Engineering", joinDate: "2024-10-15" },
         { id: 2, name: "Jane Smith", email: "jane@example.com", salary: 4500, department: "Marketing", joinDate: "2024-10-20" },
         { id: 3, name: "Bob Wilson", email: "bob@example.com", salary: 4200, department: "HR", joinDate: "2024-10-25" },
@@ -11,8 +10,9 @@ const EmployeesData = () => {
         { id: 6, name: "Austin Hubert", email: "austin@example.com", salary: 2900, department: "HR", joinDate: "2024-10-18" }
     ])
 
+
     const removeEntry = (employeeID) => {
-        setEmployees(employess.filter(emp => emp.id !== employeeID))
+        setEmployees(employees.filter(emp => emp.id !== employeeID))
 
     }
 
@@ -23,17 +23,15 @@ const EmployeesData = () => {
         const formattedData = { ...data, salary: Number(data.salary) }
 
         if (editingEmployees) {
-            // Update existing employee
-            setEmployees(employess.map(emp =>
+            setEmployees(employees.map(emp =>
                 emp.id === editingEmployees.id ? { ...emp, ...formattedData } : emp
             ));
         } else {
-            // Add new employee
             const newEmployee = {
-                id: employess.length + 1, //Seperate New ID for New Entry
+                id: employees.length + 1,
                 ...formattedData
             };
-            setEmployees([...employess, newEmployee]);
+            setEmployees([...employees, newEmployee]);
         }
     };
 
@@ -95,7 +93,7 @@ const EmployeesData = () => {
                         </tr>
                     </thead>
                     <tbody className='divide-y divide-gray-200'>
-                        {employess
+                        {employees
                             .sort((a, b) => sort === "asc" ? a.salary - b.salary : b.salary - a.salary)
                             .filter((employee) => {
                                 return search.toLowerCase() === '' ? employee : employee.name.toLowerCase().includes(search)
