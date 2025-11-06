@@ -14,8 +14,9 @@ const AboutMe = () => {
                 <div className="boxes">
                     <img src={experience} />
                     <h3>Experience</h3>
-                    <p>6+ months</p>
-                    <p>Frontend Development</p>
+                    <p>Frontend Development: 3+ months</p>
+                    <p>Freelancing Projects: 8+ months</p>
+
                 </div>
 
                 <div className="boxes">
@@ -31,8 +32,7 @@ const AboutMe = () => {
 
             <div className="text-container">
                 <p>
-                    Hi, I’m Hassaan — a <strong>Front-End Developer</strong> with holding an experience from a
-                    remote internship. Along the way, I have earned the <strong>Meta Front-End Developer Certificate</strong>,
+                    Hi, I’m Hassaan. I’m a <strong>Front-End Developer</strong> with experience in a remote internship. Along the way, I have earned the <strong>Meta Front-End Developer Certificate</strong>,
                     completed <strong>5+ projects</strong>, and built a track record as a
                     <strong> 5-star freelancer</strong>. Right now, I’m focused on sharpening my
                     <strong> UI/UX skills</strong> and developing <strong>dynamic and scalable front-end projects</strong>.
