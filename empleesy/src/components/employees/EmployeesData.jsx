@@ -1,19 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import EmployeesModel from './EmployeesModel'
-const EmployeesData = () => {
-    const [employees, setEmployees] = useState([
-        { id: 1, name: "John Doe", email: "john@example.com", salary: 5000, department: "Engineering", joinDate: "2024-10-15" },
-        { id: 2, name: "Jane Smith", email: "jane@example.com", salary: 4500, department: "Marketing", joinDate: "2024-10-20" },
-        { id: 3, name: "Bob Wilson", email: "bob@example.com", salary: 4200, department: "HR", joinDate: "2024-10-25" },
-        { id: 4, name: "Alice Blue", email: "alice@example.com", salary: 3800, department: "Engineering", joinDate: "2024-10-02" },
-        { id: 5, name: "Sam Andrew", email: "sam@example.com", salary: 4800, department: "Sales", joinDate: "2024-10-14" },
-        { id: 6, name: "Austin Hubert", email: "austin@example.com", salary: 2900, department: "HR", joinDate: "2024-10-18" }
-    ])
 
+const EmployeesData = () => {
+
+    const [employees, setEmployees] = useState(() => {
+        const saved = localStorage.getItem('employees')
+        if (saved) {
+            return JSON.parse(saved)
+        }
+        return [
+            { id: 1, name: "John Doe", email: "john@example.com", salary: 1000, department: "Engineering", joinDate: "2024-10-15" },
+            { id: 2, name: "Jane Smith", email: "jane@example.com", salary: 3500, department: "Marketing", joinDate: "2024-10-20" },
+            { id: 3, name: "Bob Wilson", email: "bob@example.com", salary: 2200, department: "HR", joinDate: "2024-10-25" },
+            { id: 4, name: "Alice Blue", email: "alice@example.com", salary: 1800, department: "Engineering", joinDate: "2024-10-02" },
+            { id: 5, name: "Sam Andrew", email: "sam@example.com", salary: 3800, department: "Sales", joinDate: "2024-10-14" },
+            { id: 6, name: "Austin Hubert", email: "austin@example.com", salary: 2900, department: "HR", joinDate: "2024-10-18" }
+        ]
+    })
+
+
+    useEffect(() => {
+        localStorage.setItem('employees', JSON.stringify(employees))
+    }, [employees])
 
     const removeEntry = (employeeID) => {
         setEmployees(employees.filter(emp => emp.id !== employeeID))
-
     }
 
     const [showModel, setShowModel] = useState(false)
@@ -25,33 +36,33 @@ const EmployeesData = () => {
         if (editingEmployees) {
             setEmployees(employees.map(emp =>
                 emp.id === editingEmployees.id ? { ...emp, ...formattedData } : emp
-            ));
+            ))
         } else {
             const newEmployee = {
-                id: employees.length + 1,
+                id: Date.now(),
                 ...formattedData
-            };
-            setEmployees([...employees, newEmployee]);
+            }
+            setEmployees([...employees, newEmployee])
         }
-    };
+        setShowModel(false)
+    }
 
     const [search, setSearch] = useState("")
     const [sort, setSort] = useState("asc")
 
-
     return (
         <div className='p-6'>
-
-
             <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
             <div className='flex justify-between'>
-                <input className=' w-[40rem] rounded-lg border border-slate-500 p-3' placeholder='Search...'
+                <input
+                    className='w-[40rem] rounded-lg border border-slate-500 p-3'
+                    placeholder='Search...'
                     onChange={(e) => setSearch(e.target.value)}
                 />
                 <button
                     onClick={() => {
-                        setEditingEmployees(null);
-                        setShowModel(true);
+                        setEditingEmployees(null)
+                        setShowModel(true)
                     }}
                     className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-lg'
                 >
@@ -61,10 +72,12 @@ const EmployeesData = () => {
 
             <div className='flex justify-end mb-6'>
                 <EmployeesModel
-                    isOpen={showModel} onClose={() => setShowModel(false)} employeeData={editingEmployees} onSave={handleSaveEmployee}
+                    isOpen={showModel}
+                    onClose={() => setShowModel(false)}
+                    employeeData={editingEmployees}
+                    onSave={handleSaveEmployee}
                 />
             </div>
-
 
             <div className='overflow-x-auto bg-white rounded-lg shadow'>
                 <table className='w-full'>
@@ -76,8 +89,9 @@ const EmployeesData = () => {
                             <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'>
                                 Email
                             </th>
-                            <th className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider'
-                                onClick={() => setSort(sort === "asc" ? "dsc" : "asc")}
+                            <th
+                                className='px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer'
+                                onClick={() => setSort(sort === "asc" ? "desc" : "asc")}
                             >
                                 Salary {sort === "asc" ? "▲" : "▼"}
                             </th>
@@ -97,7 +111,8 @@ const EmployeesData = () => {
                             .sort((a, b) => sort === "asc" ? a.salary - b.salary : b.salary - a.salary)
                             .filter((employee) => {
                                 return search.toLowerCase() === '' ? employee : employee.name.toLowerCase().includes(search)
-                            }).map((employee) => (
+                            })
+                            .map((employee) => (
                                 <tr key={employee.id} className='hover:bg-gray-50 transition-colors'>
                                     <td className='px-6 py-4 text-sm text-gray-900'>
                                         {employee.name}
@@ -114,17 +129,28 @@ const EmployeesData = () => {
                                     <td className='px-6 py-4 text-sm text-gray-900'>
                                         {employee.joinDate}
                                     </td>
-
                                     <td>
-                                        <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => { setEditingEmployees(employee); setShowModel(true) }}>Edit</button>
-                                        <button className='hover:bg-slate-200 py-1 px-4 rounded-md' onClick={() => removeEntry(employee.id)}>Remove</button>
+                                        <button
+                                            className='hover:bg-slate-200 py-1 px-4 rounded-md'
+                                            onClick={() => {
+                                                setEditingEmployees(employee)
+                                                setShowModel(true)
+                                            }}
+                                        >
+                                            Edit
+                                        </button>
+                                        <button
+                                            className='hover:bg-slate-200 py-1 px-4 rounded-md'
+                                            onClick={() => removeEntry(employee.id)}
+                                        >
+                                            Remove
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
                     </tbody>
                 </table>
             </div>
-
         </div>
     )
 }
