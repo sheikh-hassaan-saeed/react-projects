@@ -9,6 +9,7 @@ const PackageCard = () => {
     const handleBook = (testName) => {
         navigate('/bookForm', { state: { testName } });
     };
+
     return (
         <div className="packagecard-container">
             {Packages.map((value, index) => {
@@ -16,15 +17,32 @@ const PackageCard = () => {
 
                 return (
                     <div key={index} className="package-card">
-                        <div className="img">
-                            <img src={value.image} alt={value.name} />
+                        <div className="card-header">
+                            <div className="img">
+                                <img src={value.image} alt={value.name} />
+                            </div>
+                            <div className="rating">
+                                <span className="stars">{stars}</span>
+                                <span className="rating-number">{value.rating}</span>
+                            </div>
                         </div>
-                        <h2>{value.name}</h2>
-                        <p>{value.paragraph}</p>
-                        <p>{stars} ({value.rating})</p>
-                        <p>Price: {value.price}</p>
-                        <div className="package-btn">
-                            <button onClick={() => handleBook(value.name)}>Book Now</button>
+
+                        <div className="card-content">
+                            <h2 className="package-title">{value.name}</h2>
+                            <p className="package-description">{value.paragraph}</p>
+                        </div>
+
+                        <div className="card-footer">
+                            <div className="price-section">
+                                <span className="price-label">Starting from</span>
+                                <span className="price">{value.price}</span>
+                            </div>
+                            <button
+                                className="book-button"
+                                onClick={() => handleBook(value.name)}
+                            >
+                                Book Now
+                            </button>
                         </div>
                     </div>
                 );
