@@ -20,17 +20,11 @@ const TopBar = () => {
                         alt="Profile"
                         className="w-8 h-8 rounded-full object-cover"
                     />
-                    <div className="flex leading-tight">
+                    <div className="flex leading-tight cursor-pointer" onClick={goToProfile}>
                         <div className='flex flex-col'>
                             <span className="text-[14px] font-semibold text-gray-800">Sheikh Hassaan</span>
                             <span className="text-[10px] text-gray-500 ml-1">Frontend Developer</span>
                         </div>
-
-                        <FiChevronDown
-                            size={19}
-                            className="text-gray-600 cursor-pointer hover:text-blue-800 transition-colors mt-1 ml-3"
-                            onClick={goToProfile}
-                        />
                     </div>
                 </div>
             </div>

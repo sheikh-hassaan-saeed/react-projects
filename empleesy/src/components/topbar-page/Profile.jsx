@@ -1,14 +1,16 @@
 import React from 'react'
-
+import myPic from '../../assets/circle.png'
 const Profile = () => {
     return (
         <div className='p-6'>
-            <h1 className='text-3xl font-bold mb-6 text-gray-800'>Profile</h1>
 
-            <div className='bg-white rounded-lg shadow p-6 max-w-2xl'>
-                <div className='flex items-center gap-6 mb-6'>
+
+            <div className='bg-gray-100 rounded-lg shadow-lg p-6 m-auto max-w-2xl'>
+                <h1 className='text-3xl font-bold mb-2 text-gray-800'>Profile</h1>
+                <hr />
+                <div className='flex items-center gap-6 mb-6 mt-4'>
                     <img
-                        src="/src/assets/circle.png"
+                        src={myPic}
                         alt="Profile"
                         className='w-24 h-24 rounded-full object-cover'
                     />
@@ -18,40 +20,43 @@ const Profile = () => {
                     </div>
                 </div>
 
-                <div className='space-y-4'>
-                    <div>
-                        <label className='text-sm font-semibold text-gray-600'>Email</label>
-                        <p className='text-gray-800'>sheikh.hassaan@example.com</p>
-                    </div>
+                <table className='w-full'>
+                    <tbody>
+                        <tr className='border-b'>
+                            <td className='py-3 text-sm font-semibold text-gray-600'>Email:</td>
+                            <td className='py-3 text-gray-800'>sheikh.hassaan@example.com</td>
+                        </tr>
 
-                    <div>
-                        <label className='text-sm font-semibold text-gray-600'>Phone</label>
-                        <p className='text-gray-800'>+92 300 1234567</p>
-                    </div>
+                        <tr className='border-b'>
+                            <td className='py-3 text-sm font-semibold text-gray-600'>Phone:</td>
+                            <td className='py-3 text-gray-800'>+92 300 1234567</td>
+                        </tr>
 
-                    <div>
-                        <label className='text-sm font-semibold text-gray-600'>Department</label>
-                        <p className='text-gray-800'>Engineering</p>
-                    </div>
+                        <tr className='border-b'>
+                            <td className='py-3 text-sm font-semibold text-gray-600'>Department:</td>
+                            <td className='py-3 text-gray-800'>Engineering</td>
+                        </tr>
 
-                    <div>
-                        <label className='text-sm font-semibold text-gray-600'>Employee ID</label>
-                        <p className='text-gray-800'>EMP-001</p>
-                    </div>
+                        <tr className='border-b'>
+                            <td className='py-3 text-sm font-semibold text-gray-600'>Employee ID:</td>
+                            <td className='py-3 text-gray-800'>EMP-001</td>
+                        </tr>
 
-                    <div>
-                        <label className='text-sm font-semibold text-gray-600'>Joined Date</label>
-                        <p className='text-gray-800'>January 15, 2024</p>
-                    </div>
-                </div>
+                        <tr>
+                            <td className='py-3 text-sm font-semibold text-gray-600'>Joined Date:</td>
+                            <td className='py-3 text-gray-800'>January 15, 2024</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <div className='mt-6 flex gap-4'>
-                    <button className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors'>
+                <div className='mt-6 flex justify-end gap-4'>
+                    <button className='bg-blue-500  text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors'>
                         Edit Profile
+
                     </button>
-                    <button className='bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors'>
+                    {/* <button className='bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors'>
                         Change Password
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
