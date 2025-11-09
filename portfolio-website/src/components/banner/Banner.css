@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
-    height: 80vh;
+    gap: 5rem;
+    height: 10vh;
     flex-direction: row-reverse;
-
+    border-radius: 100px;
 }
 
-/* .bg {
-    background: linear-gradient(135deg, #1a1a2e 0%, rgb(0, 136, 255) 80%);
+.bg {
+    background: linear-gradient(135deg, #ecf4ff 0%, #00163a 100%);
     width: 1450px;
     height: 500px;
     border-radius: 31px;
@@ -17,18 +17,21 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-} */
+}
 
 
 .main-text-area {
     align-self: center;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding-left: 80px;
     padding-right: 80px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-radius: 31px;
+    border-radius: 51px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .text-area {
@@ -127,7 +130,9 @@
 .banner-img img {
     height: 360px;
     width: 360px;
-    margin-bottom: 1.5rem;
+    border: 10px solid white;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
 }
 
 .arrow-btn {
@@ -152,6 +157,7 @@
     .banner-img img {
         height: 189px;
         width: 189px;
+
     }
 
     .text-area p {
@@ -168,6 +174,7 @@
 
     .main-text-area {
         margin-top: 0rem;
+
     }
 
     .buttons button {
@@ -183,6 +190,12 @@
     .exp-btn {
         margin-left: 50px;
     }
+
+    .bg {
+        background: white;
+        width: 300px;
+        height: 700px;
+    }
 }
 
 @media only screen and (max-width: 375px) {
@@ -196,6 +209,13 @@
     .banner-img img {
         height: 189px;
         width: 189px;
+        border: 10px #1a1a2e;
+    }
+
+    .bg {
+        background: white;
+        width: 280px;
+        height: 600px;
     }
 
     .text-area p {

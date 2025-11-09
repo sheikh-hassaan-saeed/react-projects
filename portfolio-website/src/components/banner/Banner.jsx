@@ -18,10 +18,10 @@ const Banner = () => {
                         <p className='text-p2'>Frontend Developer</p>
                     </div>
 
-                    <div className="buttons">
+                    {/* <div className="buttons">
                         <a href='#projects' className='exp-btn'>Explore More</a>
                         <img className='arrow-btn' src={arrow} alt="Arrow icon" />
-                    </div>
+                    </div> */}
 
                     <div className="social-links">
                         <a href="https://www.linkedin.com/in/sheikh-hassaan-saeed"
