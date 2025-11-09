@@ -13,7 +13,7 @@ const AboutMe = () => {
                 <div className="about-details">
 
                     <div className="boxes">
-                        <img src={experience} />
+                        <img src={experience} alt="Experience image" />
                         <h3>Experience</h3>
                         <p>Frontend Development: 3+ months</p>
                         <p>Freelancing Projects: 8+ months</p>
@@ -21,7 +21,7 @@ const AboutMe = () => {
                     </div>
 
                     <div className="boxes">
-                        <img src={education} />
+                        <img src={education} alt="Educationimage" />
                         <h3>Education</h3>
                         <p>Bsc. Computer Science</p>
                         <p>High School Graduate</p>
@@ -42,7 +42,7 @@ const AboutMe = () => {
                 </div>
 
                 <div className="arrow-container">
-                    <img src={arrow} />
+                    <img src={arrow} alt="Arrow" />
                 </div>
             </div>
         </div>

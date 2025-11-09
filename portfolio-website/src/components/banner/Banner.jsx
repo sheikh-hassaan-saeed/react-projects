@@ -3,14 +3,13 @@ import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 import circle from '../../assets/circle.png'
 import arrow from '../../assets/arrow.png'
+
 const Banner = () => {
-
     return (
-        <div class="bg">
+        <div className="bg">
             <div className="portfolio-banner">
-
                 <div className="banner-img">
-                    <img src={circle} />
+                    <img src={circle} alt="Decorative circle background" />
                 </div>
                 <div className="main-text-area">
                     <div className="text-area">
@@ -20,23 +19,23 @@ const Banner = () => {
                     </div>
 
                     <div className="buttons">
-                        <a href='#' className='exp-btn'>Explore More </a>
-                        <img className='arrow-btn' src={arrow} />
+                        <a href='#projects' className='exp-btn'>Explore More</a>
+                        <img className='arrow-btn' src={arrow} alt="Arrow icon" />
                     </div>
-
 
                     <div className="social-links">
                         <a href="https://www.linkedin.com/in/sheikh-hassaan-saeed"
                             target="_blank"
                             rel="noopener noreferrer">
-                            <img src={linkedin} className='icon' /></a>
+                            <img src={linkedin} className='icon' alt="LinkedIn profile" />
+                        </a>
                         <a href="https://github.com/sheikh-hassaan-saeed"
                             target="_blank"
                             rel="noopener noreferrer">
-                            <img src={github} className='icon' /></a>
+                            <img src={github} className='icon' alt="GitHub profile" />
+                        </a>
                     </div>
                 </div>
-
             </div>
         </div>
     )

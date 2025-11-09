@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 import { Link } from 'react-scroll'
-import myPic from '../../assets/circle.png'
-const Navbar = () => {
+// Remove unused import: import myPic from '../../assets/circle.png'
 
+const Navbar = () => {
     const [isOpen, setisOpen] = useState(false);
     const menuref = useRef(null)
 
@@ -20,11 +20,9 @@ const Navbar = () => {
         }
     }, [])
 
-
     return (
         <>
             <div className="navbar-portfolio" ref={menuref}>
-
                 <div
                     className="hamburger"
                     onClick={() => setisOpen(!isOpen)}
@@ -44,7 +42,7 @@ const Navbar = () => {
                     <Link to="projects" smooth={true} offset={-50} duration={500} onClick={() => setisOpen(false)}>Projects</Link>
                     <Link to="contact" smooth={true} duration={500} onClick={() => setisOpen(false)}>Contact</Link>
                 </div>
-            </div >
+            </div>
         </>
     )
 }
