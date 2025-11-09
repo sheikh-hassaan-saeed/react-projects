@@ -135,16 +135,7 @@
     border-radius: 50%;
 }
 
-.arrow-btn {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
 
-.arrow-btn:hover {
-    transform: translateX(5px);
-}
 
 @media only screen and (max-width: 768px) {
     .portfolio-banner {
@@ -182,10 +173,7 @@
         padding: 0.8rem;
     }
 
-    .arrow-btn {
-        width: 30px;
-        height: 30px;
-    }
+
 
     .exp-btn {
         margin-left: 50px;
@@ -240,8 +228,5 @@
         margin-left: 50px;
     }
 
-    .arrow-btn {
-        width: 30px;
-        height: 30px;
-    }
+
 }

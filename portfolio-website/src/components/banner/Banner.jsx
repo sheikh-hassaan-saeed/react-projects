@@ -2,7 +2,6 @@ import './Banner.css'
 import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 import circle from '../../assets/circle.png'
-import arrow from '../../assets/arrow.png'
 
 const Banner = () => {
     return (
@@ -18,10 +17,6 @@ const Banner = () => {
                         <p className='text-p2'>Frontend Developer</p>
                     </div>
 
-                    {/* <div className="buttons">
-                        <a href='#projects' className='exp-btn'>Explore More</a>
-                        <img className='arrow-btn' src={arrow} alt="Arrow icon" />
-                    </div> */}
 
                     <div className="social-links">
                         <a href="https://www.linkedin.com/in/sheikh-hassaan-saeed"
