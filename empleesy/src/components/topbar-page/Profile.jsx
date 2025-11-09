@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import myPic from '../../assets/circle.png'
+import ProfileModel from './ProfileModel'
 const Profile = () => {
+
+    const [showModel, setShowModel] = useState(false)
+
     return (
         <div className='p-6'>
 
@@ -49,14 +53,16 @@ const Profile = () => {
                     </tbody>
                 </table>
 
-                <div className='mt-6 flex justify-end gap-4'>
-                    <button className='bg-blue-500  text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors'>
-                        Edit Profile
+                <ProfileModel
+                    isOpen={showModel}
+                    onClose={() => setShowModel(false)}
 
+                />
+
+                <div className='mt-6 flex justify-end gap-4'>
+                    <button className='bg-blue-500  text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors' onClick={() => setShowModel(true)}>
+                        Edit Profile
                     </button>
-                    {/* <button className='bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors'>
-                        Change Password
-                    </button> */}
                 </div>
             </div>
         </div>

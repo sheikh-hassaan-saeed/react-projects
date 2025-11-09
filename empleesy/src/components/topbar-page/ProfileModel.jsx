@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ProfileModel = () => {
+const ProfileModel = ({ isOpen, onClose }) => {
 
 
 
@@ -12,15 +12,15 @@ const ProfileModel = () => {
         joinDate: ""
     })
 
-    function handleSubmit() {
+    if (!isOpen) return null
 
-
-    }
-
-    function closeForm() {
-
+    function handleSubmit(e) {
+        e.preventDefault()
+        onClose();
 
     }
+
+
 
     return (
         <>
@@ -30,7 +30,7 @@ const ProfileModel = () => {
                     <button
                         type="button"
                         className='absolute top-3 right-3 text-red-700 rounded-full hover:text-black text-xl'
-                        onClose={closeForm}
+                        onClick={onClose}
                     >
                         ×
                     </button>
@@ -46,6 +46,7 @@ const ProfileModel = () => {
                                 value={formData.name}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="John Doe"
+                                onChange={(e) => setFormData(e.target.value)}
                             />
                         </div>
 
@@ -59,6 +60,7 @@ const ProfileModel = () => {
                                 value={formData.email}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="john@example.com"
+                                onChange={(e) => setFormData(e.target.value)}
                             />
                         </div>
 
@@ -72,6 +74,7 @@ const ProfileModel = () => {
                                 value={formData.employeeId}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="EMP-001"
+                                onChange={(e) => setFormData(e.target.value)}
                             />
                         </div>
 
@@ -85,6 +88,7 @@ const ProfileModel = () => {
                                 value={formData.department}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="Engineering"
+                                onChange={(e) => setFormData(e.target.value)}
                             />
                         </div>
 
@@ -97,6 +101,7 @@ const ProfileModel = () => {
                                 name="joinDate"
                                 value={formData.joinDate}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
+                                onChange={(e) => setFormData(e.target.value)}
                             />
                         </div>
                     </div>
@@ -105,6 +110,7 @@ const ProfileModel = () => {
                         <button
                             type="button"
                             className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-[30px] hover:bg-gray-50 transition-colors shadow-md font-semibold"
+                            onClick={onClose}
                         >
                             Cancel
                         </button>
