@@ -84,7 +84,7 @@
     border-radius: 2rem;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 253, 250);
+    background-color: #f5f7fa;
 }
 
 .projects-container h2 {
@@ -124,7 +124,7 @@
         max-width: 420px;
         padding: 2rem;
         border-radius: 2rem;
-        background-color: rgb(255, 253, 250);
+        background-color: #f5f7fa;
         margin: 0 auto;
         box-sizing: border-box;
     }

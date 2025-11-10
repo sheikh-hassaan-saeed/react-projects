@@ -3,6 +3,7 @@
     height: 32px;
     object-fit: contain;
     display: block;
+
 }
 
 .contact-p1 {
@@ -20,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .elements-container {
@@ -32,6 +34,7 @@
     padding: 1.5rem;
     border-radius: 2rem;
     margin-top: 1rem;
+    background-color: #f5f7fa;
 
 }
 
