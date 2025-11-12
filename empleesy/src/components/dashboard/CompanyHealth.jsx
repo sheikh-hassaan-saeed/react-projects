@@ -66,7 +66,7 @@ const CompanyHealth = () => {
     return (
         <>
             <div className='bg-slate-100 p-4 rounded-[21px] mt-2'>
-                <div className="mb-6 mt-3 bg-gradient-to-br from-slate-50 to-slate-100  px-8 py-6 rounded-[21px] shadow-lg w-full border mr-4">
+                <div className="mb-6 mt-3 bg-gradient-to-br from-slate-50 to-slate-100  px-8 py-6 rounded-[21px] shadow-lg w-full border">
                     <h1 className="text-xl font-bold text-slate-800 mb-2">Company Health Index</h1>
                     <p className="text-slate-600 text-[12px]">Real-time overview of your organization's performance</p>
                 </div>

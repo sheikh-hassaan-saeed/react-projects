@@ -1,7 +1,7 @@
 import React from 'react'
 import { StatCards } from './StatCards'
 import CompanyHealth from './CompanyHealth'
-
+import PieChart from './PieChart'
 
 const Grid = ({ employees }) => {
     return (
@@ -13,10 +13,15 @@ const Grid = ({ employees }) => {
                         <StatCards employees={employees} />
                     </div>
                 </div>
+                <div className=" mt-2 w-[100%] col-span-5">
+                    <PieChart />
+                </div>
+                <div className=" col-span-7">
 
-                <div className="col-span-7">
                     <CompanyHealth />
                 </div>
+
+
             </div>
 
 
