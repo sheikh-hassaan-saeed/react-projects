@@ -1,6 +1,5 @@
 import React from 'react'
 import { StatCards } from './StatCards'
-import CompanyHealth from './CompanyHealth'
 import PieChart from './PieChart'
 
 const Grid = ({ employees }) => {
@@ -14,13 +13,8 @@ const Grid = ({ employees }) => {
                     </div>
                 </div>
                 <div className=" mt-2 w-[100%] col-span-5">
-                    <PieChart />
+                    <PieChart employees={employees} />
                 </div>
-                <div className=" col-span-7">
-
-                    <CompanyHealth />
-                </div>
-
 
             </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EmployeesModel from './EmployeesModel'
-
+import PieChart from '../dashboard/PieChart'
 const EmployeesData = () => {
 
     const [employees, setEmployees] = useState(() => {
@@ -8,14 +8,7 @@ const EmployeesData = () => {
         if (saved) {
             return JSON.parse(saved)
         }
-        return [
-            { id: 1, name: "John Doe", email: "john@example.com", salary: 1000, department: "Engineering", joinDate: "2024-10-15" },
-            { id: 2, name: "Jane Smith", email: "jane@example.com", salary: 3500, department: "Marketing", joinDate: "2024-10-20" },
-            { id: 3, name: "Bob Wilson", email: "bob@example.com", salary: 2200, department: "HR", joinDate: "2024-10-25" },
-            { id: 4, name: "Alice Blue", email: "alice@example.com", salary: 1800, department: "Engineering", joinDate: "2024-10-02" },
-            { id: 5, name: "Sam Andrew", email: "sam@example.com", salary: 3800, department: "Sales", joinDate: "2024-10-14" },
-            { id: 6, name: "Austin Hubert", email: "austin@example.com", salary: 2900, department: "HR", joinDate: "2024-10-18" }
-        ]
+        return []
     })
 
 
@@ -55,7 +48,7 @@ const EmployeesData = () => {
             <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
             <div className='flex justify-between'>
                 <input
-                    className='w-[40rem] rounded-lg border border-slate-500 p-3'
+                    className='w-[40rem] rounded-[30px] border border-slate-500 p-3'
                     placeholder='Search...'
                     onChange={(e) => setSearch(e.target.value)}
                 />
@@ -64,7 +57,7 @@ const EmployeesData = () => {
                         setEditingEmployees(null)
                         setShowModel(true)
                     }}
-                    className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-lg'
+                    className='bg-blue-600 text-white px-6 py-2 rounded-[30px] hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-lg'
                 >
                     + Add Employee
                 </button>
@@ -151,6 +144,7 @@ const EmployeesData = () => {
                     </tbody>
                 </table>
             </div>
+
         </div>
     )
 }

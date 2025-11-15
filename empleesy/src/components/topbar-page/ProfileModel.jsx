@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const ProfileModel = ({ isOpen, onClose }) => {
-
-
-
+const ProfileModel = ({ isOpen, onClose, profileData, onSave }) => {
+    // 🔥 Initialize with current profile data
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -12,21 +10,47 @@ const ProfileModel = ({ isOpen, onClose }) => {
         joinDate: ""
     })
 
+    // 🔥 Pre-fill form when modal opens
+    useEffect(() => {
+        if (profileData) {
+            setFormData({
+                name: profileData.name,
+                email: profileData.email,
+                department: profileData.department,
+                employeeId: profileData.employeeId,
+                joinDate: profileData.joinDate
+            })
+        }
+    }, [profileData, isOpen])
+
     if (!isOpen) return null
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        onClose();
-
+    // 🔥 Handle input changes correctly
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormData({
+            ...formData,
+            [name]: value
+        })
     }
 
-
+    // 🔥 Submit updates
+    function handleSubmit(e) {
+        e.preventDefault()
+        onSave(formData)  // Send data to parent
+    }
 
     return (
         <>
-            <div className='fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50'>
-
-                <form className="relative bg-white p-6 border border-blue-600 rounded-lg max-w-lg w-full" onSubmit={handleSubmit}>
+            <div
+                className='fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50'
+                onClick={onClose}  // Close when clicking outside
+            >
+                <form
+                    className="relative bg-white p-6 border border-blue-600 rounded-lg max-w-lg w-full"
+                    onSubmit={handleSubmit}
+                    onClick={(e) => e.stopPropagation()}  // Don't close when clicking form
+                >
                     <button
                         type="button"
                         className='absolute top-3 right-3 text-red-700 rounded-full hover:text-black text-xl'
@@ -34,6 +58,8 @@ const ProfileModel = ({ isOpen, onClose }) => {
                     >
                         ×
                     </button>
+
+                    <h2 className='text-2xl font-bold mb-6 text-gray-800'>Edit Profile</h2>
 
                     <div className="space-y-5">
                         <div>
@@ -46,7 +72,8 @@ const ProfileModel = ({ isOpen, onClose }) => {
                                 value={formData.name}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="John Doe"
-                                onChange={(e) => setFormData(e.target.value)}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
@@ -60,7 +87,8 @@ const ProfileModel = ({ isOpen, onClose }) => {
                                 value={formData.email}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="john@example.com"
-                                onChange={(e) => setFormData(e.target.value)}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
@@ -74,7 +102,8 @@ const ProfileModel = ({ isOpen, onClose }) => {
                                 value={formData.employeeId}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
                                 placeholder="EMP-001"
-                                onChange={(e) => setFormData(e.target.value)}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
@@ -82,14 +111,19 @@ const ProfileModel = ({ isOpen, onClose }) => {
                             <label className="block text-sm font-semibold text-gray-700 mb-2">
                                 Department <span className="text-red-500">*</span>
                             </label>
-                            <input
-                                type="text"
+                            <select
                                 name="department"
                                 value={formData.department}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
-                                placeholder="Engineering"
-                                onChange={(e) => setFormData(e.target.value)}
-                            />
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="Engineering">Engineering</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="HR">HR</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Finance">Finance</option>
+                            </select>
                         </div>
 
                         <div>
@@ -101,7 +135,8 @@ const ProfileModel = ({ isOpen, onClose }) => {
                                 name="joinDate"
                                 value={formData.joinDate}
                                 className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"
-                                onChange={(e) => setFormData(e.target.value)}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
                     </div>
@@ -118,10 +153,9 @@ const ProfileModel = ({ isOpen, onClose }) => {
                             type="submit"
                             className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-[30px] hover:bg-blue-700 transition-colors font-semibold shadow-lg hover:shadow-xl"
                         >
-                            Submit
+                            Save Changes
                         </button>
                     </div>
-
                 </form>
             </div>
         </>
