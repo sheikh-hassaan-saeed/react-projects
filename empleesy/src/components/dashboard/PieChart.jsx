@@ -11,10 +11,11 @@ const PieChart = ({ employees = [] }) => {
 
     // Example colors for each dept
     const colors = {
-        Engineering: "#3b82f6",
+        Engineering: "#ef4444",
         Marketing: "#10b981",
         HR: "#facc15",
-        Sales: "#ef4444"
+        Sales: "#3b82f6",
+        Operations: "#e36414"
     }
 
     // Build the conic-gradient string from data
@@ -30,7 +31,7 @@ const PieChart = ({ employees = [] }) => {
     const gradient = `conic-gradient(${gradientParts.join(",")})`
 
     return (
-        <div className="ml-2 max-w-sm mx-auto bg-gradient-to-br from-slate-50 to-slate-100 border mt-2 shadow-md rounded-[21px] p-6">
+        <div className="ml-2 w-[33rem] mx-auto bg-gradient-to-br from-slate-50 to-slate-100 border mt-2 shadow-md rounded-[21px] p-6">
             <h2 className="text-xl font-bold text-gray-800 mb-6 text-center">DEPARTMENT PIE</h2>
 
             <div className="relative w-40 h-40 mx-auto mb-6">
