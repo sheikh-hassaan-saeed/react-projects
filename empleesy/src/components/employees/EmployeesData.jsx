@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import EmployeesModel from './EmployeesModel'
-import PieChart from '../dashboard/PieChart'
 
 const EmployeesData = () => {
     const [employees, setEmployees] = useState(() => {
@@ -53,7 +52,7 @@ const EmployeesData = () => {
         .filter((employee) => {
             return search.toLowerCase() === ''
                 ? employee
-                : employee.name.toLowerCase().includes(search.toLowerCase())
+                : employee.name.toLowerCase().includes(search.toLowerCase()) || employee.department.toLowerCase().includes(search.toLowerCase())
         })
 
     //Pagination Calculation

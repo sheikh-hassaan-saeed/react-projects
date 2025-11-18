@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'  // ← Make sure this is imported
+import { useNavigate } from 'react-router-dom'
 import { MdDashboard } from 'react-icons/md'
 import { FaUsers, FaMoneyBillWave, FaRegCalendarCheck } from 'react-icons/fa'
 
