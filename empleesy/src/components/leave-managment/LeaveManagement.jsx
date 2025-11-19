@@ -26,6 +26,14 @@ const LeaveManagementUI = () => {
         days: 0
     })
 
+    // Stats Data
+    const stats = {
+        total: leaveRequests.length,
+        pending: leaveRequests.filter(req => req.status === 'pending').length,
+        approved: leaveRequests.filter(req => req.status === 'approved').length,
+        rejected: leaveRequests.filter(req => req.status === 'rejected').length,
+    }
+
     const thisMonthLeaves = leaveRequests.filter(req => {
         const startDate = new Date(req.startDate)
         const currentMonth = new Date().getMonth()
@@ -37,13 +45,57 @@ const LeaveManagementUI = () => {
 
     const totalDaysThisMonth = thisMonthLeaves.reduce((sum, req) => sum + req.days, 0)
 
-    // Stats Data
-    const stats = {
-        total: leaveRequests.length,
-        pending: leaveRequests.filter(req => req.status === 'pending').length,
-        approved: leaveRequests.filter(req => req.status === 'approved').length,
-        rejected: leaveRequests.filter(req => req.status === 'rejected').length,
+    const approveRequest = (id) => {
+        setLeaveRequests(leaveRequests.map(req => {
+            req.id === id ? { ...req, status: 'approved' } : req
+        }))
     }
+
+    const rejectRequest = (id) => {
+        const confirmed = window.confirm("Are you sure you want to reject this leave request?")
+        if (confirmed) {
+            setLeaveRequests(leaveRequests.map(req => {
+                req.id === id ? { ...req, status: 'rejected' } : req
+            }))
+        }
+    }
+
+    const deleteRequest = () => {
+        const confirmed = window.confirm("Are you sure you want to delete this request?")
+        if (confirmed) {
+            setLeaveRequests(leaveRequests.filter(req => req.id !== id))
+        }
+    }
+
+    const calculateDays = (start, end) => {
+        if (!start || !end) return 0
+        const startDate = new Date(start)
+        const endDate = new Date(end)
+        const diffTime = Math.abs(endDate - startDate)
+        const diffDays = Math.ceil(diffTime / 1000 * 60 * 60 * 24) + 1
+        return diffDays
+    }
+
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target
+        if (name === 'startDate' || name === 'endDate') {
+            const updatedRequest = { ...newRequest, [name]: value }
+            const days = calculateDays(updatedRequest.startDate, updatedRequest.endDate)
+            setNewRequest({ ...updatedRequest, days })
+        }
+        else {
+            setNewRequest({ ...updatedRequest, [name]: value })
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (!newRequest.employeeName || !newRequest.employeeEmail || !newRequest.department)
+            alert("Please fill all the fields")
+        return
+    }
+
 
 
     return (
@@ -55,25 +107,25 @@ const LeaveManagementUI = () => {
 
                 <div className='bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-md border border-blue-200'>
                     <p className='text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1'>Total Leaves</p>
-                    <h3 className='text-3xl font-bold text-blue-900'>0</h3>
+                    <h3 className='text-3xl font-bold text-blue-900'>{stats.total}</h3>
                     <p className='text-xs text-blue-600 mt-2'>All requests</p>
                 </div>
 
                 <div className='bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg shadow-md border border-yellow-200'>
                     <p className='text-sm font-semibold text-yellow-600 uppercase tracking-wide mb-1'>Pending</p>
-                    <h3 className='text-3xl font-bold text-yellow-900'>0</h3>
+                    <h3 className='text-3xl font-bold text-yellow-900'>{stats.pending}</h3>
                     <p className='text-xs text-yellow-600 mt-2'>Awaiting approval</p>
                 </div>
 
                 <div className='bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg shadow-md border border-green-200'>
                     <p className='text-sm font-semibold text-green-600 uppercase tracking-wide mb-1'>Approved</p>
-                    <h3 className='text-3xl font-bold text-green-900'>0</h3>
+                    <h3 className='text-3xl font-bold text-green-900'>{stats.approved}</h3>
                     <p className='text-xs text-green-600 mt-2'>This month</p>
                 </div>
 
                 <div className='bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg shadow-md border border-red-200'>
                     <p className='text-sm font-semibold text-red-600 uppercase tracking-wide mb-1'>Rejected</p>
-                    <h3 className='text-3xl font-bold text-red-900'>0</h3>
+                    <h3 className='text-3xl font-bold text-red-900'>{stats.rejected}</h3>
                     <p className='text-xs text-red-600 mt-2'>All time</p>
                 </div>
             </div>
@@ -82,7 +134,9 @@ const LeaveManagementUI = () => {
             <div className='bg-white rounded-lg shadow-md mb-8 overflow-hidden'>
                 <div className='px-6 py-4 border-b border-gray-200 flex items-center justify-between'>
                     <h3 className='text-xl font-bold text-gray-800'>Leave Requests</h3>
-                    <button className='bg-blue-600 text-white px-4 py-2 rounded-[30px] text-sm font-medium shadow-md'>
+                    <button className='bg-blue-600 text-white px-4 py-2 rounded-[30px] text-sm font-medium shadow-md'
+                        onClick={() => setShowModal(true)}
+                    >
                         + New Request
                     </button>
                 </div>
@@ -125,7 +179,7 @@ const LeaveManagementUI = () => {
 
             {/* Modal */}
             <div className='hidden'>
-                <form className='bg-white p-6 rounded-lg max-w-lg w-full relative'>
+                <form className='bg-white p-6 rounded-lg max-w-lg w-full relative' onSubmit={handleSubmit}>
                     <h3 className='text-2xl font-bold mb-6 text-gray-800'>New Leave Request</h3>
 
                     <div className='space-y-4'>
@@ -137,6 +191,9 @@ const LeaveManagementUI = () => {
                                 type='text'
                                 className='w-full px-4 py-3 border rounded-lg'
                                 placeholder='John Doe'
+                                onChange={handleInputChange}
+                                name='employeeName'
+                                value={newRequest.employeeName}
                             />
                         </div>
 
@@ -148,6 +205,9 @@ const LeaveManagementUI = () => {
                                 type='email'
                                 className='w-full px-4 py-3 border rounded-lg'
                                 placeholder='john@example.com'
+                                onChange={handleInputChange}
+                                name='employeeEmail'
+                                value={newRequest.employeeEmail}
                             />
                         </div>
 
@@ -155,7 +215,11 @@ const LeaveManagementUI = () => {
                             <label className='block text-sm font-semibold text-gray-700 mb-2'>
                                 Department *
                             </label>
-                            <select className='w-full px-4 py-3 border rounded-lg'>
+                            <select className='w-full px-4 py-3 border rounded-lg'
+                                onChange={handleInputChange}
+                                name='employeeDept'
+                                value={newRequest.department}
+                            >
                                 <option>Select Department</option>
                                 <option>Engineering</option>
                                 <option>Marketing</option>
@@ -169,7 +233,11 @@ const LeaveManagementUI = () => {
                             <label className='block text-sm font-semibold text-gray-700 mb-2'>
                                 Leave Type *
                             </label>
-                            <select className='w-full px-4 py-3 border rounded-lg'>
+                            <select className='w-full px-4 py-3 border rounded-lg'
+                                onChange={handleInputChange}
+                                name='leaveType'
+                                value={newRequest.leaveType}
+                            >
                                 <option>Sick Leave</option>
                                 <option>Vacation</option>
                                 <option>Personal</option>
@@ -180,17 +248,34 @@ const LeaveManagementUI = () => {
                             <label className='block text-sm font-semibold text-gray-700 mb-2'>
                                 Start Date *
                             </label>
-                            <input type='date' className='w-full px-4 py-3 border rounded-lg' />
+                            <input type='date' className='w-full px-4 py-3 border rounded-lg'
+                                onChange={handleInputChange}
+                                name='startDate'
+                                value={newRequest.startDate}
+                            />
                         </div>
 
                         <div>
                             <label className='block text-sm font-semibold text-gray-700 mb-2'>
                                 End Date *
                             </label>
-                            <input type='date' className='w-full px-4 py-3 border rounded-lg' />
+                            <input type='date' className='w-full px-4 py-3 border rounded-lg'
+                                onChange={handleInputChange}
+                                name='endDate'
+                                value={newRequest.endDate}
+                            />
                         </div>
 
-                        <button className='bg-blue-600 text-white w-full py-3 rounded-lg'>
+                        <button className='bg-red-300 text-red-700 w-full py-3 rounded-lg'
+                            type='button'
+                            onClick={() => setShowModal(false)}
+                        >
+                            Cancel
+                        </button>
+
+                        <button className='bg-blue-300 text-blue-700 w-full py-3 rounded-lg'
+                            type='submit'
+                        >
                             Submit
                         </button>
                     </div>
