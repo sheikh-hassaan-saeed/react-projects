@@ -4,7 +4,7 @@ import Dashboard from './components/dashboard/Dashboard'
 import EmployeesData from './components/employees/EmployeesData'
 import Profile from './components/topbar-page/Profile'
 import { useState, useEffect } from 'react'
-import LeaveManagement from './components/leave-managment/LeaveManagement'
+import LeaveManagementUI from './components/leave-managment/LeaveManagement'
 function App() {
 
   const [employees, setEmployees] = useState(() => {
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard employees={employees} />} />
         <Route path="/employees" element={<EmployeesData employees={employees} setEmployees={setEmployees} />} />
-        <Route path='/leave' element={<LeaveManagement />} />
+        <Route path='/leave' element={<LeaveManagementUI />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Layout>
