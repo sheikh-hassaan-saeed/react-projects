@@ -1,6 +1,7 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = () => 'bg-gray-500', totalDaysThisMonth = 0 }) => {
 
-const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = (index) => 'bg-gray-500', totalDaysThisMonth = 0 }) => {
 
 
     return (
@@ -13,7 +14,6 @@ const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = (index) => 'bg-gr
                     </svg>
                     This Month Summary
                 </h3>
-
                 {thisMonthLeaves.length > 0 ? (
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                         {thisMonthLeaves.map((leave, index) => (
