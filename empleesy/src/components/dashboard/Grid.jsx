@@ -37,7 +37,7 @@ const Grid = ({ employees, leaveRequests = [] }) => {
                 <PieChart employees={employees} />
             </div>
 
-            <div className="mt-2 col-span-12 lg:col-span-6">
+            <div className="mt-2 md:col-span-6">
                 <LeaveSummary
                     thisMonthLeaves={thisMonthLeaves}
                     getAvatarColor={getAvatarColor}
