@@ -2,8 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = () => 'bg-gray-500', totalDaysThisMonth = 0 }) => {
 
-
-
     return (
         <>
             {/* SECTION 3: THIS MONTH SUMMARY */}

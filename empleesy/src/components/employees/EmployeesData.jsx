@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import EmployeesModel from './EmployeesModel'
-
-const EmployeesData = () => {
-    const [employees, setEmployees] = useState(() => {
-        const saved = localStorage.getItem('employees')
-        if (saved) {
-            return JSON.parse(saved)
-        }
-        return []
-    })
-
-    useEffect(() => {
-        localStorage.setItem('employees', JSON.stringify(employees))
-    }, [employees])
+import App from '../../App'
+const EmployeesData = ({ employees, setEmployees }) => {
 
     const removeEntry = (employeeID) => {
         setEmployees(employees.filter(emp => emp.id !== employeeID))

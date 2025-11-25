@@ -12,13 +12,12 @@ function App() {
     if (saved) {
       return JSON.parse(saved)
     }
-
+    return []
   })
+
   useEffect(() => {
-    localStorage.setItem('employeeData', employees)
+    localStorage.setItem('employees', JSON.stringify(employees))
   }, [employees])
-
-
 
   return (
     <Layout>
