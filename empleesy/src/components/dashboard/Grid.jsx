@@ -2,7 +2,7 @@ import React from 'react'
 import { StatCards } from './StatCards'
 import PieChart from './PieChart'
 import LeaveSummary from './LeaveSummary'
-
+import ExportCSVButton from './ExportCSVButton'
 const Grid = ({ employees, leaveRequests = [] }) => {
 
     // 🔥 CALCULATE THIS MONTH'S LEAVES
@@ -43,6 +43,10 @@ const Grid = ({ employees, leaveRequests = [] }) => {
                     getAvatarColor={getAvatarColor}
                     totalDaysThisMonth={totalDaysThisMonth}
                 />
+            </div>
+            <div className='md:col-span-12 '>
+                <ExportCSVButton EmployeesData={employees} />
+
             </div>
         </div>
     )
