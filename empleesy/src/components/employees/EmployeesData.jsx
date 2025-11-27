@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import EmployeesModel from './EmployeesModel'
-import App from '../../App'
 const EmployeesData = ({ employees, setEmployees }) => {
 
     const removeEntry = (employeeID) => {
@@ -72,7 +71,7 @@ const EmployeesData = ({ employees, setEmployees }) => {
 
     return (
         <div className='p-6'>
-            <h2 className='text-2xl font-bold mb-6 text-gray-800'>Current Employees</h2>
+            <h2 className='text-2xl font-bold mb-6 text-slate-800'>Current Employees</h2>
 
             <div className='flex justify-between mb-6'>
                 <input

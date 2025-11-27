@@ -5,14 +5,27 @@ import EmployeesData from './components/employees/EmployeesData'
 import Profile from './components/topbar-page/Profile'
 import { useState, useEffect } from 'react'
 import LeaveManagementUI from './components/leave-managment/LeaveManagement'
+import employeesInformation from '../src/data/employeesInfo'
+
 function App() {
 
   const [employees, setEmployees] = useState(() => {
     const saved = localStorage.getItem('employees')
+
+    console.log('Saved data:', saved) // Debug log
+    console.log('Imported data:', employeesInformation) // Debug log
+
     if (saved) {
       return JSON.parse(saved)
     }
-    return []
+
+    const employeesWithIds = employeesInformation.map((emp, index) => ({
+      id: Date.now() + index,
+      ...emp
+    }))
+
+    console.log('Employees with IDs:', employeesWithIds) // Debug log
+    return employeesWithIds
   })
 
   useEffect(() => {

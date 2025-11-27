@@ -2,20 +2,19 @@ import React from 'react'
 
 const PieChart = ({ employees = [] }) => {
 
-
     const departmentCount = employees.reduce((acc, emp) => {
         acc[emp.department] = (acc[emp.department] || 0) + 1
         return acc;
-    }, [])
-
+    }, {})  // ✅ Changed from [] to {}
 
     // Example colors for each dept
     const colors = {
         Engineering: "#ef4444",
         Marketing: "#10b981",
-        HR: "#facc15",
+        "Human Resources": "#facc15",  // ✅ Added quotes for "Human Resources"
         Sales: "#3b82f6",
-        Operations: "#e36414"
+        Operations: "#e36414",
+        Finance: "#8b5cf6"  // ✅ Added Finance color
     }
 
     // Build the conic-gradient string from data
@@ -31,7 +30,7 @@ const PieChart = ({ employees = [] }) => {
     const gradient = `conic-gradient(${gradientParts.join(",")})`
 
     return (
-        <div className="ml-2 w-[33rem] mx-auto bg-gradient-to-br from-slate-50 to-slate-100 border mt-2 shadow-md rounded-[21px] p-6">
+        <div className="ml-2 w-[38rem] h-[23rem] mx-auto bg-gradient-to-br from-slate-50 to-slate-100 border mt-2 shadow-md rounded-[21px] p-6">
             <h2 className="text-xl font-bold text-gray-800 mb-6 text-center">DEPARTMENT PIE</h2>
 
             <div className="relative w-40 h-40 mx-auto mb-6">
@@ -47,7 +46,7 @@ const PieChart = ({ employees = [] }) => {
 
             <div className="flex justify-around text-gray-700 font-semibold text-sm">
                 {Object.entries(departmentCount).map(([dept, count]) => (
-                    <div className="flex flex-col items-center" key={dept}>
+                    <div className="flex flex-col items-center mt-8" key={dept}>
                         <span style={{ color: colors[dept] }}>●</span>
                         <span>{dept}: {count}</span>
                     </div>

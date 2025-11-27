@@ -12,7 +12,7 @@ const Dashboard = ({ employees }) => {
         localStorage.setItem('leaveRequests', JSON.stringify(leaveRequests))
     }, [leaveRequests])
     return (
-        <div className='bg-white rounded-lg pb-4 shadow  h-[220vh]'>
+        <div className='bg-white rounded-lg pb-4 shadow  h-[110vh]'>
             <TopBar />
             <Grid employees={employees} leaveRequests={leaveRequests} />
         </div >
