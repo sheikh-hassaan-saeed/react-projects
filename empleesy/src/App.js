@@ -29,7 +29,12 @@ function App() {
   })
 
   useEffect(() => {
+    alert("It is recommended to open this on a desktop/laptop as it will cause responsive issues on mobile screens")
+
+  }, [])
+  useEffect(() => {
     localStorage.setItem('employees', JSON.stringify(employees))
+
   }, [employees])
 
   return (

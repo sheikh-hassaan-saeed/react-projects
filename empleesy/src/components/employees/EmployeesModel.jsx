@@ -24,7 +24,7 @@ const EmployeesModel = ({ isOpen, onClose, employeeData, onSave }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         onSave(formData) // Send form data to parent
-        onClose()        // Close modal
+        onClose()
     }
 
 
@@ -85,7 +85,7 @@ const EmployeesModel = ({ isOpen, onClose, employeeData, onSave }) => {
                                     onChange={(e) =>
                                         setFormData({
                                             ...formData,
-                                            salary: e.target.value.replace(/,/g, ""), // remove commas for state
+                                            salary: e.target.value.replace(/,/g, ""),
                                         })
                                     }
                                     className="w-full pl-8 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all"

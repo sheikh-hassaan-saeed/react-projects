@@ -222,7 +222,6 @@ const LeaveManagementUI = () => {
                 Leave Management
             </motion.h2>
 
-            {/* SECTION 1: LEAVE SUMMARY CARDS */}
             <motion.div
                 className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8'
                 variants={containerVariants}
@@ -344,7 +343,7 @@ const LeaveManagementUI = () => {
                 </motion.div>
             </motion.div>
 
-            {/* SECTION 2: LEAVE REQUESTS TABLE */}
+            {/* LEAVE REQUESTS TABLE */}
             <motion.div
                 className='bg-white rounded-lg shadow-md mb-8 overflow-hidden'
                 variants={tableVariants}

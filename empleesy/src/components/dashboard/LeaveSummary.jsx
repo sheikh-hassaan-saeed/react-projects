@@ -20,7 +20,7 @@ const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = () => 'bg-gray-50
                                 className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200"
                             >
                                 <div className="flex items-center justify-between gap-3">
-                                    {/* Avatar */}
+                                    {/* Avatar Style */}
                                     <div
                                         className={`w-12 h-12 rounded-full ${getAvatarColor(
                                             index

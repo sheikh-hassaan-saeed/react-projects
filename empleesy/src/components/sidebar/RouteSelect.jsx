@@ -14,7 +14,7 @@ const RouteSelect = () => {
     ];
 
     const handleClick = (index, path) => {
-        console.log("🔥 Clicked:", path);
+        console.log("Clicked:", path);
         setActiveIndex(index);
         navigate(path);
     };

@@ -84,7 +84,7 @@ const Card = ({ title, value, pillText, trend, period, icon, progress }) => {
     )
 }
 
-// Modern Icon Components
+// Icon Components
 const UserPlusIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="9" cy="7" r="4" strokeLinecap="round" />

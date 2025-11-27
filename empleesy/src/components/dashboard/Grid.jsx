@@ -5,7 +5,7 @@ import LeaveSummary from './LeaveSummary'
 import ExportCSVButton from './ExportCSVButton'
 const Grid = ({ employees, leaveRequests = [] }) => {
 
-    // 🔥 CALCULATE THIS MONTH'S LEAVES
+    // CALCULATE THIS MONTH'S LEAVES
     const thisMonthLeaves = leaveRequests.filter(req => {
         const startDate = new Date(req.startDate)
         const currentMonth = new Date().getMonth()
@@ -15,10 +15,10 @@ const Grid = ({ employees, leaveRequests = [] }) => {
             startDate.getFullYear() === currentYear
     })
 
-    // 🔥 CALCULATE TOTAL DAYS
+    // CALCULATE TOTAL DAYS
     const totalDaysThisMonth = thisMonthLeaves.reduce((sum, req) => sum + req.days, 0)
 
-    // 🔥 AVATAR COLOR FUNCTION
+    // AVATAR COLOR FUNCTION
     const getAvatarColor = (index) => {
         const colors = ['bg-blue-500', 'bg-green-500', 'bg-orange-500', 'bg-pink-500', 'bg-purple-500', 'bg-red-500']
         return colors[index % colors.length]

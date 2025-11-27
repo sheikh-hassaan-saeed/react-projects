@@ -6,7 +6,7 @@ import ProfileModel from './ProfileModel'
 const Profile = () => {
     const [showModel, setShowModel] = useState(false)
 
-    // 🔥 STEP 1: Create state for profile data
+    // state for profile data
     const [profileData, setProfileData] = useState(() => {
         const saved = localStorage.getItem('profile')
         if (saved) return JSON.parse(saved)
@@ -25,7 +25,7 @@ const Profile = () => {
         localStorage.setItem('profile', JSON.stringify(profileData))
     }, [profileData])
 
-    // 🔥 STEP 3: Function to update profile
+    // Function to update profile
     const handleSaveProfile = (newData) => {
         setProfileData({ ...profileData, ...newData })
         setShowModel(false)
@@ -117,7 +117,6 @@ const Profile = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        {/* 🔥 STEP 4: Display data from state */}
                         <h2 className='text-2xl font-semibold text-gray-800'>{profileData.name}</h2>
                         <p className='text-gray-600'>{profileData.role}</p>
                     </motion.div>
@@ -184,7 +183,7 @@ const Profile = () => {
                     </tbody>
                 </motion.table>
 
-                {/* 🔥 STEP 2: Pass data and save function to modal */}
+
                 <ProfileModel
                     isOpen={showModel}
                     onClose={() => setShowModel(false)}

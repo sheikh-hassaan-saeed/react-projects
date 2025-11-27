@@ -249,7 +249,7 @@ const EmployeesData = ({ employees, setEmployees }) => {
                 </table>
             </motion.div>
 
-            {/* 🔥 PAGINATION CONTROLS */}
+            {/* PAGINATION CONTROLS */}
             {filteredAndSortedEmployees.length > 0 && (
                 <motion.div
                     className='mt-6 flex items-center justify-between bg-white px-6 py-4 rounded-lg shadow'

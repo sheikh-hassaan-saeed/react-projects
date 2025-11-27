@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const ProfileModel = ({ isOpen, onClose, profileData, onSave }) => {
-    // 🔥 Initialize with current profile data
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -10,7 +10,6 @@ const ProfileModel = ({ isOpen, onClose, profileData, onSave }) => {
         joinDate: ""
     })
 
-    // 🔥 Pre-fill form when modal opens
     useEffect(() => {
         if (profileData) {
             setFormData({
@@ -25,7 +24,6 @@ const ProfileModel = ({ isOpen, onClose, profileData, onSave }) => {
 
     if (!isOpen) return null
 
-    // 🔥 Handle input changes correctly
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData({
@@ -34,7 +32,6 @@ const ProfileModel = ({ isOpen, onClose, profileData, onSave }) => {
         })
     }
 
-    // 🔥 Submit updates
     function handleSubmit(e) {
         e.preventDefault()
         onSave(formData)  // Send data to parent

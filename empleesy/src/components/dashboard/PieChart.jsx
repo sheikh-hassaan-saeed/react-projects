@@ -5,19 +5,17 @@ const PieChart = ({ employees = [] }) => {
     const departmentCount = employees.reduce((acc, emp) => {
         acc[emp.department] = (acc[emp.department] || 0) + 1
         return acc;
-    }, {})  // ✅ Changed from [] to {}
+    }, {})
 
-    // Example colors for each dept
     const colors = {
         Engineering: "#ef4444",
         Marketing: "#10b981",
-        "Human Resources": "#facc15",  // ✅ Added quotes for "Human Resources"
+        "Human Resources": "#facc15",
         Sales: "#3b82f6",
         Operations: "#e36414",
-        Finance: "#8b5cf6"  // ✅ Added Finance color
+        Finance: "#8b5cf6"
     }
 
-    // Build the conic-gradient string from data
     let start = 0
     const gradientParts = Object.entries(departmentCount).map(([dept, count]) => {
         const percent = (count / employees.length) * 100
