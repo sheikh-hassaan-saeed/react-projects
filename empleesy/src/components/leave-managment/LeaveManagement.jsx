@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import LeaveSummary from '../dashboard/LeaveSummary';
+
 const LeaveManagementUI = () => {
 
     const [leaveRequests, setLeaveRequests] = useState(() => {
@@ -75,10 +77,6 @@ const LeaveManagementUI = () => {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1
         return diffDays
     }
-    // Add this right after your stats calculation
-    console.log('leaveRequests:', leaveRequests)
-    console.log('thisMonthLeaves:', thisMonthLeaves)
-    console.log('totalDaysThisMonth:', totalDaysThisMonth)
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
@@ -99,7 +97,6 @@ const LeaveManagementUI = () => {
             return
         }
 
-
         const initials = newRequest.employeeName
             .split(' ')
             .map(n => n[0])
@@ -118,7 +115,6 @@ const LeaveManagementUI = () => {
         setShowModal(false)
 
         setNewRequest({
-
             employeeName: '',
             employeeEmail: '',
             department: '',
@@ -126,10 +122,8 @@ const LeaveManagementUI = () => {
             startDate: '',
             endDate: '',
             days: 0
-
         })
     }
-
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -159,22 +153,99 @@ const LeaveManagementUI = () => {
         return colors[index % colors.length]
     }
 
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    }
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.4 }
+        }
+    }
+
+    const tableVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.4, delay: 0.3 }
+        }
+    }
+
+    const rowVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 },
+        exit: { opacity: 0, x: 20, transition: { duration: 0.2 } }
+    }
+
+    const modalVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { type: 'spring', duration: 0.5 }
+        },
+        exit: {
+            opacity: 0,
+            scale: 0.8,
+            transition: { duration: 0.3 }
+        }
+    }
+
+    const modalBackdropVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+        exit: { opacity: 0 }
+    }
 
     return (
-        <div className='p-6'>
-            <h2 className='text-2xl font-bold mb-6 text-gray-800'>Leave Management</h2>
+        <motion.div
+            className='p-6'
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+        >
+            <motion.h2
+                className='text-2xl font-bold mb-6 text-gray-800'
+                variants={cardVariants}
+            >
+                Leave Management
+            </motion.h2>
 
             {/* SECTION 1: LEAVE SUMMARY CARDS */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8'>
-
+            <motion.div
+                className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8'
+                variants={containerVariants}
+            >
                 {/* Total Leaves Card */}
-                <div className='bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-md border border-blue-200'>
+                <motion.div
+                    className='bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-md border border-blue-200'
+                    variants={cardVariants}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                >
                     <div className='flex items-center justify-between'>
                         <div>
                             <p className='text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1'>
                                 Total Leaves
                             </p>
-                            <h3 className='text-3xl font-bold text-blue-900'>{stats.total}</h3>
+                            <motion.h3
+                                className='text-3xl font-bold text-blue-900'
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: 'spring', delay: 0.2 }}
+                            >
+                                {stats.total}
+                            </motion.h3>
                         </div>
                         <div className='bg-blue-500 p-3 rounded-full'>
                             <svg className='w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -183,16 +254,27 @@ const LeaveManagementUI = () => {
                         </div>
                     </div>
                     <p className='text-xs text-blue-600 mt-2'>All requests</p>
-                </div>
+                </motion.div>
 
                 {/* Pending Requests Card */}
-                <div className='bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg shadow-md border border-yellow-200'>
+                <motion.div
+                    className='bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg shadow-md border border-yellow-200'
+                    variants={cardVariants}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                >
                     <div className='flex items-center justify-between'>
                         <div>
                             <p className='text-sm font-semibold text-yellow-600 uppercase tracking-wide mb-1'>
                                 Pending
                             </p>
-                            <h3 className='text-3xl font-bold text-yellow-900'>{stats.pending}</h3>
+                            <motion.h3
+                                className='text-3xl font-bold text-yellow-900'
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: 'spring', delay: 0.3 }}
+                            >
+                                {stats.pending}
+                            </motion.h3>
                         </div>
                         <div className='bg-yellow-500 p-3 rounded-full'>
                             <svg className='w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -201,16 +283,27 @@ const LeaveManagementUI = () => {
                         </div>
                     </div>
                     <p className='text-xs text-yellow-600 mt-2'>Awaiting approval</p>
-                </div>
+                </motion.div>
 
                 {/* Approved Requests Card */}
-                <div className='bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg shadow-md border border-green-200'>
+                <motion.div
+                    className='bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg shadow-md border border-green-200'
+                    variants={cardVariants}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                >
                     <div className='flex items-center justify-between'>
                         <div>
                             <p className='text-sm font-semibold text-green-600 uppercase tracking-wide mb-1'>
                                 Approved
                             </p>
-                            <h3 className='text-3xl font-bold text-green-900'>{stats.approved}</h3>
+                            <motion.h3
+                                className='text-3xl font-bold text-green-900'
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: 'spring', delay: 0.4 }}
+                            >
+                                {stats.approved}
+                            </motion.h3>
                         </div>
                         <div className='bg-green-500 p-3 rounded-full'>
                             <svg className='w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -219,16 +312,27 @@ const LeaveManagementUI = () => {
                         </div>
                     </div>
                     <p className='text-xs text-green-600 mt-2'>This month</p>
-                </div>
+                </motion.div>
 
                 {/* Rejected Requests Card */}
-                <div className='bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg shadow-md border border-red-200'>
+                <motion.div
+                    className='bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg shadow-md border border-red-200'
+                    variants={cardVariants}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                >
                     <div className='flex items-center justify-between'>
                         <div>
                             <p className='text-sm font-semibold text-red-600 uppercase tracking-wide mb-1'>
                                 Rejected
                             </p>
-                            <h3 className='text-3xl font-bold text-red-900'>{stats.rejected}</h3>
+                            <motion.h3
+                                className='text-3xl font-bold text-red-900'
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: 'spring', delay: 0.5 }}
+                            >
+                                {stats.rejected}
+                            </motion.h3>
                         </div>
                         <div className='bg-red-500 p-3 rounded-full'>
                             <svg className='w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -237,19 +341,24 @@ const LeaveManagementUI = () => {
                         </div>
                     </div>
                     <p className='text-xs text-red-600 mt-2'>All time</p>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
             {/* SECTION 2: LEAVE REQUESTS TABLE */}
-            <div className='bg-white rounded-lg shadow-md mb-8 overflow-hidden'>
+            <motion.div
+                className='bg-white rounded-lg shadow-md mb-8 overflow-hidden'
+                variants={tableVariants}
+            >
                 <div className='px-6 py-4 border-b border-gray-200 flex items-center justify-between'>
                     <h3 className='text-xl font-bold text-gray-800'>Leave Requests</h3>
-                    <button
+                    <motion.button
                         onClick={() => setShowModal(true)}
                         className='bg-blue-600 text-white px-4 py-2 rounded-[30px] hover:bg-blue-700 transition-colors text-sm font-medium shadow-md'
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         + New Request
-                    </button>
+                    </motion.button>
                 </div>
 
                 <div className='overflow-x-auto'>
@@ -280,236 +389,287 @@ const LeaveManagementUI = () => {
                             </tr>
                         </thead>
                         <tbody className='divide-y divide-gray-200'>
-                            {leaveRequests.length > 0 ? (
-                                leaveRequests.map((request, index) => (
-                                    <tr key={request.id} className='hover:bg-gray-50 transition-colors'>
-                                        <td className='px-6 py-4'>
-                                            <div className='flex items-center'>
-                                                <div className={`w-10 h-10 rounded-full ${getAvatarColor(index)} flex items-center justify-center text-white font-bold`}>
-                                                    {request.employeeInitials}
-                                                </div>
-                                                <div className='ml-3'>
-                                                    <p className='text-sm font-medium text-gray-900'>{request.employeeName}</p>
-                                                    <p className='text-xs text-gray-500'>{request.employeeEmail}</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td className='px-6 py-4'>
-                                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getLeaveTypeColor(request.leaveType)}`}>
-                                                {request.leaveType}
-                                            </span>
-                                        </td>
-                                        <td className='px-6 py-4 text-sm text-gray-900'>
-                                            {formatDate(request.startDate)}
-                                        </td>
-                                        <td className='px-6 py-4 text-sm text-gray-900'>
-                                            {formatDate(request.endDate)}
-                                        </td>
-                                        <td className='px-6 py-4 text-sm font-semibold text-gray-900'>
-                                            {request.days} days
-                                        </td>
-                                        <td className='px-6 py-4'>
-                                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(request.status)}`}>
-                                                {request.status === 'approved' && '✓ Approved'}
-                                                {request.status === 'pending' && '⏳ Pending'}
-                                                {request.status === 'rejected' && '✗ Rejected'}
-                                            </span>
-                                        </td>
-                                        <td className='px-6 py-4'>
-                                            {request.status === 'pending' ? (
-                                                <div className='flex gap-2'>
-                                                    <button
-                                                        onClick={() => approveRequest(request.id)}
-                                                        className='bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-600 text-xs font-medium transition-colors'
+                            <AnimatePresence mode='popLayout'>
+                                {leaveRequests.length > 0 ? (
+                                    leaveRequests.map((request, index) => (
+                                        <motion.tr
+                                            key={request.id}
+                                            className='hover:bg-gray-50 transition-colors'
+                                            variants={rowVariants}
+                                            initial="hidden"
+                                            animate="visible"
+                                            exit="exit"
+                                            layout
+                                            transition={{ duration: 0.3 }}
+                                        >
+                                            <td className='px-6 py-4'>
+                                                <div className='flex items-center'>
+                                                    <motion.div
+                                                        className={`w-10 h-10 rounded-full ${getAvatarColor(index)} flex items-center justify-center text-white font-bold`}
+                                                        initial={{ scale: 0 }}
+                                                        animate={{ scale: 1 }}
+                                                        transition={{ type: 'spring', delay: 0.1 }}
                                                     >
-                                                        ✓ Approve
-                                                    </button>
-                                                    <button
-                                                        onClick={() => rejectRequest(request.id)}
-                                                        className='bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 text-xs font-medium transition-colors'
-                                                    >
-                                                        ✗ Reject
-                                                    </button>
+                                                        {request.employeeInitials}
+                                                    </motion.div>
+                                                    <div className='ml-3'>
+                                                        <p className='text-sm font-medium text-gray-900'>{request.employeeName}</p>
+                                                        <p className='text-xs text-gray-500'>{request.employeeEmail}</p>
+                                                    </div>
                                                 </div>
-                                            ) : (
-                                                <button
-                                                    onClick={() => deleteRequest(request.id)}
-                                                    className='text-red-600 hover:text-red-800 text-sm font-medium'
-                                                >
-                                                    Delete
-                                                </button>
-                                            )}
+                                            </td>
+                                            <td className='px-6 py-4'>
+                                                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getLeaveTypeColor(request.leaveType)}`}>
+                                                    {request.leaveType}
+                                                </span>
+                                            </td>
+                                            <td className='px-6 py-4 text-sm text-gray-900'>
+                                                {formatDate(request.startDate)}
+                                            </td>
+                                            <td className='px-6 py-4 text-sm text-gray-900'>
+                                                {formatDate(request.endDate)}
+                                            </td>
+                                            <td className='px-6 py-4 text-sm font-semibold text-gray-900'>
+                                                {request.days} days
+                                            </td>
+                                            <td className='px-6 py-4'>
+                                                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(request.status)}`}>
+                                                    {request.status === 'approved' && '✓ Approved'}
+                                                    {request.status === 'pending' && '⏳ Pending'}
+                                                    {request.status === 'rejected' && '✗ Rejected'}
+                                                </span>
+                                            </td>
+                                            <td className='px-6 py-4'>
+                                                {request.status === 'pending' ? (
+                                                    <div className='flex gap-2'>
+                                                        <motion.button
+                                                            onClick={() => approveRequest(request.id)}
+                                                            className='bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-600 text-xs font-medium transition-colors'
+                                                            whileHover={{ scale: 1.05 }}
+                                                            whileTap={{ scale: 0.95 }}
+                                                        >
+                                                            ✓ Approve
+                                                        </motion.button>
+                                                        <motion.button
+                                                            onClick={() => rejectRequest(request.id)}
+                                                            className='bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 text-xs font-medium transition-colors'
+                                                            whileHover={{ scale: 1.05 }}
+                                                            whileTap={{ scale: 0.95 }}
+                                                        >
+                                                            ✗ Reject
+                                                        </motion.button>
+                                                    </div>
+                                                ) : (
+                                                    <motion.button
+                                                        onClick={() => deleteRequest(request.id)}
+                                                        className='text-red-600 hover:text-red-800 text-sm font-medium'
+                                                        whileHover={{ scale: 1.05 }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                    >
+                                                        Delete
+                                                    </motion.button>
+                                                )}
+                                            </td>
+                                        </motion.tr>
+                                    ))
+                                ) : (
+                                    <motion.tr
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        <td colSpan="7" className="px-6 py-8 text-center text-gray-500">
+                                            No leave requests yet. Add your first request!
                                         </td>
-                                    </tr>
-                                ))
-                            ) : (
-                                <tr>
-                                    <td colSpan="7" className="px-6 py-8 text-center text-gray-500">
-                                        No leave requests yet. Add your first request!
-                                    </td>
-                                </tr>
-                            )}
+                                    </motion.tr>
+                                )}
+                            </AnimatePresence>
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </motion.div>
 
             <LeaveSummary
                 thisMonthLeaves={thisMonthLeaves}
                 getAvatarColor={getAvatarColor}
                 totalDaysThisMonth={totalDaysThisMonth}
-
             />
 
             {/* MODAL: NEW LEAVE REQUEST */}
-            {showModal && (
-                <div className='fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50' onClick={() => setShowModal(false)}>
-                    <form
-                        className='bg-white p-6 rounded-lg max-w-lg w-full relative'
-                        onClick={(e) => e.stopPropagation()}
-                        onSubmit={handleSubmit}
+            <AnimatePresence>
+                {showModal && (
+                    <motion.div
+                        className='fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50'
+                        onClick={() => setShowModal(false)}
+                        variants={modalBackdropVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
                     >
-                        <button
-                            type='button'
-                            className='absolute top-3 right-3 text-red-700 text-2xl hover:text-black'
-                            onClick={() => setShowModal(false)}
+                        <motion.form
+                            className='bg-white p-6 rounded-lg max-w-lg w-full relative'
+                            onClick={(e) => e.stopPropagation()}
+                            onSubmit={handleSubmit}
+                            variants={modalVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
                         >
-                            ×
-                        </button>
-
-                        <h3 className='text-2xl font-bold mb-6 text-gray-800'>New Leave Request</h3>
-
-                        <div className='space-y-4'>
-                            {/* Employee Name */}
-                            <div>
-                                <label className='block text-sm font-semibold text-gray-700 mb-2'>
-                                    Employee Name <span className='text-red-500'>*</span>
-                                </label>
-                                <input
-                                    type='text'
-                                    name='employeeName'
-                                    value={newRequest.employeeName}
-                                    onChange={handleInputChange}
-                                    className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
-                                    placeholder='John Doe'
-                                    required
-                                />
-                            </div>
-
-                            {/* Employee Email */}
-                            <div>
-                                <label className='block text-sm font-semibold text-gray-700 mb-2'>
-                                    Employee Email <span className='text-red-500'>*</span>
-                                </label>
-                                <input
-                                    type='email'
-                                    name='employeeEmail'
-                                    value={newRequest.employeeEmail}
-                                    onChange={handleInputChange}
-                                    className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
-                                    placeholder='john@example.com'
-                                    required
-                                />
-                            </div>
-
-                            {/* Department */}
-                            <div>
-                                <label className='block text-sm font-semibold text-gray-700 mb-2'>
-                                    Department <span className='text-red-500'>*</span>
-                                </label>
-                                <select
-                                    name='department'
-                                    value={newRequest.department}
-                                    onChange={handleInputChange}
-                                    className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
-                                    required
-                                >
-                                    <option value=''>Select Department</option>
-                                    <option value='Engineering'>Engineering</option>
-                                    <option value='Marketing'>Marketing</option>
-                                    <option value='HR'>HR</option>
-                                    <option value='Sales'>Sales</option>
-                                    <option value='Finance'>Finance</option>
-                                </select>
-                            </div>
-
-                            {/* Leave Type */}
-                            <div>
-                                <label className='block text-sm font-semibold text-gray-700 mb-2'>
-                                    Leave Type <span className='text-red-500'>*</span>
-                                </label>
-                                <select
-                                    name='leaveType'
-                                    value={newRequest.leaveType}
-                                    onChange={handleInputChange}
-                                    className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
-                                >
-                                    <option value='Sick Leave'>Sick Leave</option>
-                                    <option value='Vacation'>Vacation</option>
-                                    <option value='Personal'>Personal</option>
-                                </select>
-                            </div>
-
-                            {/* Start Date */}
-                            <div>
-                                <label className='block text-sm font-semibold text-gray-700 mb-2'>
-                                    Start Date <span className='text-red-500'>*</span>
-                                </label>
-                                <input
-                                    type='date'
-                                    name='startDate'
-                                    value={newRequest.startDate}
-                                    onChange={handleInputChange}
-                                    className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
-                                    required
-                                />
-                            </div>
-
-                            {/* End Date */}
-                            <div>
-                                <label className='block text-sm font-semibold text-gray-700 mb-2'>
-                                    End Date <span className='text-red-500'>*</span>
-                                </label>
-                                <input
-                                    type='date'
-                                    name='endDate'
-                                    value={newRequest.endDate}
-                                    onChange={handleInputChange}
-                                    className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
-                                    required
-                                />
-                            </div>
-
-                            {/* Days (Auto-calculated) */}
-                            {newRequest.days > 0 && (
-                                <div className='bg-blue-50 p-3 rounded-lg'>
-                                    <p className='text-sm text-blue-700'>
-                                        <strong>Total Days:</strong> {newRequest.days} days
-                                    </p>
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Buttons */}
-                        <div className='flex gap-3 mt-6'>
-                            <button
+                            <motion.button
                                 type='button'
-                                className='flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-[30px] hover:bg-gray-50 transition-colors font-semibold'
+                                className='absolute top-3 right-3 text-red-700 text-2xl hover:text-black'
                                 onClick={() => setShowModal(false)}
+                                whileHover={{ scale: 1.2, rotate: 90 }}
+                                whileTap={{ scale: 0.9 }}
                             >
-                                Cancel
-                            </button>
-                            <button
-                                type='submit'
-                                className='flex-1 px-6 py-3 bg-blue-600 text-white rounded-[30px] hover:bg-blue-700 transition-colors font-semibold shadow-lg'
-                            >
-                                Submit Request
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            )}
-        </div>
+                                ×
+                            </motion.button>
+
+                            <h3 className='text-2xl font-bold mb-6 text-gray-800'>New Leave Request</h3>
+
+                            <div className='space-y-4'>
+                                {/* Employee Name */}
+                                <div>
+                                    <label className='block text-sm font-semibold text-gray-700 mb-2'>
+                                        Employee Name <span className='text-red-500'>*</span>
+                                    </label>
+                                    <input
+                                        type='text'
+                                        name='employeeName'
+                                        value={newRequest.employeeName}
+                                        onChange={handleInputChange}
+                                        className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
+                                        placeholder='John Doe'
+                                        required
+                                    />
+                                </div>
+
+                                {/* Employee Email */}
+                                <div>
+                                    <label className='block text-sm font-semibold text-gray-700 mb-2'>
+                                        Employee Email <span className='text-red-500'>*</span>
+                                    </label>
+                                    <input
+                                        type='email'
+                                        name='employeeEmail'
+                                        value={newRequest.employeeEmail}
+                                        onChange={handleInputChange}
+                                        className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
+                                        placeholder='john@example.com'
+                                        required
+                                    />
+                                </div>
+
+                                {/* Department */}
+                                <div>
+                                    <label className='block text-sm font-semibold text-gray-700 mb-2'>
+                                        Department <span className='text-red-500'>*</span>
+                                    </label>
+                                    <select
+                                        name='department'
+                                        value={newRequest.department}
+                                        onChange={handleInputChange}
+                                        className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
+                                        required
+                                    >
+                                        <option value=''>Select Department</option>
+                                        <option value='Engineering'>Engineering</option>
+                                        <option value='Marketing'>Marketing</option>
+                                        <option value='HR'>HR</option>
+                                        <option value='Sales'>Sales</option>
+                                        <option value='Finance'>Finance</option>
+                                    </select>
+                                </div>
+
+                                {/* Leave Type */}
+                                <div>
+                                    <label className='block text-sm font-semibold text-gray-700 mb-2'>
+                                        Leave Type <span className='text-red-500'>*</span>
+                                    </label>
+                                    <select
+                                        name='leaveType'
+                                        value={newRequest.leaveType}
+                                        onChange={handleInputChange}
+                                        className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
+                                    >
+                                        <option value='Sick Leave'>Sick Leave</option>
+                                        <option value='Vacation'>Vacation</option>
+                                        <option value='Personal'>Personal</option>
+                                    </select>
+                                </div>
+
+                                {/* Start Date */}
+                                <div>
+                                    <label className='block text-sm font-semibold text-gray-700 mb-2'>
+                                        Start Date <span className='text-red-500'>*</span>
+                                    </label>
+                                    <input
+                                        type='date'
+                                        name='startDate'
+                                        value={newRequest.startDate}
+                                        onChange={handleInputChange}
+                                        className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
+                                        required
+                                    />
+                                </div>
+
+                                {/* End Date */}
+                                <div>
+                                    <label className='block text-sm font-semibold text-gray-700 mb-2'>
+                                        End Date <span className='text-red-500'>*</span>
+                                    </label>
+                                    <input
+                                        type='date'
+                                        name='endDate'
+                                        value={newRequest.endDate}
+                                        onChange={handleInputChange}
+                                        className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
+                                        required
+                                    />
+                                </div>
+
+                                {/* Days (Auto-calculated) */}
+                                <AnimatePresence>
+                                    {newRequest.days > 0 && (
+                                        <motion.div
+                                            className='bg-blue-50 p-3 rounded-lg'
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                        >
+                                            <p className='text-sm text-blue-700'>
+                                                <strong>Total Days:</strong> {newRequest.days} days
+                                            </p>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            {/* Buttons */}
+                            <div className='flex gap-3 mt-6'>
+                                <motion.button
+                                    type='button'
+                                    className='flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-[30px] hover:bg-gray-50 transition-colors font-semibold'
+                                    onClick={() => setShowModal(false)}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    Cancel
+                                </motion.button>
+                                <motion.button
+                                    type='submit'
+                                    className='flex-1 px-6 py-3 bg-blue-600 text-white rounded-[30px] hover:bg-blue-700 transition-colors font-semibold shadow-lg'
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    Submit Request
+                                </motion.button>
+                            </div>
+                        </motion.form>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
     )
 };
 

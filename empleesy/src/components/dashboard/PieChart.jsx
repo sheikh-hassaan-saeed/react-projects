@@ -30,7 +30,7 @@ const PieChart = ({ employees = [] }) => {
     const gradient = `conic-gradient(${gradientParts.join(",")})`
 
     return (
-        <div className="ml-2 w-[38rem] h-[23rem] mx-auto bg-gradient-to-br from-slate-50 to-slate-100 border mt-2 shadow-md rounded-[21px] p-6">
+        <div className="ml-2 w-full h-[23rem] mx-auto bg-gradient-to-br from-slate-50 to-slate-100 border mt-2 shadow-md rounded-[21px] p-6">
             <h2 className="text-xl font-bold text-gray-800 mb-6 text-center">DEPARTMENT PIE</h2>
 
             <div className="relative w-40 h-40 mx-auto mb-6">
