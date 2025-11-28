@@ -2,6 +2,7 @@
     height: 340px;
     width: 310px;
     border-radius: 2rem;
+    object-fit: cover;
 }
 
 .main-container {

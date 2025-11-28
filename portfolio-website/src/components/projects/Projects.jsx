@@ -3,7 +3,7 @@ import './Projects.css'
 import project1 from '../../assets/docx.jpg'
 import project3 from '../../assets/project-3.png'
 import mechanic from '../../assets/logo.png'
-
+import empleesy from '../../assets/empleesy-pic.png'
 const Projects = () => {
     return (
         <section id='projects'>
@@ -35,11 +35,12 @@ const Projects = () => {
                     </div>
 
                     <div className="projects-container" id='thirdproject'>
-                        <img src={project3} alt="Empleesy project coming soon" />
-                        <h2>Empleesy (Coming Soon!)</h2>
+                        <img src={empleesy} alt="Empleesy project coming soon" />
+                        <h2>Empleesy</h2>
+                        <p>A complete employee management dashboard</p>
                         <div className="buttons">
-                            <button className='project-btn1'>Github</button>
-                            <button className='project-btn2'>Live Demo</button>
+                            <button className='project-btn1'><a href='https://github.com/sheikh-hassaan-saeed/react-projects/tree/main/empleesy' target='_blank' rel="noreferrer">Github</a></button>
+                            <button className='project-btn2'><a href='https://react-projects-sigma-eight.vercel.app/' target='_blank' rel="noreferrer">Live Demo</a></button>
                         </div>
                     </div>
 
