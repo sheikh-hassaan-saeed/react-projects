@@ -17,7 +17,7 @@ const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = () => 'bg-gray-50
                         {thisMonthLeaves.map((leave, index) => (
                             <div
                                 key={leave.id}
-                                className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200"
+                                className="bg-[#1B263B] p-4 rounded-[21px] border border-blue-200"
                             >
                                 <div className="flex items-center justify-between gap-3">
                                     {/* Avatar Style */}
@@ -31,16 +31,16 @@ const LeaveSummary = ({ thisMonthLeaves = [], getAvatarColor = () => 'bg-gray-50
 
                                     {/* Name + department */}
                                     <div className="flex-1 text-left">
-                                        <p className="text-sm font-semibold text-gray-900">
+                                        <p className="text-sm font-semibold text-white">
                                             {leave.employeeName}
                                         </p>
-                                        <p className="text-xs text-gray-600">{leave.department}</p>
+                                        <p className="text-xs text-white">{leave.department}</p>
                                     </div>
 
                                     {/* Days */}
                                     <div className="text-right">
-                                        <p className="text-2xl font-bold text-blue-600">{leave.days}</p>
-                                        <p className="text-xs text-gray-600">days</p>
+                                        <p className="text-2xl font-bold text-white">{leave.days}</p>
+                                        <p className="text-xs text-white">days</p>
                                     </div>
                                 </div>
                             </div>

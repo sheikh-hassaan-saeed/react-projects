@@ -11,38 +11,42 @@ function App() {
 
   const [employees, setEmployees] = useState(() => {
     const saved = localStorage.getItem('employees')
-
-    console.log('Saved data:', saved) // Debug log
-    console.log('Imported data:', employeesInformation) // Debug log
-
     if (saved) {
       return JSON.parse(saved)
     }
-
     const employeesWithIds = employeesInformation.map((emp, index) => ({
       id: Date.now() + index,
       ...emp
     }))
-
-    console.log('Employees with IDs:', employeesWithIds) // Debug log
     return employeesWithIds
   })
 
-  useEffect(() => {
-    alert("It is recommended to open this on a desktop/laptop as it will cause responsive issues on mobile screens")
+  // ADD THIS: Lift leaveRequests state to App level
+  const [leaveRequests, setLeaveRequests] = useState(() => {
+    const saved = localStorage.getItem('leaveRequests')
+    if (saved) {
+      return JSON.parse(saved)
+    }
+    return []
+  })
 
-  }, [])
   useEffect(() => {
     localStorage.setItem('employees', JSON.stringify(employees))
-
   }, [employees])
+
+  // ADD THIS: Sync leaveRequests to localStorage
+  useEffect(() => {
+    localStorage.setItem('leaveRequests', JSON.stringify(leaveRequests))
+  }, [leaveRequests])
 
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Dashboard employees={employees} />} />
+        {/* Pass leaveRequests to Dashboard */}
+        <Route path="/" element={<Dashboard employees={employees} leaveRequests={leaveRequests} />} />
         <Route path="/employees" element={<EmployeesData employees={employees} setEmployees={setEmployees} />} />
-        <Route path='/leave' element={<LeaveManagementUI />} />
+        {/* Pass leaveRequests and setter to LeaveManagementUI */}
+        <Route path='/leave' element={<LeaveManagementUI leaveRequests={leaveRequests} setLeaveRequests={setLeaveRequests} />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Layout>

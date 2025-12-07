@@ -111,7 +111,7 @@ const EmployeesData = ({ employees, setEmployees }) => {
             variants={containerVariants}
         >
             <motion.h2
-                className='text-2xl font-bold mb-6 text-slate-800'
+                className='text-2xl font-bold mb-6 text-white'
                 variants={itemVariants}
             >
                 Current Employees

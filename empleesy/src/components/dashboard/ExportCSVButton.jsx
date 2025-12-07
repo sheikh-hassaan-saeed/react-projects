@@ -28,9 +28,10 @@ const ExportCSVButton = ({ EmployeesData, filename = "employees.csv" }) => {
 
     return <button
         onClick={exportToCSV}
-        className="bg-gradient-to-br from-slate-50 to-slate-100 border shadow-lg w-full p-6 rounded-[21px] 
-             hover:from-slate-700 hover:to-slate-900 text-black hover:text-white 
-             transition-all duration-300 ease-in-out"
+        className="bg-[#1B263B] text-white border shadow-lg
+       w-full p-6 rounded-[21px]
+        hover:bg-blue-900
+       transition-all duration-300 ease-in-out"
     >
         Export to CSV
     </button>

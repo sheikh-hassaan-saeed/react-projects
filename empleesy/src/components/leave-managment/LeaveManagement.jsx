@@ -2,19 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LeaveSummary from '../dashboard/LeaveSummary';
 
-const LeaveManagementUI = () => {
+const LeaveManagementUI = ({ leaveRequests, setLeaveRequests }) => {
 
-    const [leaveRequests, setLeaveRequests] = useState(() => {
-        const saved = localStorage.getItem('leaveRequests')
-        if (saved) {
-            return JSON.parse(saved)
-        }
-        return []
-    })
 
-    useEffect(() => {
-        localStorage.setItem('leaveRequests', JSON.stringify(leaveRequests))
-    }, [leaveRequests])
 
     // Model data
     const [showModal, setShowModal] = useState(false)
@@ -216,7 +206,7 @@ const LeaveManagementUI = () => {
             variants={containerVariants}
         >
             <motion.h2
-                className='text-2xl font-bold mb-6 text-gray-800'
+                className='text-2xl font-bold mb-6 text-white'
                 variants={cardVariants}
             >
                 Leave Management
@@ -487,12 +477,6 @@ const LeaveManagementUI = () => {
                     </table>
                 </div>
             </motion.div>
-
-            <LeaveSummary
-                thisMonthLeaves={thisMonthLeaves}
-                getAvatarColor={getAvatarColor}
-                totalDaysThisMonth={totalDaysThisMonth}
-            />
 
             {/* MODAL: NEW LEAVE REQUEST */}
             <AnimatePresence>

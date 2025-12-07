@@ -46,22 +46,25 @@ export const StatCards = ({ employees }) => {
 const Card = ({ title, value, pillText, trend, period, icon, progress }) => {
 
     return (
-        <div className="h-[170px] px-6 py-4 bg-gradient-to-br from-blue-50 to-rose-00 border border-blue-100 mt-2 shadow-md rounded-[21px] col-span-4">            <h3 className="text-slate-500 text-xs font-medium tracking-wide uppercase mt-1">{title}</h3>
+        <div className="h-[190px] pr-6 py-4 bg-gradient-to-br from-blue-50 to-rose-00 border border-blue-100 mt-2 shadow-md rounded-[21px] col-span-4">
+            <div className='bg-[#1B263B] inline-block px-4 py-1.5 rounded-r-[31px]'>
+                <h3 className="text-white  text-xs font-medium tracking-wide uppercase">{title}</h3>
+            </div>
 
             <div className='flex justify-between'>
-                <p className="text-3xl font-semibold text-slate-800 mt-2 tracking-tight">{value}</p>
+                <p className="text-3xl font-semibold text-slate-800 mt-2 tracking-tight pl-6 ">{value}</p>
 
-                <div className="w-20 h-20 relative bottom-5">
+                <div className="w-20 h-20 relative bottom-5  ">
                     <svg viewBox="0 0 36 36" className="w-full h-full">
                         <circle cx="18" cy="18" r="15" className="stroke-indigo-100" strokeWidth="3.5" fill="none" />
-                        <circle cx="18" cy="18" r="15" className="stroke-blue-600 transition-all duration-700" strokeWidth="3.5" fill="none"
+                        <circle cx="18" cy="18" r="15" className="stroke-blue-700 transition-all duration-700" strokeWidth="3.5" fill="none"
                             strokeDasharray="100"
                             strokeDashoffset={100 - progress}
                             strokeLinecap="round"
                             transform="rotate(-90 18 18)" />
                     </svg>
 
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center ">
                         <div className="text-blue-600">
                             {icon}
                         </div>
@@ -69,10 +72,10 @@ const Card = ({ title, value, pillText, trend, period, icon, progress }) => {
                 </div>
             </div>
 
-            <div className="flex items-center justify-between mt-3">
+            <div className="flex items-center justify-between mt-3 pl-4">
                 <span
                     className={`flex items-center gap-1 text-xs font-semibold py-1.5 px-2.5 rounded-full 
-          ${trend === 'up' ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'}`}
+          ${trend === 'up' ? 'text-slate-900 bg-[#b8cdea]' : 'text-slate-900 bg-[#b8cdea]'}`}
                 >
                     {trend === 'up' ? <FiTrendingUp /> : <FiTrendingDown />}
                     {pillText}

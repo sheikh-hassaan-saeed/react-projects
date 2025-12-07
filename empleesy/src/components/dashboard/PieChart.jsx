@@ -8,13 +8,13 @@ const PieChart = ({ employees = [] }) => {
     }, {})
 
     const colors = {
-        Engineering: "#ef4444",
-        Marketing: "#10b981",
-        "Human Resources": "#facc15",
-        Sales: "#3b82f6",
-        Operations: "#e36414",
-        Finance: "#8b5cf6"
-    }
+        "Engineering": "#1B263B", // Deep Navy (Matches Sidebar)
+        "Sales": "#2D4A86",       // Rich Professional Blue
+        "Marketing": "#318096",   // Muted Teal Accent
+        "Finance": "#215A77",     // Steel Blue
+        "Operations": "#5A7D9A",  // Cool Blue-Grey
+        "Human Resources": "#73A2BD" // Light Muted Blue
+    };
 
     let start = 0
     const gradientParts = Object.entries(departmentCount).map(([dept, count]) => {
