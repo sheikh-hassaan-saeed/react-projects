@@ -104,17 +104,17 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
-    border-radius: 12px;
+    border-radius: 32px;
     transition: 0.3s;
 }
 
 .btn-github {
-    background: dodgerblue;
+    background: var(--navy-dark);
     color: white;
 }
 
 .btn-live {
-    background: dodgerblue;
+    background: #f1f5f9;
     color: var(--navy-dark);
     border: 1px solid #e2e8f0;
 }
