@@ -1,192 +1,158 @@
-.packagecard-container {
+:root {
+    --clinic-navy: #002b86;
+    --clinic-blue: #004bed;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+}
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-    padding: 20px 30px;
+.packages-section {
+    padding: 60px 5%;
+    background-color: var(--light-bg);
+}
+
+.package-grid {
+    display: grid;
+    /* This ensures cards are at least 320px wide and fill the row perfectly */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .package-card {
     background: #ffffff;
-    border-radius: 16px;
-    border: 1px solid #e8edf2;
-    overflow: hidden;
+    border-radius: 24px;
+    /* Softer, more modern corners */
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 32px;
+    /* Uniform internal spacing */
 }
 
 .package-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 80, 161, 0.12);
-    border-color: #0050a1;
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 43, 134, 0.15);
+    border-color: var(--clinic-blue);
 }
 
-/* Card Header */
-.card-header {
-    padding: 24px 24px 16px;
+/* Header: Clean & Icon-Focused */
+.card-top {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
-    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
-    border-bottom: 1px solid #f0f4f8;
+    align-items: flex-start;
+    margin-bottom: 24px;
 }
 
-.img {
-    width: 72px;
-    height: 72px;
-    background: #ffffff;
-    border-radius: 12px;
+.icon-box {
+    width: 64px;
+    height: 64px;
+    background: #eff6ff;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.img img {
-    width: 48px;
-    height: 48px;
+.icon-box img {
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+    /* Optional: make icon navy to match brand */
+    filter: brightness(0) saturate(100%) invert(13%) sepia(59%) saturate(4645%) hue-rotate(217deg) brightness(91%) contrast(106%);
 }
 
-.rating {
+.rating-tag {
+    background: #fffbeb;
+    color: #b45309;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 6px;
-    background: #fff9e6;
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid #ffe8a3;
-}
-
-.stars {
-    font-size: 14px;
-    line-height: 1;
-}
-
-.rating-number {
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-}
-
-/* Card Content */
-.card-content {
-    padding: 20px 24px;
-    flex-grow: 1;
-}
-
-.package-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0 0 12px 0;
-    line-height: 1.3;
-}
-
-.package-description {
-    font-size: 14px;
-    color: #5a6c7d;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Card Footer */
-.card-footer {
-    padding: 20px 24px 24px;
-    border-top: 1px solid #f0f4f8;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.price-section {
-    display: flex;
-    flex-direction: column;
     gap: 4px;
 }
 
-.price-label {
-    font-size: 12px;
-    color: #7a8895;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
+.star-svg {
+    color: #f59e0b;
 }
 
-.price {
-    font-size: 24px;
+/* Content: Typography Hierarchy */
+.card-info {
+    flex-grow: 1;
+}
+
+.package-name {
+    font-size: 22px;
+    color: var(--text-main);
+    margin-bottom: 12px;
     font-weight: 700;
-    color: #0050a1;
+    line-height: 1.2;
 }
 
-.book-button {
-    width: 100%;
-    padding: 14px 24px;
-    background: #0050a1;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
+.package-text {
     font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Footer: Strong CTA */
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 24px;
+}
+
+.price-tag {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.amount {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--clinic-navy);
+}
+
+.action-button {
+    width: 100%;
+    padding: 16px;
+    background: var(--clinic-navy);
+    color: white;
+    border: none;
+    border-radius: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0, 80, 161, 0.2);
+    transition: 0.3s;
 }
 
-.book-button:hover {
-    background: #003d7a;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 80, 161, 0.3);
+.action-button:hover {
+    background: var(--clinic-blue);
+    transform: scale(1.02);
 }
 
-.book-button:active {
-    transform: translateY(0);
-}
-
-/* Responsive Design */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .packagecard-container {
+    .package-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 16px;
     }
 
     .package-card {
-        max-width: 100%;
-    }
-
-    .card-header {
-        padding: 20px 20px 14px;
-    }
-
-    .card-content {
-        padding: 16px 20px;
-    }
-
-    .card-footer {
-        padding: 16px 20px 20px;
-    }
-
-    .package-title {
-        font-size: 18px;
-    }
-
-    .price {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 480px) {
-    .img {
-        width: 64px;
-        height: 64px;
-    }
-
-    .img img {
-        width: 42px;
-        height: 42px;
+        padding: 24px;
     }
 }

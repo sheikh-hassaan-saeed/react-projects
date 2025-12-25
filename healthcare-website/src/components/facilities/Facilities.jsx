@@ -5,26 +5,37 @@ import facility2 from '../../assets/images/facility2.jpg'
 
 const Facilities = () => {
     return (
-        <>
-            <h2 className='h2-facilites'>Our Facilites</h2>
-            <div className="facilites-container">
+        <section className="facilities-section">
+            <div className="facilities-container">
 
-                <div className="text-area">
-
-                    <h3 className='h3-facilites'>Clinical facilites are the backbone of <br />modern healthcare system</h3>
-
-                    <div className="btn-facilites">
-                        <button>Find Out More</button>
+                {/* Image Side */}
+                <div className="facilities-visual">
+                    <div className="image-stack">
+                        <img src={facility1} alt="Laboratory" className="img-main" />
+                        <img src={facility2} alt="Medical Equipment" className="img-sub" />
+                        <div className="decorative-box"></div>
                     </div>
                 </div>
 
-                <div className="facilites-img">
-                    <img src={facility1} />
-                    <img src={facility2} />
+                {/* Text Side */}
+                <div className="facilities-text">
+                    <span className="accent-text">Advanced Technology</span>
+                    <h2 className='h2-facilities'>Our Facilities</h2>
+                    <h3 className='h3-facilities'>
+                        Clinical facilities are the backbone of <br />
+                        <span>modern healthcare systems.</span>
+                    </h3>
+                    <p className="facilities-description">
+                        Equipped with the latest diagnostic technology, our labs provide
+                        accurate results with a focus on patient comfort and safety.
+                    </p>
+                    <div className="btn-facilities">
+                        <button className="primary-btn">Find Out More</button>
+                    </div>
                 </div>
 
             </div>
-        </>
+        </section>
     )
 }
 

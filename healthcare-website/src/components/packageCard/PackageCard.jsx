@@ -11,43 +11,41 @@ const PackageCard = () => {
     };
 
     return (
-        <div className="packagecard-container">
-            {Packages.map((value, index) => {
-                const stars = "⭐".repeat(value.rating);
-
-                return (
+        <section className="packages-section">
+            <div className="package-grid">
+                {Packages.map((value, index) => (
                     <div key={index} className="package-card">
-                        <div className="card-header">
-                            <div className="img">
+                        <div className="card-top">
+                            <div className="icon-box">
                                 <img src={value.image} alt={value.name} />
                             </div>
-                            <div className="rating">
-                                <span className="stars">{stars}</span>
-                                <span className="rating-number">{value.rating}</span>
+                            <div className="rating-tag">
+                                <span className="star-svg">★</span>
+                                <span className="rating-val">{value.rating}</span>
                             </div>
                         </div>
 
-                        <div className="card-content">
-                            <h2 className="package-title">{value.name}</h2>
-                            <p className="package-description">{value.paragraph}</p>
+                        <div className="card-info">
+                            <h3 className="package-name">{value.name}</h3>
+                            <p className="package-text">{value.paragraph}</p>
                         </div>
 
-                        <div className="card-footer">
-                            <div className="price-section">
-                                <span className="price-label">Starting from</span>
-                                <span className="price">{value.price}</span>
+                        <div className="card-bottom">
+                            <div className="price-tag">
+                                <span className="label">Total Cost</span>
+                                <span className="amount">{value.price}</span>
                             </div>
                             <button
-                                className="book-button"
+                                className="action-button"
                                 onClick={() => handleBook(value.name)}
                             >
-                                Book Now
+                                Book Appointment
                             </button>
                         </div>
                     </div>
-                );
-            })}
-        </div>
+                ))}
+            </div>
+        </section>
     );
 };
 
