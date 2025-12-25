@@ -32,7 +32,6 @@
     background: white;
     padding: 15px;
     border-radius: 50px;
-    /* Modern "Pill" container */
     border: 1px solid #e2e8f0;
     display: flex;
     gap: 10px;
@@ -101,5 +100,23 @@
 
     .contact-title {
         font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-cards-container {
+        flex-direction: column;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .contact-card {
+        justify-content: flex-start;
+        border-radius: 16px;
+    }
+
+    .contact-title {
+        font-size: 29px;
     }
 }

@@ -109,12 +109,12 @@
 }
 
 .btn-github {
-    background: var(--navy-dark);
+    background: dodgerblue;
     color: white;
 }
 
 .btn-live {
-    background: #f1f5f9;
+    background: dodgerblue;
     color: var(--navy-dark);
     border: 1px solid #e2e8f0;
 }
