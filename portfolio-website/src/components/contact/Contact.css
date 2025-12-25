@@ -1,122 +1,105 @@
-.contact-container img {
-    width: 32px;
-    height: 32px;
+:root {
+    --primary-navy: #032339;
+    --accent-blue: #004bed;
+    --text-slate: #64748b;
+}
+
+.contact-section {
+    padding: 100px 5%;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-slate);
+}
+
+.contact-title {
+    font-size: 42px;
+    color: var(--primary-navy);
+    margin: 10px 0 50px 0;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-cards-container {
+    background: white;
+    padding: 15px;
+    border-radius: 50px;
+    /* Modern "Pill" container */
+    border: 1px solid #e2e8f0;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 25px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    background-color: #eff6ff;
+}
+
+
+.contact-icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon-box img {
+    width: 28px;
+    height: 28px;
     object-fit: contain;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info span {
     display: block;
-
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-slate);
+    letter-spacing: 0.5px;
 }
 
-.contact-p1 {
-    text-align: center;
-    margin-top: 7rem;
+.contact-info p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--primary-navy);
+    font-weight: 500;
 }
 
-.contact-h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.elements-container {
-    border: 1px solid black;
-    width: 38rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.3rem;
-    font-size: 1.2rem;
-    padding: 1.5rem;
-    border-radius: 2rem;
-    margin-top: 1rem;
-    background-color: #f5f7fa;
-
-}
-
-
-.email {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    cursor: pointer;
-}
-
-.email img {
-    width: 38px;
-    height: 38px;
-}
-
-.linkedin {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-    .elements-container {
-        border: 1px solid black;
-        width: 95%;
-        max-width: 470px;
-        display: flex;
-        justify-content: center;
-        gap: 0.6rem;
-        font-size: 1.1rem;
-        padding: 1.3rem 0.3rem;
-        border-radius: 1.8rem;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .contact-cards-container {
         flex-direction: column;
-        align-items: center;
-        margin: 1rem auto 0;
-
+        border-radius: 24px;
+        width: 100%;
+        max-width: 400px;
     }
 
-    .contact-container img {
-        width: 27px;
-        height: 27px;
-        object-fit: contain;
-        display: block;
+    .contact-card {
+        justify-content: flex-start;
+        border-radius: 16px;
     }
 
-    .email img {
-        width: 34px;
-        height: 34px;
-    }
-
-
-}
-
-@media only screen and (max-width: 375px) {
-    .elements-container {
-        border: 1px solid black;
-        width: 85%;
-        max-width: 470px;
-        display: flex;
-        justify-content: center;
-        gap: 0.6rem;
-        font-size: 0.9rem;
-        padding: 1rem 0.3rem;
-        margin: 1rem auto 0;
-
-    }
-
-    .contact-container img {
-        width: 25px;
-        height: 25px;
-        object-fit: contain;
-        display: block;
-    }
-
-    .email img {
-        width: 32px;
-        height: 32px;
-    }
-
-    .contact-h1 {
-        font-size: 30px;
+    .contact-title {
+        font-size: 32px;
     }
 }

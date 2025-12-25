@@ -1,17 +1,59 @@
-.bottom-btn {
-    text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-
+:root {
+    --primary-blue: #004bed;
+    --navy-dark: #032339;
 }
 
-.bottom-btn button {
-    padding: 1rem 4rem;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    background: linear-gradient(135deg, rgb(0, 77, 145) 0%, rgb(0, 136, 255) 100%);
+.scroll-to-top-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    background-color: #ffffff;
+    /* Or match your footer color */
+}
+
+.scroll-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    background: var(--navy-dark);
     color: white;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.scroll-btn:hover {
+
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(3, 35, 57, 0.2);
+}
+
+.arrow-up {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.scroll-btn:hover .arrow-up {
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .btn-text {
+        display: none;
+        /* Only show arrow on mobile for a cleaner look */
+    }
+
+    .scroll-btn {
+        padding: 12px;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+    }
 }

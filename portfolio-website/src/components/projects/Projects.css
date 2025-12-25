@@ -1,207 +1,136 @@
-.projects-container img {
-    height: 340px;
-    width: 310px;
-    border-radius: 2rem;
-    object-fit: cover;
+:root {
+    --primary-blue: #004bed;
+    --navy-dark: #032339;
+    --text-slate: #64748b;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.main-container {
+.projects-section {
+    padding: 100px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-header {
     text-align: center;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    justify-content: center;
-
+    margin-bottom: 60px;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
+.subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-slate);
+    font-weight: 600;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-
+.title {
+    font-size: 42px;
+    color: var(--navy-dark);
+    margin-top: 10px;
 }
 
-#thirdproject {
-    height: 37rem;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
 }
 
-.project-btn1 {
-    font-weight: 500;
-    transition: all 300ms ease;
-    padding: 1rem;
-    width: 10rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    list-style: none;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, rgb(0, 77, 145) 0%, rgb(0, 136, 255) 100%);
-
-
-}
-
-.project-btn2 {
-    font-weight: 500;
-    transition: all 300ms ease;
-    padding: 1rem;
-    width: 10rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    background-color: rgb(223, 223, 223);
-}
-
-.project-btn1 a {
-    text-decoration: none;
-    color: white;
-}
-
-.project-btn2 a {
-    text-decoration: none;
-    color: black;
-}
-
-.projects-container {
-    border: 0.1rem solid black;
-    width: 30%;
-    height: 100%;
+.project-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    border-radius: 2rem;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f7fa;
 }
 
-.projects-container h2 {
-    margin-top: 1rem;
-    font-size: 26px;
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
-.projects-container p {
-    font-size: 18px;
+.project-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    /* Keeps images consistent without distortion */
+    overflow: hidden;
 }
 
-.projects-text {
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.project-info {
+    padding: 30px;
+    text-align: left;
+    /* Center-aligned project cards look junior; left-aligned looks professional */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h2 {
+    font-size: 24px;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+}
+
+.project-info p {
+    color: var(--text-slate);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.project-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 0;
     text-align: center;
-    margin-top: 7rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-@media only screen and (max-width: 768px) {
-    .main-container {
-        text-align: center;
-        border-radius: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        box-sizing: border-box;
-    }
-
-    #thirdproject {
-        height: 28rem;
-    }
-
-    .projects-container {
-        border: 0.1rem solid black;
-        width: 90%;
-        max-width: 420px;
-        padding: 2rem;
-        border-radius: 2rem;
-        background-color: #f5f7fa;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    .projects-container img {
-        height: 240px;
-        width: 240px;
-        border-radius: 2rem;
-        display: block;
-        margin-bottom: 1rem;
-
-    }
-
-    .projects-container h2 {
-        margin-top: 1rem;
-        font-size: 20px;
-    }
-
-    .projects-container p {
-        font-size: 14px;
-    }
+.btn-github {
+    background: var(--navy-dark);
+    color: white;
 }
 
-@media only screen and (max-width: 375px) {
-    .main-container {
-        text-align: center;
-        border-radius: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        justify-content: center;
-        align-items: center;
-        width: 85%;
-        box-sizing: border-box;
+.btn-live {
+    background: #f1f5f9;
+    color: var(--navy-dark);
+    border: 1px solid #e2e8f0;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
-    .projects-container {
-        border: 0.1rem solid black;
-        width: 85%;
-        max-width: 420px;
-        padding: 2rem;
-        border-radius: 2rem;
-        background-color: rgb(255, 253, 250);
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    .projects-container img {
-        height: 200px;
-        width: 200px;
-        border-radius: 2rem;
-        display: block;
-        margin-bottom: 1rem;
-
-    }
-
-    .buttons .project-btn1 {
-        font-weight: 500;
-        transition: all 300ms ease;
-        padding: 0.5rem;
-        width: 6rem;
-    }
-
-    .buttons .project-btn2 {
-        font-weight: 500;
-        transition: all 300ms ease;
-        padding: 0.5rem;
-        width: 6rem;
-    }
-
-    .projects-container h2 {
-        margin-top: 1rem;
-        font-size: 20px;
-    }
-
-    .projects-container p {
-        font-size: 14px;
+    .title {
+        font-size: 32px;
     }
 }

@@ -1,33 +1,43 @@
-import React from 'react'
-import './Contact.css'
-import email from '../../assets/email.png'
-import linkedin from '../../assets/linkedin.png'
+import React from 'react';
+import './Contact.css';
+import emailIcon from '../../assets/email.png';
+import linkedinIcon from '../../assets/linkedin.png';
 
 const Contact = () => {
     return (
-        <section id='contact'>
-            <p className='contact-p1'>Get in Touch</p>
-            <h1 className='contact-h1'>Contact Me</h1>
+        <section id='contact' className="contact-section">
+            <div className="contact-header">
+                <p className='contact-subtitle'>Get in Touch</p>
+                <h1 className='contact-title'>Contact Me</h1>
+            </div>
 
-            <div className="contact-container">
-                <div className="elements-container">
-                    <div className="email">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sheikhhassaansaeed@gmail.com" target="_blank" rel="noopener noreferrer">
-                            <img src={email} alt="Email icon" />
-                        </a>
-                        <p>sheikhhassaansaeed@gmail.com</p>
-                    </div>
+            <div className="contact-wrapper">
+                <div className="contact-cards-container">
 
-                    <div className="linkedin">
-                        <a href='https://www.linkedin.com/in/sheikh-hassaan-saeed/' target='_blank' rel='noopener noreferrer'>
-                            <img src={linkedin} alt="LinkedIn profile" />
-                        </a>
-                        <p>Linkedin</p>
-                    </div>
+                    <a href="mailto:sheikhhassaansaeed@gmail.com" className="contact-card">
+                        <div className="contact-icon-box">
+                            <img src={emailIcon} alt="Email" />
+                        </div>
+                        <div className="contact-info">
+                            <span>Email</span>
+                            <p>sheikhhassaansaeed@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <a href='https://www.linkedin.com/in/sheikh-hassaan-saeed/' target='_blank' rel='noopener noreferrer' className="contact-card">
+                        <div className="contact-icon-box">
+                            <img src={linkedinIcon} alt="LinkedIn" />
+                        </div>
+                        <div className="contact-info">
+                            <span>LinkedIn</span>
+                            <p>View Profile</p>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
-export default Contact
+export default Contact;
